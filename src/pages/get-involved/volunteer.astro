@@ -1,0 +1,161 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Volunteer" description="Volunteer with Sarvagya Gyanodaya Trust">
+  <!-- Hero -->
+  <section class="section bg-mist">
+    <div class="shell">
+      <nav class="text-sm text-ink-faint mb-8">
+        <a href="/get-involved" class="hover:text-pine">Get Involved</a>
+        <span class="mx-2">/</span>
+        <span class="text-ink-soft">Volunteer</span>
+      </nav>
+      <div class="grid lg:grid-cols-2 gap-14 items-center">
+        <div>
+          <p class="kicker mb-5">Get Involved</p>
+          <h1 class="text-4xl md:text-6xl text-ink mb-6 text-balance">
+            Give your time. Change a life.
+          </h1>
+          <p class="text-lg md:text-xl text-ink-soft mb-8">
+            From teaching a child to code to sitting with an elder who needs
+            company — there is a place for your skills, however small.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a href="/contact" class="btn btn-primary">Apply to Volunteer</a>
+            <a href="/get-involved/donate" class="btn btn-ghost">Prefer to Donate?</a>
+          </div>
+        </div>
+        <div class="img-frame aspect-[4/3]">
+          <img
+            src="https://images.pexels.com/photos/6646918/pexels-photo-6646918.jpeg?auto=compress&cs=tinysrgb&w=1200"
+            alt="Volunteers working together"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ways to volunteer -->
+  <section class="section bg-paper">
+    <div class="shell">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
+        <div>
+          <p class="kicker mb-4">Ways to Volunteer</p>
+          <h2 class="text-3xl md:text-5xl text-ink">Where you can help</h2>
+        </div>
+      </div>
+      <div class="grid md:grid-cols-2 gap-7">
+        <div class="card p-8">
+          <div class="w-12 h-12 bg-pine/10 rounded-none flex items-center justify-center mb-5 text-pine">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+              <path stroke-linecap="round" d="M12 3l2.7 5.5 6.1.9-4.4 4.3 1 6.1-5.4-2.9-5.4 2.9 1-6.1L3.2 9.4l6.1-.9L12 3z" />
+            </svg>
+          </div>
+          <h3 class="font-display text-xl mb-3">Teach &amp; Tutor</h3>
+          <p class="text-ink-soft text-sm">
+            Run after-school classes, teach computer basics, or mentor students
+            preparing for exams and careers.
+          </p>
+        </div>
+        <div class="card p-8">
+          <div class="w-12 h-12 bg-pine/10 rounded-none flex items-center justify-center mb-5 text-pine">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+              <path stroke-linecap="round" d="M12 21s-7-4.6-9.2-9A5.4 5.4 0 0 1 12 6.3 5.4 5.4 0 0 1 21.2 12C19 16.4 12 21 12 21z" />
+            </svg>
+          </div>
+          <h3 class="font-display text-xl mb-3">Visit Our Elders</h3>
+          <p class="text-ink-soft text-sm">
+            Companionship visits, helping with errands, or simply being present
+            — the smallest gestures matter most.
+          </p>
+        </div>
+        <div class="card p-8">
+          <div class="w-12 h-12 bg-pine/10 rounded-none flex items-center justify-center mb-5 text-pine">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+              <path stroke-linecap="round" d="M9 12l2 2 4-4" />
+              <path d="M12 3l7 3v5c0 5-3.2 8.4-7 10-3.8-1.6-7-5-7-10V6l7-3z" />
+            </svg>
+          </div>
+          <h3 class="font-display text-xl mb-3">Support Health Camps</h3>
+          <p class="text-ink-soft text-sm">
+            Help organize free check-up camps — registration desks, logistics,
+            or translating between doctors and patients.
+          </p>
+        </div>
+        <div class="card p-8">
+          <div class="w-12 h-12 bg-pine/10 rounded-none flex items-center justify-center mb-5 text-pine">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+              <path stroke-linecap="round" d="M3 21V9l6-5 6 5v12" />
+              <path stroke-linecap="round" d="M9 21v-6h6v6M7 9h2M11 9h2M15 9h2M7 13h2M11 13h2M15 13h2" />
+            </svg>
+          </div>
+          <h3 class="font-display text-xl mb-3">Drive a Community Day</h3>
+          <p class="text-ink-soft text-sm">
+            Plan cleanliness drives, book banks, and skill workshops alongside
+            the communities we serve.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Commitment -->
+  <section class="section bg-mist">
+    <div class="shell grid lg:grid-cols-3 gap-10">
+      <div class="border-t border-line pt-8">
+        <p class="font-display text-4xl mb-3">A Weekend</p>
+        <p class="text-ink-soft text-sm leading-relaxed">
+          One-off camps, drives, and events. Perfect if you want to start small.
+        </p>
+      </div>
+      <div class="border-t border-line pt-8">
+        <p class="font-display text-4xl mb-3">A Few Hours a Month</p>
+        <p class="text-ink-soft text-sm leading-relaxed">
+          Regular teaching or companion visits — the backbone of our programs.
+        </p>
+      </div>
+      <div class="border-t border-line pt-8">
+        <p class="font-display text-4xl mb-3">An Ongoing Skill</p>
+        <p class="text-ink-soft text-sm leading-relaxed">
+          Doctors, teachers, designers, and accountants — professionals who
+          share their craft with us for months at a time.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- What we ask -->
+  <section class="section bg-paper">
+    <div class="shell grid lg:grid-cols-2 gap-16">
+      <div>
+        <p class="kicker mb-6">What We Ask</p>
+        <h2 class="text-[2.2rem] md:text-[3rem] mb-6">Simple commitments, real trust</h2>
+        <p class="text-ink-soft text-lg">
+          We keep volunteering light on paperwork and heavy on care.
+        </p>
+      </div>
+      <ul class="flex flex-col gap-4 text-ink-soft">
+        <li class="flex gap-4"><span class="text-saffron mt-1">•</span> Two short sessions of orientation before your first visit.</li>
+        <li class="flex gap-4"><span class="text-saffron mt-1">•</span> A signed volunteer agreement keeping children and elders safe.</li>
+        <li class="flex gap-4"><span class="text-saffron mt-1">•</span> [X] hours per month — or whatever you promised, honestly kept.</li>
+        <li class="flex gap-4"><span class="text-saffron mt-1">•</span> A check-in with the program lead after your first four visits.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section bg-pine-deep text-center text-paper">
+    <div class="shell max-w-2xl">
+      <h2 class="text-3xl md:text-4xl mb-4">Ready to start?</h2>
+      <p class="text-paper/75 mb-8">
+        Tell us your skills and your time — we will find the right place for you.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="/contact" class="btn btn-accent">Apply to Volunteer</a>
+        <a href="mailto:info@sarvagyagyanodayatrust.org" class="btn btn-light">info@sarvagyagyanodayatrust.org</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

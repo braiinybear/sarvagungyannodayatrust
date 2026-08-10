@@ -1,0 +1,101 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const posts = [
+  {
+    title: "Digital Literacy Center Opens in Kotma",
+    date: "August 2026",
+    category: "Education",
+    excerpt: "Our newest digital hub brings computer training to a rural community, opening doors to opportunity for 200+ students.",
+    photo: "https://images.pexels.com/photos/6217466/pexels-photo-6217466.jpeg?auto=compress&cs=tinysrgb&w=800",
+  },
+  {
+    title: "Companionship Initiative: 100 Elders Visited This Month",
+    date: "July 2026",
+    category: "Elderly Care",
+    excerpt: "Our volunteers made 300 companionship visits this month, bringing joy and connection to senior citizens.",
+    photo: "https://images.pexels.com/photos/11905784/pexels-photo-11905784.jpeg?auto=compress&cs=tinysrgb&w=800",
+  },
+  {
+    title: "Community Development: New Water Facility Completed",
+    date: "June 2026",
+    category: "Community",
+    excerpt: "A new clean water facility now serves 1,500 families, thanks to our donors and partners.",
+    photo: "https://images.pexels.com/photos/7519650/pexels-photo-7519650.jpeg?auto=compress&cs=tinysrgb&w=800",
+  },
+];
+---
+
+<BaseLayout title="News & Stories" description="Latest updates and stories from Sarvagya Gyanodaya Trust">
+  <!-- Hero -->
+  <section class="section bg-mist">
+    <div class="shell max-w-3xl">
+      <p class="kicker mb-5">News &amp; Stories</p>
+      <h1 class="text-4xl md:text-6xl text-ink mb-6 text-balance">From the field, to you.</h1>
+      <p class="text-lg md:text-xl text-ink-soft">
+        Updates from our programs, stories from the field, and announcements.
+      </p>
+    </div>
+  </section>
+
+  <!-- Posts -->
+  <section class="section bg-paper">
+    <div class="shell">
+      <div class="grid md:grid-cols-3 gap-7">
+        {
+          posts.map((post) => (
+            <article class="group card overflow-hidden flex flex-col">
+              <div class="img-frame !rounded-none aspect-[16/10]">
+                <img
+                  src={post.photo}
+                  alt={post.title}
+                  class="transition-transform duration-500 group-hover:scale-105"
+                  loading="lazy"
+                />
+              </div>
+              <div class="p-7 flex flex-col flex-1">
+                <span class="text-[0.7rem] font-bold tracking-[0.15em] uppercase text-saffron mb-3">{post.category}</span>
+                <h2 class="font-display text-xl mb-2">{post.title}</h2>
+                <p class="text-ink-soft text-sm mb-5 flex-1">{post.excerpt}</p>
+                <div class="flex items-center justify-between pt-4 border-t border-line">
+                  <span class="text-ink-faint text-xs">{post.date}</span>
+                  <a href="#" class="inline-flex items-center gap-2 text-pine font-semibold text-sm hover:gap-3 transition-all">
+                    Read <span aria-hidden>→</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter CTA -->
+  <section class="section bg-pine-deep text-center text-paper">
+    <div class="shell max-w-xl">
+      <h2 class="text-3xl md:text-4xl mb-4">Stay Updated</h2>
+      <p class="text-paper/75 mb-8">
+        Get our latest stories, program updates, and impact reports in your inbox.
+      </p>
+      <form class="flex flex-col sm:flex-row gap-4">
+        <input
+          type="email"
+          placeholder="Your email address"
+          class="flex-1 px-5 py-3.5 rounded-none bg-white/10 border border-paper/20 text-paper placeholder:text-paper/50 focus:outline-none focus:border-saffron"
+          required
+        />
+        <button type="submit" class="btn btn-primary !py-3.5">Subscribe</button>
+      </form>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  const form = document.querySelector('form');
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    alert('Thank you for subscribing!');
+    form.reset();
+  });
+</script>

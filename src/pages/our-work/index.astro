@@ -1,0 +1,102 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Our Work" description="Discover Sarvagya Gyanodaya Trust's programs in education, elderly care, and community development">
+  <!-- Hero -->
+  <section class="section bg-mist">
+    <div class="shell">
+      <p class="kicker mb-5">What We Do</p>
+      <h1 class="text-4xl md:text-6xl text-ink mb-6 max-w-2xl text-balance">Three programs. One purpose.</h1>
+      <p class="text-lg md:text-xl text-ink-soft max-w-2xl">
+        We don't just run programs — we transform lives. Explore how we're
+        making a difference across three core areas.
+      </p>
+    </div>
+  </section>
+
+  <!-- Programs Grid -->
+  <section class="section bg-paper pt-0">
+    <div class="shell grid md:grid-cols-3 gap-7">
+      <!-- Education & Digital Literacy -->
+      <article class="group card overflow-hidden flex flex-col">
+        <div class="img-frame !rounded-none aspect-[4/3]">
+          <img
+            src="https://images.pexels.com/photos/3231358/pexels-photo-3231358.jpeg?auto=compress&cs=tinysrgb&w=800"
+            alt="Children learning in a classroom"
+            class="transition-transform duration-500 group-hover:scale-105"
+            loading="lazy"
+          />
+        </div>
+        <div class="p-7 flex flex-col flex-1">
+          <h2 class="font-display text-2xl mb-3">Education &amp; Digital Literacy</h2>
+          <p class="text-ink-soft text-sm mb-6 flex-1">
+            Teaching, scholarships, and digital access that open doors to opportunity
+            for underprivileged communities.
+          </p>
+          <a href="/our-work/education" class="inline-flex items-center gap-2 text-pine font-semibold text-sm hover:gap-3 transition-all">
+            Explore Program <span aria-hidden>→</span>
+          </a>
+        </div>
+      </article>
+
+      <!-- Elderly Care -->
+      <article class="group card overflow-hidden flex flex-col">
+        <div class="img-frame !rounded-none aspect-[4/3]">
+          <img
+            src="https://images.pexels.com/photos/5973471/pexels-photo-5973471.jpeg?auto=compress&cs=tinysrgb&w=800"
+            alt="Elderly person receiving care"
+            class="transition-transform duration-500 group-hover:scale-105"
+            loading="lazy"
+          />
+        </div>
+        <div class="p-7 flex flex-col flex-1">
+          <h2 class="font-display text-2xl mb-3">Elderly Care &amp; Support</h2>
+          <p class="text-ink-soft text-sm mb-6 flex-1">
+            Healthcare, companionship, and retirement planning support to give
+            our seniors the dignity they deserve.
+          </p>
+          <a href="/our-work/elderly-care" class="inline-flex items-center gap-2 text-pine font-semibold text-sm hover:gap-3 transition-all">
+            Explore Program <span aria-hidden>→</span>
+          </a>
+        </div>
+      </article>
+
+      <!-- Community Development -->
+      <article class="group card overflow-hidden flex flex-col">
+        <div class="img-frame !rounded-none aspect-[4/3]">
+          <img
+            src="https://images.pexels.com/photos/11444459/pexels-photo-11444459.jpeg?auto=compress&cs=tinysrgb&w=800"
+            alt="Rural village community"
+            class="transition-transform duration-500 group-hover:scale-105"
+            loading="lazy"
+          />
+        </div>
+        <div class="p-7 flex flex-col flex-1">
+          <h2 class="font-display text-2xl mb-3">Community Development</h2>
+          <p class="text-ink-soft text-sm mb-6 flex-1">
+            Rural development, infrastructure, and livelihood programs that build
+            stronger, self-reliant communities.
+          </p>
+          <a href="/our-work/community" class="inline-flex items-center gap-2 text-pine font-semibold text-sm hover:gap-3 transition-all">
+            Explore Program <span aria-hidden>→</span>
+          </a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section bg-pine-deep text-center text-paper">
+    <div class="shell max-w-2xl">
+      <h2 class="text-3xl md:text-4xl mb-4">Want to Support Our Work?</h2>
+      <p class="text-paper/75 mb-8">
+        Every program is powered by people like you. Join us in creating lasting change.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="/get-involved/donate" class="btn btn-primary">Donate Now</a>
+        <a href="/get-involved/volunteer" class="btn btn-light">Become a Volunteer</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,82 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Get Involved" description="Donate, volunteer, or partner with Sarvagya Gyanodaya Trust">
+  <!-- Hero -->
+  <section class="section bg-mist">
+    <div class="shell">
+      <p class="kicker mb-5">Get Involved</p>
+      <h1 class="text-4xl md:text-6xl text-ink mb-6 max-w-2xl text-balance">There are many ways to help.</h1>
+      <p class="text-lg md:text-xl text-ink-soft max-w-2xl">
+        Donate, volunteer, or bring your organization with us. Choose how you'd like to make a difference.
+      </p>
+    </div>
+  </section>
+
+  <!-- Options -->
+  <section class="section bg-paper pt-0">
+    <div class="shell grid md:grid-cols-3 gap-7">
+      <a href="/get-involved/donate" class="group card overflow-hidden flex flex-col hover:shadow-lg transition-shadow">
+        <div class="img-frame !rounded-none aspect-[16/10]">
+          <img
+            src="https://images.pexels.com/photos/6646918/pexels-photo-6646918.jpeg?auto=compress&cs=tinysrgb&w=800"
+            alt="Person donating"
+            class="transition-transform duration-500 group-hover:scale-105"
+            loading="lazy"
+          />
+        </div>
+        <div class="p-7 flex flex-col flex-1">
+          <h2 class="font-display text-2xl mb-3">Donate</h2>
+          <p class="text-ink-soft text-sm mb-6 flex-1">
+            Your donation funds education, elderly care, and community programs.
+            Every rupee goes where it matters.
+          </p>
+          <span class="inline-flex items-center gap-2 text-pine font-semibold text-sm">
+            Donate Now <span aria-hidden>→</span>
+          </span>
+        </div>
+      </a>
+      <a href="/get-involved/volunteer" class="group card overflow-hidden flex flex-col hover:shadow-lg transition-shadow">
+        <div class="img-frame !rounded-none aspect-[16/10]">
+          <img
+            src="https://images.pexels.com/photos/6647015/pexels-photo-6647015.jpeg?auto=compress&cs=tinysrgb&w=800"
+            alt="Volunteers working together"
+            class="transition-transform duration-500 group-hover:scale-105"
+            loading="lazy"
+          />
+        </div>
+        <div class="p-7 flex flex-col flex-1">
+          <h2 class="font-display text-2xl mb-3">Volunteer</h2>
+          <p class="text-ink-soft text-sm mb-6 flex-1">
+            Give your time and skills — teach, visit elders, organize events,
+            and be part of real change.
+          </p>
+          <span class="inline-flex items-center gap-2 text-pine font-semibold text-sm">
+            Become a Volunteer <span aria-hidden>→</span>
+          </span>
+        </div>
+      </a>
+      <a href="/get-involved/partner" class="group card overflow-hidden flex flex-col hover:shadow-lg transition-shadow">
+        <div class="img-frame !rounded-none aspect-[16/10]">
+          <img
+            src="https://images.pexels.com/photos/6646926/pexels-photo-6646926.jpeg?auto=compress&cs=tinysrgb&w=800"
+            alt="People collaborating"
+            class="transition-transform duration-500 group-hover:scale-105"
+            loading="lazy"
+          />
+        </div>
+        <div class="p-7 flex flex-col flex-1">
+          <h2 class="font-display text-2xl mb-3">Partner With Us</h2>
+          <p class="text-ink-soft text-sm mb-6 flex-1">
+            CSR partnerships, program sponsorship, and in-kind support for
+            measurable social impact.
+          </p>
+          <span class="inline-flex items-center gap-2 text-pine font-semibold text-sm">
+            Partner With Us <span aria-hidden>→</span>
+          </span>
+        </div>
+      </a>
+    </div>
+  </section>
+</BaseLayout>

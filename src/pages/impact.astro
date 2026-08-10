@@ -1,0 +1,219 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Impact" description="Impact and transparency reports by Sarvagya Gyanodaya Trust">
+  <!-- Hero -->
+  <section class="section bg-mist">
+    <div class="shell">
+      <nav class="text-sm text-ink-faint mb-8">
+        <a href="/" class="hover:text-pine">Home</a>
+        <span class="mx-2">/</span>
+        <span class="text-ink-soft">Impact</span>
+      </nav>
+      <p class="kicker mb-6">Impact &amp; Transparency</p>
+      <h1 class="text-4xl md:text-6xl max-w-4xl text-balance">
+        What we have done,<br />
+        in numbers — and in lives.
+      </h1>
+      <p class="text-lg md:text-xl text-ink-soft max-w-2xl mt-8">
+        Every rupee is tracked, every program is reported, and every promise is kept.
+        Here is our progress so far — and how your support is spent.
+      </p>
+    </div>
+  </section>
+
+  <!-- Headline stats -->
+  <section class="section bg-paper">
+    <div class="shell">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-14 border-t border-line pt-14">
+        <div>
+          <div class="stat-number text-[2.6rem] md:text-[3.4rem]" data-target="50000">0</div>
+          <div class="stat-label">Lives Touched</div>
+        </div>
+        <div>
+          <div class="stat-number text-[2.6rem] md:text-[3.4rem]" data-target="3120">0</div>
+          <div class="stat-label">Children Educated</div>
+        </div>
+        <div>
+          <div class="stat-number text-[2.6rem] md:text-[3.4rem]" data-target="1040">0</div>
+          <div class="stat-label">Elders Supported</div>
+        </div>
+        <div>
+          <div class="stat-number text-[2.6rem] md:text-[3.4rem]" data-target="62">0</div>
+          <div class="stat-label">Village Projects</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Impact by program -->
+  <section class="section bg-mist">
+    <div class="shell">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
+        <p class="kicker mb-4 md:mb-0">Impact by Program</p>
+        <a href="/our-work" class="link-arrow">All Programs</a>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-10">
+        <article>
+          <div class="overflow-hidden mb-6">
+            <img
+              src="https://images.pexels.com/photos/3231358/pexels-photo-3231358.jpeg?auto=compress&cs=tinysrgb&w=900"
+              alt="Children learning in a classroom"
+              class="w-full aspect-[4/3] object-cover"
+              loading="lazy"
+            />
+          </div>
+          <p class="text-[0.68rem] font-bold tracking-[0.22em] uppercase text-saffron mb-3">Education &amp; Digital Literacy</p>
+          <p class="font-display text-2xl mb-3">[X] scholarships · [X] digital hubs</p>
+          <p class="text-ink-soft text-sm leading-relaxed">
+            School fees covered, children learning to code, and villagers using
+            government digital services for the first time.
+          </p>
+        </article>
+
+        <article>
+          <div class="overflow-hidden mb-6">
+            <img
+              src="https://images.pexels.com/photos/5973471/pexels-photo-5973471.jpeg?auto=compress&cs=tinysrgb&w=900"
+              alt="Elderly person being cared for"
+              class="w-full aspect-[4/3] object-cover"
+              loading="lazy"
+            />
+          </div>
+          <p class="text-[0.68rem] font-bold tracking-[0.22em] uppercase text-saffron mb-3">Elderly Care &amp; Support</p>
+          <p class="font-display text-2xl mb-3">[X] medical camps · [X] visits</p>
+          <p class="text-ink-soft text-sm leading-relaxed">
+            Health checkups, pension guidance, and companions who turn loneliness
+            into belonging.
+          </p>
+        </article>
+
+        <article>
+          <div class="overflow-hidden mb-6">
+            <img
+              src="https://images.pexels.com/photos/11444459/pexels-photo-11444459.jpeg?auto=compress&cs=tinysrgb&w=900"
+              alt="Rural village community"
+              class="w-full aspect-[4/3] object-cover"
+              loading="lazy"
+            />
+          </div>
+          <p class="text-[0.68rem] font-bold tracking-[0.22em] uppercase text-saffron mb-3">Community Development</p>
+          <p class="font-display text-2xl mb-3">[X] villages · [X] livelihoods</p>
+          <p class="text-ink-soft text-sm leading-relaxed">
+            Water, sanitation, and skills — projects communities plan, build, and
+            own themselves.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Transparency -->
+  <section class="section bg-paper">
+    <div class="shell grid lg:grid-cols-2 gap-16">
+      <div>
+        <p class="kicker mb-6">Transparency</p>
+        <h2 class="text-[2.2rem] md:text-[3rem] mb-6">Where your donation goes</h2>
+        <p class="text-ink-soft text-lg mb-10">
+          We publish annual accounts, and every rupee is tracked to a program.
+          No exceptions, no middlemen eating the difference.
+        </p>
+        <div class="flex flex-wrap gap-6">
+          <a href="#" class="btn btn-dark">Annual Report 2025–26</a>
+          <a href="#" class="btn btn-ghost">Audited Accounts</a>
+        </div>
+      </div>
+
+      <div class="flex flex-col justify-center">
+        <div class="mb-7">
+          <div class="flex justify-between items-baseline mb-2">
+            <span class="font-semibold text-sm">Programs &amp; Beneficiaries</span>
+            <span class="font-display text-2xl text-pine">90%</span>
+          </div>
+          <div class="h-1 bg-mist">
+            <div class="h-full bg-pine" style="width: 90%"></div>
+          </div>
+        </div>
+        <div class="mb-7">
+          <div class="flex justify-between items-baseline mb-2">
+            <span class="font-semibold text-sm">Administration</span>
+            <span class="font-display text-2xl text-saffron">7%</span>
+          </div>
+          <div class="h-1 bg-mist">
+            <div class="h-full bg-saffron" style="width: 7%"></div>
+          </div>
+        </div>
+        <div class="mb-7">
+          <div class="flex justify-between items-baseline mb-2">
+            <span class="font-semibold text-sm">Fundraising</span>
+            <span class="font-display text-2xl text-ember">3%</span>
+          </div>
+          <div class="h-1 bg-mist">
+            <div class="h-full bg-ember" style="width: 3%"></div>
+          </div>
+        </div>
+
+        <div class="border-t border-line pt-8 mt-2">
+          <p class="text-sm text-ink-soft leading-relaxed">
+            Contributions to Sarvagya Gyanodaya Trust are eligible for tax
+            benefits under <span class="font-semibold text-ink">Section 80G</span> of the
+            Income Tax Act. Your receipt is issued within 24 hours of donation.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-pine-deep text-paper">
+    <div class="shell section text-center">
+      <p class="font-display text-[2.2rem] md:text-[3.4rem] tracking-tight leading-[1.15] max-w-3xl mx-auto">
+        Help us make the next numbers bigger.
+      </p>
+      <p class="text-paper/65 max-w-xl mx-auto mt-6 mb-12 text-lg">
+        Every donation is tracked, reported, and put to work. Join the list of
+        supporters who make it possible.
+      </p>
+      <div class="flex flex-wrap justify-center gap-6">
+        <a href="/get-involved/donate" class="btn btn-accent">Donate Now</a>
+        <a href="/get-involved/volunteer" class="btn btn-light">Become a Volunteer</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  const counters = document.querySelectorAll('.stat-number[data-target]');
+
+  const animateCounter = (element: Element) => {
+    const target = parseInt(element.getAttribute('data-target') || '0');
+    const duration = 1600;
+    const step = target / (duration / 16);
+    let current = 0;
+
+    const updateCounter = () => {
+      current += step;
+      if (current < target) {
+        element.textContent = Math.floor(current).toLocaleString('en-IN');
+        requestAnimationFrame(updateCounter);
+      } else {
+        element.textContent = target.toLocaleString('en-IN');
+      }
+    };
+
+    updateCounter();
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCounter(entry.target);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  counters.forEach(counter => observer.observe(counter));
+</script>

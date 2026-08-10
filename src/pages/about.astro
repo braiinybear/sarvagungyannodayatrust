@@ -1,0 +1,228 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="About Us" description="Learn about Sarvagya Gyanodaya Trust, our mission, and our founder Mr. Rahul Rawat">
+  <!-- Hero -->
+  <section class="section bg-mist">
+    <div class="shell max-w-3xl">
+      <p class="kicker mb-5">About Us</p>
+      <h1 class="text-4xl md:text-6xl text-ink mb-6 text-balance">A vision for lasting change</h1>
+      <p class="text-lg md:text-xl text-ink-soft">
+        Discover our story, our mission, and the people behind Sarvagya Gyanodaya Trust.
+      </p>
+    </div>
+  </section>
+
+  <!-- Our Story -->
+  <section class="section bg-paper">
+    <div class="shell grid lg:grid-cols-2 gap-14 items-center">
+      <div>
+        <p class="kicker mb-4">Our Story</p>
+        <h2 class="text-3xl md:text-5xl text-ink mb-6">Born of a simple belief</h2>
+        <p class="text-ink-soft mb-4 leading-relaxed">
+          Sarvagya Gyanodaya Trust was founded with a simple belief: every person deserves
+          access to education, dignity in old age, and the opportunity to thrive.
+        </p>
+        <p class="text-ink-soft mb-4 leading-relaxed">
+          What started as a small initiative has grown into a movement impacting thousands
+          of lives across India. We work at the intersection of education, elderly care,
+          and community development to create sustainable change.
+        </p>
+        <p class="text-ink-soft leading-relaxed">
+          Our approach is rooted in compassion, transparency, and a deep commitment
+          to the communities we serve.
+        </p>
+      </div>
+      <div class="img-frame aspect-[4/3]">
+        <img
+          src="https://images.pexels.com/photos/4848235/pexels-photo-4848235.jpeg?auto=compress&cs=tinysrgb&w=1200"
+          alt="Community coming together"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Founder Section -->
+  <section class="section bg-mist">
+    <div class="shell grid lg:grid-cols-2 gap-14 items-center">
+      <div class="order-2 lg:order-1">
+        <div class="bg-pine-deep rounded-none p-10 md:p-12 text-paper relative overflow-hidden">
+          <span class="absolute -top-10 -left-6 font-display text-[16rem] leading-none text-paper/5 select-none" aria-hidden>&ldquo;</span>
+          <blockquote class="font-display text-xl md:text-2xl leading-snug text-paper relative">
+            "Education is the most powerful tool to transform lives. When we empower a
+            community with knowledge and care, we don't just change today — we shape generations."
+          </blockquote>
+          <div class="mt-8 flex items-center gap-4 relative">
+            <div class="w-12 h-12 rounded-none bg-saffron flex items-center justify-center text-paper font-display text-lg">RR</div>
+            <div>
+              <p class="font-semibold text-paper">Mr. Rahul Rawat</p>
+              <p class="text-paper/60 text-sm">Founder &amp; Settlor, Sarvagya Gyanodaya Trust</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="order-1 lg:order-2">
+        <p class="kicker mb-4">Our Founder</p>
+        <h2 class="text-3xl md:text-5xl text-ink mb-6">Mr. Rahul Rawat</h2>
+        <p class="text-ink-soft mb-6 leading-relaxed">
+          Mr. Rahul Rawat established Sarvagya Gyanodaya Trust with a vision to bridge
+          the gap between opportunity and access for underserved communities.
+        </p>
+        <p class="text-ink-soft mb-4">Under his leadership, the trust has:</p>
+        <ul class="space-y-3 mb-6">
+          {[
+            "Reached 50,000+ lives across India",
+            "Expanded to 30+ communities",
+            "Launched 3 major programs",
+            "Built partnerships with leading organizations",
+          ].map((item) => (
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-saffron mt-0.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="text-ink-soft">{item}</span>
+            </li>
+          ))}
+        </ul>
+        <p class="text-ink-faint text-sm leading-relaxed">
+          As Author/Settlor, Mr. Rawat retains overriding authority to preserve the
+          founding vision, ensuring every decision aligns with the mission of compassion,
+          education, and dignity for all.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission & Vision -->
+  <section class="section bg-paper">
+    <div class="shell grid md:grid-cols-2 gap-7">
+      <div class="card p-9">
+        <div class="w-14 h-14 bg-pine/10 rounded-none flex items-center justify-center mb-6 text-pine">
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="9" />
+            <circle cx="12" cy="12" r="5" />
+            <circle cx="12" cy="12" r="1.5" fill="currentColor" />
+          </svg>
+        </div>
+        <h3 class="font-display text-2xl mb-4">Our Mission</h3>
+        <p class="text-ink-soft">
+          To empower underprivileged communities through education, elderly care,
+          and sustainable development, creating lasting change that uplifts
+          individuals and strengthens society.
+        </p>
+      </div>
+      <div class="card p-10">
+        <div class="w-12 h-12 bg-saffron/15 rounded-none flex items-center justify-center mb-6 text-saffron">
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+            <path stroke-linecap="round" d="M2 12s3.5-6.5 10-6.5S22 12 22 12s-3.5 6.5-10 6.5S2 12 2 12z" />
+            <circle cx="12" cy="12" r="2.5" />
+          </svg>
+        </div>
+        <h3 class="font-display text-2xl mb-4">Our Vision</h3>
+        <p class="text-ink-soft">
+          A society where every individual has access to quality education,
+          dignified elderly care, and equal opportunities to thrive — regardless
+          of their background or circumstances.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Values -->
+  <section class="section bg-mist">
+    <div class="shell">
+      <h2 class="text-3xl md:text-4xl text-ink mb-12 text-center">Our Values</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        {[
+          { name: "Compassion", desc: "We lead with heart and empathy", icon: "M12 21s-7-4.6-9.2-9A5.4 5.4 0 0 1 12 6.3 5.4 5.4 0 0 1 21.2 12C19 16.4 12 21 12 21z" },
+          { name: "Integrity", desc: "We are transparent and honest", icon: "M9 12l2 2 4-4M12 3l7 3v5c0 5-3.2 8.4-7 10-3.8-1.6-7-5-7-10V6l7-3z" },
+          { name: "Dignity", desc: "We treat every person with respect", icon: "M12 21c-4 0-7-1.5-7-4.5S8 12 12 12s7 1.5 7 4.5S16 21 12 21zM12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8z" },
+          { name: "Impact", desc: "We focus on lasting results", icon: "M3 17l6-6 4 4 8-8M15 7h6v6" },
+        ].map((v) => (
+          <div class="text-center">
+            <div class="w-20 h-20 bg-pine/10 rounded-none flex items-center justify-center mx-auto mb-5 text-pine">
+              <svg class="w-9 h-9" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d={v.icon} />
+              </svg>
+            </div>
+            <h3 class="font-display font-semibold mb-2">{v.name}</h3>
+            <p class="text-ink-faint text-sm">{v.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Leadership Team -->
+  <section class="section bg-paper">
+    <div class="shell">
+      <h2 class="text-3xl md:text-4xl text-ink mb-12 text-center">Our Leadership</h2>
+      <div class="grid md:grid-cols-3 gap-7">
+        <div class="card p-8 text-center">
+          <div class="w-24 h-24 bg-pine rounded-none mx-auto mb-5 flex items-center justify-center text-paper font-display text-3xl">RR</div>
+          <h3 class="font-display text-xl mb-1">Mr. Rahul Rawat</h3>
+          <p class="text-saffron text-sm font-semibold mb-3">Founder &amp; Settlor</p>
+          <p class="text-ink-soft text-sm">Visionary leader dedicated to empowering underserved communities.</p>
+        </div>
+        <div class="card p-8 text-center">
+          <div class="w-16 h-16 bg-mist mx-auto mb-5 rounded-none flex items-center justify-center text-ink-faint font-display text-3xl">T</div>
+          <h3 class="font-display text-xl mb-1">[Trustee Name]</h3>
+          <p class="text-saffron text-sm font-semibold mb-3">Managing Trustee</p>
+          <p class="text-ink-soft text-sm">[Brief description of role and contribution]</p>
+        </div>
+        <div class="card p-8 text-center">
+          <div class="w-16 h-16 bg-mist mx-auto mb-5 rounded-none flex items-center justify-center text-ink-faint font-display text-3xl">T</div>
+          <h3 class="font-display text-xl mb-1">[Trustee Name]</h3>
+          <p class="text-saffron text-sm font-semibold mb-3">Trustee</p>
+          <p class="text-ink-soft text-sm">[Brief description of role and contribution]</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Governance -->
+  <section class="section bg-mist">
+    <div class="shell">
+      <h2 class="text-3xl md:text-4xl text-ink mb-12 text-center">Governance &amp; Registration</h2>
+      <div class="max-w-3xl mx-auto">
+        <div class="card p-8 md:p-10">
+          <div class="grid md:grid-cols-2 gap-10">
+            <div>
+              <h3 class="font-display text-lg mb-4">Legal Information</h3>
+              <ul class="space-y-2.5 text-ink-soft text-sm">
+                <li class="flex gap-2"><span class="text-saffron">•</span> Registered under Indian Trust Act, 1882</li>
+                <li class="flex gap-2"><span class="text-saffron">•</span> Registration No: [XXXXXX]</li>
+                <li class="flex gap-2"><span class="text-saffron">•</span> PAN: [XXXXXXXXXX]</li>
+                <li class="flex gap-2"><span class="text-saffron">•</span> 80G/12A Status: [Yes/Pending]</li>
+                <li class="flex gap-2"><span class="text-saffron">•</span> FCRA: [If applicable]</li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="font-display text-lg mb-4">Annual Reports</h3>
+              <ul class="space-y-2.5">
+                {["Annual Report 2024-25", "Annual Report 2023-24", "Audited Accounts 2024-25"].map((r) => (
+                  <li>
+                    <a href="#" class="text-pine hover:underline flex items-center gap-2 text-sm">
+                      <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM14 2v6h6" />
+                      </svg>
+                      {r} [Download]
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+          <div class="mt-8 pt-6 border-t border-line">
+            <p class="text-ink-faint text-sm">
+              Trust Deed: Available for inspection upon request.
+              Contact us for more information.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

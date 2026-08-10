@@ -1,0 +1,130 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Partner With Us" description="Partner with Sarvagya Gyanodaya Trust for CSR and corporate partnerships">
+  <!-- Hero -->
+  <section class="section bg-mist">
+    <div class="shell max-w-3xl">
+      <p class="kicker mb-5">Get Involved</p>
+      <h1 class="text-4xl md:text-6xl text-ink mb-6 text-balance">Partner With Us</h1>
+      <p class="text-lg md:text-xl text-ink-soft">
+        Corporate Social Responsibility (CSR) partnerships that create tangible,
+        measurable social impact.
+      </p>
+    </div>
+  </section>
+
+  <!-- Why Partner -->
+  <section class="section bg-paper">
+    <div class="shell">
+      <h2 class="text-3xl md:text-4xl text-ink mb-12 text-center">Why Partner With Us</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {[
+          {
+            title: "CSR Compliance",
+            desc: "Registered trust eligible for CSR funding under Indian law.",
+            icon: "M9 12l2 2 4-4M12 3l7 3v5c0 5-3.2 8.4-7 10-3.8-1.6-7-5-7-10V6l7-3z",
+          },
+          {
+            title: "Tangible Reports",
+            desc: "Detailed impact reports and documentation for stakeholders.",
+            icon: "M4 4h16v16H4zM8 9h8M8 13h8M8 17h5",
+          },
+          {
+            title: "Employee Engagement",
+            desc: "Volunteering opportunities that boost team morale and purpose.",
+            icon: "M16 11a3 3 0 0 0 0-6M18 21a4 4 0 0 0-8 0M9 8a3 3 0 0 1-6 0 3 3 0 0 1 6 0zM3 21a5 5 0 0 1 10 0",
+          },
+          {
+            title: "Brand Association",
+            desc: "Align your brand with education, care, and community good.",
+            icon: "M12 3l1.8 4.6L18.5 8l-3.5 3 1 4.7-4-2.5-4 2.5 1-4.7L5.5 8l4.7-.4L12 3z",
+          },
+        ].map((o) => (
+          <div class="card p-7 text-center">
+            <div class="w-14 h-14 bg-pine/10 rounded-none flex items-center justify-center mx-auto mb-5 text-pine">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d={o.icon} />
+              </svg>
+            </div>
+            <h3 class="font-display text-lg mb-2">{o.title}</h3>
+            <p class="text-ink-soft text-sm">{o.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Partnership Models -->
+  <section class="section bg-mist">
+    <div class="shell">
+      <h2 class="text-3xl md:text-4xl text-ink mb-12 text-center">Partnership Models</h2>
+      <div class="grid md:grid-cols-2 gap-7">
+        <div class="card p-8">
+          <div class="w-12 h-12 bg-pine/10 rounded-none flex items-center justify-center mb-5 text-pine">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+              <path stroke-linecap="round" d="M3 21V9l6-5 6 5v12M9 21v-6h6v6M7 9h2M11 9h2M15 9h2M7 13h2M11 13h2M15 13h2" />
+            </svg>
+          </div>
+          <h3 class="font-display text-xl mb-3">Fund a Program</h3>
+          <p class="text-ink-soft">
+            Support a complete program — from digital literacy centers to
+            elderly care initiatives — with full program ownership and reporting.
+          </p>
+        </div>
+        <div class="card p-8">
+          <div class="w-12 h-12 bg-saffron/15 rounded-none flex items-center justify-center mb-5 text-saffron">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+              <path stroke-linecap="round" d="M3 21V9l6-5 6 5v12" />
+              <path stroke-linecap="round" d="M9 21v-6h6v6" />
+            </svg>
+          </div>
+          <h3 class="font-display text-xl mb-3">Sponsor a Community</h3>
+          <p class="text-ink-soft">
+            Adopt a village or community and fund holistic development,
+            with measurable before/after impact.
+          </p>
+        </div>
+        <div class="card p-8">
+          <div class="w-12 h-12 bg-ember/10 rounded-none flex items-center justify-center mb-5 text-ember">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+              <circle cx="9" cy="8" r="3" />
+              <path stroke-linecap="round" d="M3 20c1-3 3.5-4.5 6-4.5s7 1 7-1 4 2 5 5.5" />
+            </svg>
+          </div>
+          <h3 class="font-display text-xl mb-3">Employee Volunteering</h3>
+          <p class="text-ink-soft">
+            Bring your team to the field — teaching, camps, and community days
+            that build purpose and teamwork.
+          </p>
+        </div>
+        <div class="card p-8">
+          <div class="w-12 h-12 bg-pine/10 rounded-none flex items-center justify-center mb-5 text-pine">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+              <path d="M3 12l3-6h12l3 6-4 5H7l-4-5z" />
+              <path stroke-linecap="round" d="M3 12h18" />
+            </svg>
+          </div>
+          <h3 class="font-display text-xl mb-3">In-Kind Support</h3>
+          <p class="text-ink-soft">
+            Contribute goods, services, or expertise — books, laptops, medical
+            supplies, pro-bono skills.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact CTA -->
+  <section class="section bg-pine-deep text-center text-paper">
+    <div class="shell max-w-2xl">
+      <h2 class="text-3xl md:text-4xl mb-4">Let's Create Impact Together</h2>
+      <p class="text-paper/75 mb-8">
+        Ready to partner with us? Reach out and we'll design a partnership
+        that fits your CSR goals.
+      </p>
+      <a href="/contact" class="btn btn-primary text-lg">Contact for Partnership</a>
+    </div>
+  </section>
+</BaseLayout>

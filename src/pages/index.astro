@@ -1,0 +1,362 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Home">
+  <!-- Hero: video background -->
+  <section class="relative min-h-[92vh] flex items-center overflow-hidden bg-pine-deep">
+    <video
+      class="absolute inset-0 w-full h-full object-cover"
+      src="https://videos.pexels.com/video-files/16868495/16868495-hd_1920_1080_25fps.mp4"
+      poster="https://images.pexels.com/videos/16868495/books-celebrations-childhood-in-india-children-of-india-16868495.jpeg?auto=compress&cs=tinysrgb&w=1600"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="metadata"
+    ></video>
+    <div class="absolute inset-0 bg-pine-deep/65"></div>
+    <div class="relative shell py-36 md:py-44">
+      <p class="kicker mb-8">A Trust for Education · for the Elderly · for Communities</p>
+      <h1 class="text-paper text-[2.75rem] md:text-[4.5rem] lg:text-[5.5rem] max-w-4xl">
+        Education, dignity, and care — for every life.
+      </h1>
+      <div class="mt-10 flex flex-wrap items-center gap-8">
+        <a href="/get-involved/donate" class="btn btn-accent">Donate Today</a>
+        <a href="/our-work" class="btn btn-light">Explore Our Work</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- One big number -->
+  <section class="shell section">
+    <p class="kicker mb-6">Impact</p>
+    <p class="text-[2.4rem] md:text-[3.4rem] lg:text-[4rem] font-display font-medium tracking-tight leading-[1.1] max-w-5xl">
+      More than <span class="text-saffron">50,000 lives</span> touched across
+      education, elderly care, and community development.
+    </p>
+    <a href="/impact" class="link-arrow mt-10">See the full impact</a>
+  </section>
+
+  <!-- Programs: photo grid, no borders -->
+  <section class="section bg-mist">
+    <div class="shell">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
+        <p class="kicker mb-4 md:mb-0">What We Do</p>
+        <p class="text-ink-soft max-w-sm text-lg">Three programs, one purpose — to make dignity everyone's birthright.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-10">
+        <article class="group">
+          <a href="/our-work/education" class="block overflow-hidden mb-6">
+            <img
+              src="https://images.pexels.com/photos/3231358/pexels-photo-3231358.jpeg?auto=compress&cs=tinysrgb&w=900"
+              alt="Children learning in a classroom"
+              class="w-full aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+              loading="lazy"
+            />
+          </a>
+          <p class="text-[0.68rem] font-bold tracking-[0.22em] uppercase text-saffron mb-3">Program 01</p>
+          <h2 class="font-display text-[1.7rem] md:text-2xl mb-3">Education &amp; Digital Literacy</h2>
+          <p class="text-ink-soft text-[0.95rem] mb-6 max-w-sm">
+            Scholarships, after-school classes and computer access for children who would otherwise be left out of the digital age.
+          </p>
+          <div class="h-1 bg-line mb-4">
+            <div class="h-full bg-saffron" style="width: 63%"></div>
+          </div>
+          <div class="flex items-end justify-between gap-4">
+            <p class="text-xs text-ink-faint">
+              <span class="font-bold text-ink">₹53,458</span> raised<br />of ₹87,609
+            </p>
+            <a href="/get-involved/donate" class="link-arrow">Donate</a>
+          </div>
+        </article>
+
+        <article class="group">
+          <a href="/our-work/elderly-care" class="block overflow-hidden mb-6">
+            <img
+              src="https://images.pexels.com/photos/5973471/pexels-photo-5973471.jpeg?auto=compress&cs=tinysrgb&w=900"
+              alt="Elderly person being cared for"
+              class="w-full aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+              loading="lazy"
+            />
+          </a>
+          <p class="text-[0.68rem] font-bold tracking-[0.22em] uppercase text-saffron mb-3">Program 02</p>
+          <h2 class="font-display text-[1.7rem] md:text-2xl mb-3">Elderly Care &amp; Support</h2>
+          <p class="text-ink-soft text-[0.95rem] mb-6 max-w-sm">
+            Health camps, companionship, pensions guidance and digital training for the elders who built our communities.
+          </p>
+          <div class="h-1 bg-line mb-4">
+            <div class="h-full bg-saffron" style="width: 41%"></div>
+          </div>
+          <div class="flex items-end justify-between gap-4">
+            <p class="text-xs text-ink-faint">
+              <span class="font-bold text-ink">₹34,180</span> raised<br />of ₹84,000
+            </p>
+            <a href="/get-involved/donate" class="link-arrow">Donate</a>
+          </div>
+        </article>
+
+        <article class="group">
+          <a href="/our-work/community" class="block overflow-hidden mb-6">
+            <img
+              src="https://images.pexels.com/photos/11444459/pexels-photo-11444459.jpeg?auto=compress&cs=tinysrgb&w=900"
+              alt="Rural village community"
+              class="w-full aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+              loading="lazy"
+            />
+          </a>
+          <p class="text-[0.68rem] font-bold tracking-[0.22em] uppercase text-saffron mb-3">Program 03</p>
+          <h2 class="font-display text-[1.7rem] md:text-2xl mb-3">Community Development</h2>
+          <p class="text-ink-soft text-[0.95rem] mb-6 max-w-sm">
+            Village infrastructure, water, sanitation and livelihoods that communities build and own themselves.
+          </p>
+          <div class="h-1 bg-line mb-4">
+            <div class="h-full bg-saffron" style="width: 78%"></div>
+          </div>
+          <div class="flex items-end justify-between gap-4">
+            <p class="text-xs text-ink-faint">
+              <span class="font-bold text-ink">₹61,200</span> raised<br />of ₹78,500
+            </p>
+            <a href="/get-involved/donate" class="link-arrow">Donate</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Founder pull quote: centered, giant, serif italic -->
+  <section class="section">
+    <div class="shell max-w-5xl text-center">
+      <figure>
+        <p class="font-display text-[1.9rem] md:text-[2.9rem] lg:text-[3.4rem] italic font-medium leading-[1.2] tracking-tight">
+          "True service is not about charity — it is about creating lasting change that empowers people to build better lives."
+        </p>
+        <figcaption class="mt-10">
+          <p class="font-bold text-sm tracking-[0.18em] uppercase">Mr. Rahul Rawat</p>
+          <p class="text-ink-faint text-sm mt-1">Founder &amp; Settlor, Sarvagya Gyanodaya Trust</p>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Story video -->
+  <section class="section bg-paper">
+    <div class="shell grid lg:grid-cols-2 gap-14 items-center">
+      <div>
+        <p class="kicker mb-5">In the Field</p>
+        <h2 class="text-[2.2rem] md:text-[3rem] mb-6">See the change unfold</h2>
+        <p class="text-ink-soft text-lg mb-8">
+          A moment from our community outreach — food and care reaching families
+          during our festivals of giving.
+        </p>
+        <a href="/our-work" class="link-arrow">Explore Our Work</a>
+      </div>
+      <video
+        class="w-full aspect-video object-cover"
+        src="https://videos.pexels.com/video-files/12483187/12483187-hd_1920_1080_25fps.mp4"
+        poster="https://images.pexels.com/videos/12483187/pexels-photo-12483187.jpeg?auto=compress&cs=tinysrgb&w=1200"
+        controls
+        preload="metadata"
+      ></video>
+    </div>
+  </section>
+
+  <!-- Stories: editorial list -->
+  <section class="section bg-mist">
+    <div class="shell">
+      <div class="flex items-end justify-between gap-6 mb-16">
+        <p class="kicker mb-4 md:mb-0">Stories of Change</p>
+        <a href="/blog" class="link-arrow hidden md:inline-flex">All stories</a>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-10">
+        {[
+          {
+            img: "https://images.pexels.com/photos/5780601/pexels-photo-5780601.jpeg?auto=compress&cs=tinysrgb&w=900",
+            alt: "Elderly woman smiling",
+            cat: "Digital Literacy",
+            title: "“Now I teach my grandchildren the computer.”",
+            who: "Kamla Devi, 67 · Uttarakhand",
+          },
+          {
+            img: "https://images.pexels.com/photos/11359605/pexels-photo-11359605.jpeg?auto=compress&cs=tinysrgb&w=900",
+            alt: "Elderly man smiling",
+            cat: "Elderly Care",
+            title: "“They have become like my own family.”",
+            who: "Ram Prasad, 79 · Madhya Pradesh",
+          },
+          {
+            img: "https://images.pexels.com/photos/1469875/pexels-photo-1469875.jpeg?auto=compress&cs=tinysrgb&w=900",
+            alt: "Women working together",
+            cat: "Community",
+            title: "“Today I earn enough to send my daughter to school.”",
+            who: "Sunita Sharma · Maharashtra",
+          },
+        ].map((s) => (
+          <article class="group">
+            <div class="overflow-hidden mb-6">
+              <img
+                src={s.img}
+                alt={s.alt}
+                class="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                loading="lazy"
+              />
+            </div>
+            <p class="text-[0.68rem] font-bold tracking-[0.22em] uppercase text-saffron mb-3">{s.cat}</p>
+            <h3 class="font-display text-xl md:text-[1.35rem] leading-snug mb-3">{s.title}</h3>
+            <p class="text-ink-faint text-sm">{s.who}</p>
+          </article>
+        ))}
+      </div>
+
+      <a href="/blog" class="link-arrow mt-12 md:hidden">All stories</a>
+    </div>
+  </section>
+
+  <!-- Latest supporters -->
+  <section class="section bg-mist">
+    <div class="shell">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
+        <p class="kicker mb-4 md:mb-0">Latest Supporters</p>
+        <a href="/get-involved/donate" class="link-arrow">Join them</a>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-x-8 gap-y-10 items-start">
+        {[
+          { initials: "AK", name: "Amit & Kavita K.", place: "Delhi", amount: "10,000" },
+          { initials: "SP", name: "S. Pandey", place: "Lucknow", amount: "5,000" },
+          { initials: "RM", name: "Rajesh M.", place: "Indore", amount: "2,500" },
+          { initials: "Anon", name: "An anonymous donor", place: "Uttarakhand", amount: "1,000" },
+          { initials: "DV", name: "Deepti V.", place: "Pune", amount: "850" },
+          { initials: "GS", name: "Gaurav S.", place: "Bhopal", amount: "500" },
+        ].map((s) => (
+          <figure class="text-center">
+            <div class="w-14 h-14 bg-pine text-paper flex items-center justify-center font-display text-sm tracking-widest mx-auto mb-4">
+              {s.initials}
+            </div>
+            <figcaption>
+              <p class="font-semibold text-sm leading-tight">{s.name}</p>
+              <p class="text-ink-faint text-xs mt-1">{s.place}</p>
+              <p class="text-saffron font-display text-sm mt-2">₹{s.amount}</p>
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Transparency: text + flat bars -->
+  <section class="section">
+    <div class="shell grid lg:grid-cols-2 gap-16">
+      <div>
+        <p class="kicker mb-6">Transparency</p>
+        <h2 class="text-[2.2rem] md:text-[3rem] mb-6">Where your donation goes</h2>
+        <p class="text-ink-soft text-lg mb-10">
+          We publish annual accounts and every rupee is tracked to a program. No exceptions.
+        </p>
+        <a href="/impact" class="link-arrow">View annual reports</a>
+      </div>
+
+      <div class="flex flex-col justify-center">
+        <div class="mb-7">
+          <div class="flex justify-between items-baseline mb-2">
+            <span class="font-semibold text-sm">Programs &amp; Beneficiaries</span>
+            <span class="font-display text-2xl text-pine">90%</span>
+          </div>
+          <div class="h-1 bg-mist">
+            <div class="h-full bg-pine" style="width: 90%"></div>
+          </div>
+        </div>
+        <div class="mb-7">
+          <div class="flex justify-between items-baseline mb-2">
+            <span class="font-semibold text-sm">Administration</span>
+            <span class="font-display text-2xl text-saffron">7%</span>
+          </div>
+          <div class="h-1 bg-mist">
+            <div class="h-full bg-saffron" style="width: 7%"></div>
+          </div>
+        </div>
+        <div class="mb-7">
+          <div class="flex justify-between items-baseline mb-2">
+            <span class="font-semibold text-sm">Fundraising</span>
+            <span class="font-display text-2xl text-ember">3%</span>
+          </div>
+          <div class="h-1 bg-mist">
+            <div class="h-full bg-ember" style="width: 3%"></div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-8 mt-4">
+          <div class="border-t border-line pt-5">
+            <p class="font-display text-2xl mb-1">₹500</p>
+            <p class="text-sm text-ink-soft">School supplies for five children for a month</p>
+          </div>
+          <div class="border-t border-line pt-5">
+            <p class="font-display text-2xl mb-1">₹1,000</p>
+            <p class="text-sm text-ink-soft">Health checkups for ten elders</p>
+          </div>
+          <div class="border-t border-line pt-5">
+            <p class="font-display text-2xl mb-1">₹5,000</p>
+            <p class="text-sm text-ink-soft">Digital literacy training for 20 students</p>
+          </div>
+          <div class="border-t border-line pt-5">
+            <p class="font-display text-2xl mb-1">₹10,000</p>
+            <p class="text-sm text-ink-soft">A village sanitation or livelihood project</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-pine-deep text-paper">
+    <div class="shell section text-center">
+      <p class="font-display text-[2.2rem] md:text-[3.4rem] tracking-tight leading-[1.15] max-w-4xl mx-auto">
+        A small act, a lifetime of change.
+      </p>
+      <p class="text-paper/65 max-w-xl mx-auto mt-6 mb-12 text-lg">
+        Donate, volunteer, or simply share our work. However you choose to help, you make the difference real.
+      </p>
+      <div class="flex flex-wrap justify-center gap-6">
+        <a href="/get-involved/donate" class="btn btn-accent">Donate Now</a>
+        <a href="/get-involved/volunteer" class="btn btn-light">Become a Volunteer</a>
+        <a href="/get-involved/partner" class="link-arrow link-arrow-light mt-4">Partner With Us</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  const counters = document.querySelectorAll('.stat-number[data-target]');
+
+  const animateCounter = (element: Element) => {
+    const target = parseInt(element.getAttribute('data-target') || '0');
+    const duration = 2000;
+    const step = target / (duration / 16);
+    let current = 0;
+
+    const updateCounter = () => {
+      current += step;
+      if (current < target) {
+        element.textContent = Math.floor(current).toLocaleString();
+        requestAnimationFrame(updateCounter);
+      } else {
+        element.textContent = target.toLocaleString();
+      }
+    };
+
+    updateCounter();
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCounter(entry.target);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  counters.forEach(counter => observer.observe(counter));
+</script>

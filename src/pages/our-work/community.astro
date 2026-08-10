@@ -1,0 +1,183 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Community Development" description="Community development programs by Sarvagya Gyanodaya Trust">
+  <!-- Hero -->
+  <section class="section bg-mist">
+    <div class="shell">
+      <nav class="text-sm text-ink-faint mb-8">
+        <a href="/our-work" class="hover:text-pine">Our Work</a>
+        <span class="mx-2">/</span>
+        <span class="text-ink-soft">Community Development</span>
+      </nav>
+      <div class="grid lg:grid-cols-2 gap-14 items-center">
+        <div>
+          <p class="kicker mb-5">Program 03</p>
+          <h1 class="text-4xl md:text-6xl text-ink mb-6 text-balance">Community Development</h1>
+          <p class="text-lg md:text-xl text-ink-soft mb-8">
+            Building stronger, self-reliant communities through rural development
+            and livelihood programs.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a href="/get-involved/donate" class="btn btn-primary">Support This Program</a>
+            <a href="/get-involved/partner" class="btn btn-ghost">Partner With Us</a>
+          </div>
+        </div>
+        <div class="img-frame aspect-[4/3]">
+          <img
+            src="https://images.pexels.com/photos/13520612/pexels-photo-13520612.jpeg?auto=compress&cs=tinysrgb&w=1200"
+            alt="Rural village scene"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Programs List -->
+  <section class="section bg-paper">
+    <div class="shell">
+      <div class="mb-14">
+        <p class="kicker mb-4">Inside the Program</p>
+        <h2 class="text-3xl md:text-5xl text-ink">What we offer</h2>
+      </div>
+      <div class="grid md:grid-cols-2 gap-7">
+        <div class="card p-8">
+          <div class="w-12 h-12 bg-ember/10 rounded-none flex items-center justify-center mb-5 text-ember">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+              <path stroke-linecap="round" d="M3 21V9l6-5 6 5v12" />
+              <path stroke-linecap="round" d="M9 21v-6h6v6M7 9h2M11 9h2M15 9h2M7 13h2M11 13h2M15 13h2" />
+            </svg>
+          </div>
+          <h3 class="font-display text-xl mb-3">Rural Infrastructure</h3>
+          <p class="text-ink-soft text-sm">
+            Small-scale projects like water facilities, classroom repairs, and
+            community spaces that improve daily life.
+          </p>
+        </div>
+        <div class="card p-8">
+          <div class="w-12 h-12 bg-ember/10 rounded-none flex items-center justify-center mb-5 text-ember">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+              <path stroke-linecap="round" d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6l1.4 1.4M17 17l1.4 1.4M5.6 18.4L7 17M17 7l1.4-1.4" />
+              <circle cx="12" cy="12" r="4" />
+            </svg>
+          </div>
+          <h3 class="font-display text-xl mb-3">Livelihood Training</h3>
+          <p class="text-ink-soft text-sm">
+            Skill development and vocational training that help families build
+            sustainable incomes.
+          </p>
+        </div>
+        <div class="card p-8">
+          <div class="w-12 h-12 bg-ember/10 rounded-none flex items-center justify-center mb-5 text-ember">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+              <circle cx="9" cy="8" r="3" />
+              <path stroke-linecap="round" d="M3 20c1-3 3.5-4.5 6-4.5S14 17 15 20M15.5 5.5a3 3 0 0 1 0 5.4M17 15.5c2 .8 3.6 2 4 4.5" />
+            </svg>
+          </div>
+          <h3 class="font-display text-xl mb-3">Women's Empowerment</h3>
+          <p class="text-ink-soft text-sm">
+            Self-help groups, financial literacy, and income generation
+            initiatives for women in rural areas.
+          </p>
+        </div>
+        <div class="card p-8">
+          <div class="w-12 h-12 bg-ember/10 rounded-none flex items-center justify-center mb-5 text-ember">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+              <path d="M12 3c3 3.5 5 6 5 9a5 5 0 0 1-10 0c0-3 2-5.5 5-9z" />
+              <path stroke-linecap="round" d="M12 15a3 3 0 0 0 3-3M5 13v8M19 13v8" />
+            </svg>
+          </div>
+          <h3 class="font-display text-xl mb-3">Health &amp; Sanitation Drives</h3>
+          <p class="text-ink-soft text-sm">
+            Awareness campaigns, cleanliness drives, and access to safe water
+            and sanitation facilities.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video: Life in our villages -->
+  <section class="section bg-mist">
+    <div class="shell">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
+        <div>
+          <p class="kicker mb-4">Life in Our Villages</p>
+          <h2 class="text-3xl md:text-5xl text-ink">Where work begins</h2>
+        </div>
+        <p class="text-ink-soft text-lg max-w-md">Rural roads and daily life — the communities our programs walk with.</p>
+      </div>
+      <video
+        class="w-full aspect-video object-cover"
+        src="https://videos.pexels.com/video-files/4684304/4684304-hd_1920_1080_25fps.mp4"
+        poster="https://images.pexels.com/videos/4684304/pexels-photo-4684304.jpeg?auto=compress&cs=tinysrgb&w=1600"
+        controls
+        preload="metadata"
+      ></video>
+    </div>
+  </section>
+
+  <!-- Impact -->
+  <section class="section bg-pine text-paper">
+    <div class="shell">
+      <p class="kicker !text-saffron mb-4">Program Impact</p>
+      <h2 class="text-3xl md:text-4xl mb-12">The difference so far</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-px bg-pine">
+        <div class="py-8 text-center bg-pine">
+          <div class="stat-number !text-saffron">[X]+</div>
+          <div class="stat-label !text-paper/70">Communities Served</div>
+        </div>
+        <div class="py-8 text-center bg-pine">
+          <div class="stat-number !text-saffron">[X]</div>
+          <div class="stat-label !text-paper/70">Livelihoods Supported</div>
+        </div>
+        <div class="py-8 text-center bg-pine">
+          <div class="stat-number !text-saffron">[X]</div>
+          <div class="stat-label !text-paper/70">Infrastructure Projects</div>
+        </div>
+        <div class="py-8 text-center bg-pine">
+          <div class="stat-number !text-saffron">[X]</div>
+          <div class="stat-label !text-paper/70">Women Empowered</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stories -->
+  <section class="section bg-paper">
+    <div class="shell grid lg:grid-cols-2 gap-14 items-center">
+      <div class="img-frame aspect-[4/3]">
+        <img
+          src="https://images.pexels.com/photos/1469875/pexels-photo-1469875.jpeg?auto=compress&cs=tinysrgb&w=1000"
+          alt="Women working together in a community"
+          loading="lazy"
+        />
+      </div>
+      <div>
+        <p class="kicker mb-4">A Story of Change</p>
+        <blockquote class="font-display text-2xl md:text-3xl leading-snug text-ink mb-8">
+          "The self-help group gave me the confidence to start my own stitching
+          business. Today I earn enough to send my daughter to school."
+        </blockquote>
+        <p class="font-semibold">Sunita Sharma</p>
+        <p class="text-ink-faint text-sm">Maharashtra</p>
+        <a href="/impact" class="inline-flex items-center gap-2 text-pine font-semibold mt-8 hover:gap-3 transition-all">
+          More Stories <span aria-hidden>→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section bg-pine-deep text-center text-paper">
+    <div class="shell max-w-2xl">
+      <h2 class="text-3xl md:text-4xl mb-4">Build Stronger Communities</h2>
+      <p class="text-paper/75 mb-8">
+        Partner with us to fund community development projects with measurable impact.
+      </p>
+      <a href="/get-involved/partner" class="btn btn-primary">Partner With Us</a>
+    </div>
+  </section>
+</BaseLayout>

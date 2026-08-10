@@ -1,0 +1,190 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #14120F;
+  --color-ink-soft: #4A463E;
+  --color-ink-faint: #8A857A;
+  --color-paper: #FDFCFA;
+  --color-mist: #F3F1EC;
+  --color-line: #E3E0D8;
+  --color-pine: #123A2C;
+  --color-pine-deep: #0B2A1F;
+  --color-saffron: #E08A2E;
+  --color-ember: #C2572E;
+
+  --font-display: 'Fraunces', serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+
+  --spacing-page: 1160px;
+  --spacing-section: 120px;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-body);
+    color: var(--color-ink);
+    background-color: var(--color-paper);
+    line-height: 1.6;
+    font-size: 17px;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+  }
+
+  ::selection {
+    background: var(--color-ink);
+    color: var(--color-paper);
+  }
+}
+
+@layer components {
+  .shell {
+    width: 100%;
+    max-width: var(--spacing-page);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.75rem;
+    padding-right: 1.75rem;
+  }
+
+  .section {
+    padding-top: var(--spacing-section);
+    padding-bottom: var(--spacing-section);
+  }
+
+  .kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.9rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--color-saffron);
+  }
+
+  .kicker::before {
+    content: "";
+    width: 2.5rem;
+    height: 1px;
+    background: currentColor;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem 1.9rem;
+    font-weight: 700;
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    transition: all 0.2s ease;
+  }
+
+  .btn-primary {
+    background: var(--color-pine);
+    color: #fff;
+  }
+
+  .btn-primary:hover {
+    background: var(--color-pine-deep);
+  }
+
+  .btn-dark {
+    background: var(--color-ink);
+    color: #fff;
+  }
+
+  .btn-dark:hover {
+    background: #000;
+  }
+
+  .btn-ghost {
+    background: transparent;
+    color: var(--color-ink);
+    border: 1px solid var(--color-ink);
+  }
+
+  .btn-ghost:hover {
+    background: var(--color-ink);
+    color: #fff;
+  }
+
+  .btn-light {
+    background: #fff;
+    color: var(--color-ink);
+  }
+
+  .btn-light:hover {
+    background: var(--color-mist);
+  }
+
+  .btn-accent {
+    background: var(--color-saffron);
+    color: #fff;
+  }
+
+  .btn-accent:hover {
+    background: #c9741c;
+  }
+
+  .card {
+    background: #fff;
+  }
+
+  .img-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .stat-number {
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--color-ink);
+    line-height: 1.05;
+  }
+
+  .stat-label {
+    margin-top: 0.75rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-ink-faint);
+  }
+
+  .link-arrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-ink);
+    border-bottom: 1px solid var(--color-ink);
+    padding-bottom: 0.25rem;
+    transition: gap 0.2s ease;
+  }
+
+  .link-arrow:hover {
+    gap: 1rem;
+  }
+
+  .link-arrow-light {
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.6);
+  }
+}
