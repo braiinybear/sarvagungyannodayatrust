@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://sarvagyagyanodayatrust.org/sitemap.xml
+Sitemap: https://sarvagungyannodayatrust.org/sitemap.xml
