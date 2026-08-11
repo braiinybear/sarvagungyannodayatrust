@@ -24,6 +24,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
           </div>
         </div>
         <div class="img-frame aspect-[4/3]">
+          <!-- TODO: replace with real photo of trust elderly care -->
           <img
             src="https://images.pexels.com/photos/6406419/pexels-photo-6406419.jpeg?auto=compress&cs=tinysrgb&w=1200"
             alt="Elderly person smiling"
@@ -110,7 +111,10 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         class="w-full aspect-video object-cover"
         src="https://videos.pexels.com/video-files/5327875/5327875-hd_1920_1080_25fps.mp4"
         poster="https://images.pexels.com/videos/5327875/20-25-years-old-man-indian-people-old-old-age-5327875.jpeg?auto=compress&cs=tinysrgb&w=1600"
-        controls
+        autoplay
+        muted
+        loop
+        playsinline
         preload="metadata"
       ></video>
     </div>

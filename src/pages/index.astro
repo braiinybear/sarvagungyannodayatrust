@@ -49,6 +49,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <div class="grid md:grid-cols-3 gap-10">
         <article class="group">
           <a href="/our-work/education" class="block overflow-hidden mb-6">
+            <!-- TODO: replace with real photo -->
             <img
               src="https://images.pexels.com/photos/3231358/pexels-photo-3231358.jpeg?auto=compress&cs=tinysrgb&w=900"
               alt="Children learning in a classroom"
@@ -74,6 +75,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
         <article class="group">
           <a href="/our-work/elderly-care" class="block overflow-hidden mb-6">
+            <!-- TODO: replace with real photo -->
             <img
               src="https://images.pexels.com/photos/5973471/pexels-photo-5973471.jpeg?auto=compress&cs=tinysrgb&w=900"
               alt="Elderly person being cared for"
@@ -99,6 +101,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
         <article class="group">
           <a href="/our-work/community" class="block overflow-hidden mb-6">
+            <!-- TODO: replace with real photo -->
             <img
               src="https://images.pexels.com/photos/11444459/pexels-photo-11444459.jpeg?auto=compress&cs=tinysrgb&w=900"
               alt="Rural village community"
@@ -156,7 +159,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         class="w-full aspect-video object-cover"
         src="https://videos.pexels.com/video-files/12483187/12483187-hd_1920_1080_25fps.mp4"
         poster="https://images.pexels.com/videos/12483187/pexels-photo-12483187.jpeg?auto=compress&cs=tinysrgb&w=1200"
-        controls
+        autoplay
+        muted
+        loop
+        playsinline
         preload="metadata"
       ></video>
     </div>
@@ -173,6 +179,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <div class="grid md:grid-cols-3 gap-10">
         {[
           {
+            // TODO: replace with real photo
             img: "https://images.pexels.com/photos/5780601/pexels-photo-5780601.jpeg?auto=compress&cs=tinysrgb&w=900",
             alt: "Elderly woman smiling",
             cat: "Digital Literacy",
@@ -180,6 +187,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             who: "Kamla Devi, 67 · Uttarakhand",
           },
           {
+            // TODO: replace with real photo
             img: "https://images.pexels.com/photos/11359605/pexels-photo-11359605.jpeg?auto=compress&cs=tinysrgb&w=900",
             alt: "Elderly man smiling",
             cat: "Elderly Care",
@@ -187,6 +195,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             who: "Ram Prasad, 79 · Madhya Pradesh",
           },
           {
+            // TODO: replace with real photo
             img: "https://images.pexels.com/photos/1469875/pexels-photo-1469875.jpeg?auto=compress&cs=tinysrgb&w=900",
             alt: "Women working together",
             cat: "Community",

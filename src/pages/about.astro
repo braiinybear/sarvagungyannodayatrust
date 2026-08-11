@@ -35,11 +35,37 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </p>
       </div>
       <div class="img-frame aspect-[4/3]">
+        <!-- TODO: replace with real photo of trust community -->
         <img
           src="https://images.pexels.com/photos/4848235/pexels-photo-4848235.jpeg?auto=compress&cs=tinysrgb&w=1200"
           alt="Community coming together"
           loading="lazy"
         />
+      </div>
+    </div>
+  </section>
+
+  <!-- In the Field -->
+  <section class="section bg-mist">
+    <div class="shell grid lg:grid-cols-2 gap-14 items-center">
+      <video
+        class="w-full aspect-video object-cover order-2 lg:order-1"
+        src="https://videos.pexels.com/video-files/6646649/6646649-hd_1920_1080_30fps.mp4"
+        poster="https://images.pexels.com/videos/6646649/africa-causes-change-charity-6646649.jpeg?auto=compress&cs=tinysrgb&w=1200"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+      ></video>
+      <div class="order-1 lg:order-2">
+        <p class="kicker mb-5">In the Field</p>
+        <h2 class="text-[2.2rem] md:text-[3rem] mb-6">Service in action</h2>
+        <p class="text-ink-soft text-lg mb-8">
+          Volunteers and supporters delivering aid and care — the everyday work
+          that turns our mission into a movement.
+        </p>
+        <a href="/our-work" class="link-arrow">Explore Our Work</a>
       </div>
     </div>
   </section>
