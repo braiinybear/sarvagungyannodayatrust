@@ -1,0 +1,45 @@
+---
+import type { Program } from '../data/programsData';
+
+interface Props {
+  program: Program;
+}
+
+const { program } = Astro.props;
+---
+
+<article class="group flex flex-col justify-between">
+  <div>
+    <a href={program.href} class="block overflow-hidden mb-6">
+      <img
+        src={program.image}
+        alt={program.imageAlt}
+        class="w-full aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+        loading="lazy"
+      />
+    </a>
+    <p class="text-[0.68rem] font-bold tracking-[0.22em] uppercase text-saffron mb-3">
+      Program {program.number}
+    </p>
+    <h2 class="font-display text-[1.7rem] md:text-2xl mb-3">
+      <a href={program.href} class="hover:text-pine transition-colors">
+        {program.title}
+      </a>
+    </h2>
+    <p class="text-ink-soft text-[0.95rem] mb-6 max-w-sm">
+      {program.description}
+    </p>
+  </div>
+
+  <div>
+    <div class="h-1 bg-line mb-4 rounded-full overflow-hidden">
+      <div class="h-full bg-saffron transition-all duration-500" style={`width: ${program.progressPercent}%`}></div>
+    </div>
+    <div class="flex items-end justify-between gap-4">
+      <p class="text-xs text-ink-faint">
+        <span class="font-bold text-ink">₹{program.raised.toLocaleString('en-IN')}</span> raised<br />of ₹{program.goal.toLocaleString('en-IN')}
+      </p>
+      <a href="/get-involved/donate" class="link-arrow">Donate</a>
+    </div>
+  </div>
+</article>

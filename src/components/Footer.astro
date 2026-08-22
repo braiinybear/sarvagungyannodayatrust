@@ -1,0 +1,75 @@
+---
+import { SITE_INFO, NAV_ITEMS } from '../data/siteData';
+import { PROGRAMS } from '../data/programsData';
+import SocialLinks from './SocialLinks.astro';
+---
+
+<footer class="bg-pine-deep text-paper">
+  <div class="shell pt-20 pb-12">
+    <!-- Callout Statement -->
+    <div class="max-w-3xl mb-16">
+      <p class="font-display text-3xl md:text-[2.75rem] leading-[1.15] tracking-tight">
+        {SITE_INFO.tagline}
+      </p>
+      <a href="/get-involved/donate" class="link-arrow link-arrow-light mt-8">Donate today</a>
+    </div>
+
+    <!-- Links Grid -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-10 border-t border-paper/10 pt-12">
+      <!-- Trust Info Column -->
+      <div class="col-span-2 md:col-span-1">
+        <p class="font-display text-xl mb-3">
+          {SITE_INFO.shortName}<span class="text-saffron">.</span>
+        </p>
+        <p class="text-paper/55 text-sm leading-relaxed mb-4">
+          {SITE_INFO.description}
+        </p>
+        <p class="text-paper/40 text-xs">Established by {SITE_INFO.founder.name}</p>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h4 class="text-[0.68rem] font-bold tracking-[0.2em] uppercase text-paper/40 mb-5">Explore</h4>
+        <ul class="space-y-3">
+          {NAV_ITEMS.map((item) => (
+            <li>
+              <a href={item.href} class="text-paper/75 hover:text-paper text-sm transition-colors">
+                {item.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Programs -->
+      <div>
+        <h4 class="text-[0.68rem] font-bold tracking-[0.2em] uppercase text-paper/40 mb-5">Programs</h4>
+        <ul class="space-y-3">
+          {PROGRAMS.map((program) => (
+            <li>
+              <a href={program.href} class="text-paper/75 hover:text-paper text-sm transition-colors">
+                {program.title}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Legal Info -->
+      <div>
+        <h4 class="text-[0.68rem] font-bold tracking-[0.2em] uppercase text-paper/40 mb-5">Trust Details</h4>
+        <ul class="space-y-3 text-sm text-paper/75">
+          <li>{SITE_INFO.legal.act}</li>
+          <li>{SITE_INFO.legal.regNo}</li>
+          <li>{SITE_INFO.legal.taxExemption}</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom Bar & Social Icons -->
+    <div class="mt-14 pt-8 border-t border-paper/10 flex flex-col md:flex-row justify-between items-start gap-5">
+      <p class="text-paper/40 text-xs">© 2026 {SITE_INFO.name}. All rights reserved.</p>
+      <SocialLinks variant="light" />
+    </div>
+  </div>
+</footer>

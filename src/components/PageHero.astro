@@ -1,0 +1,37 @@
+---
+interface Props {
+  kicker: string;
+  title: string;
+  description?: string;
+  breadcrumbs?: { label: string; href?: string }[];
+}
+
+const { kicker, title, description, breadcrumbs } = Astro.props;
+---
+
+<section class="section bg-mist">
+  <div class="shell max-w-3xl">
+    {breadcrumbs && breadcrumbs.length > 0 && (
+      <nav class="text-sm text-ink-faint mb-8 flex items-center gap-2">
+        {breadcrumbs.map((crumb, idx) => (
+          <>
+            {idx > 0 && <span>/</span>}
+            {crumb.href ? (
+              <a href={crumb.href} class="hover:text-pine transition-colors">
+                {crumb.label}
+              </a>
+            ) : (
+              <span class="text-ink-soft">{crumb.label}</span>
+            )}
+          </>
+        ))}
+      </nav>
+    )}
+    <p class="kicker mb-5">{kicker}</p>
+    <h1 class="text-4xl md:text-6xl text-ink mb-6 text-balance font-display">{title}</h1>
+    {description && (
+      <p class="text-lg md:text-xl text-ink-soft leading-relaxed">{description}</p>
+    )}
+    <slot />
+  </div>
+</section>

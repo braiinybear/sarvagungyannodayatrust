@@ -1,0 +1,23 @@
+---
+import type { StatItem } from '../data/statsData';
+
+interface Props {
+  stat: StatItem;
+  size?: 'md' | 'lg';
+}
+
+const { stat, size = 'md' } = Astro.props;
+const numberClasses = size === 'lg'
+  ? 'text-[3rem] md:text-[4.5rem]'
+  : 'text-[2.5rem] md:text-[3.5rem]';
+---
+
+<div class="card p-8 md:p-10 flex flex-col justify-between">
+  <div>
+    <p class={`stat-number ${numberClasses}`}>{stat.number}</p>
+    <p class="stat-label mb-2">{stat.label}</p>
+  </div>
+  {stat.description && (
+    <p class="text-ink-soft text-sm mt-4 leading-relaxed">{stat.description}</p>
+  )}
+</div>

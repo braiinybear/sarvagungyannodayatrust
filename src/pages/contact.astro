@@ -1,20 +1,19 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import SocialLinks from '../components/SocialLinks.astro';
+import { SITE_INFO } from '../data/siteData';
 ---
 
-<BaseLayout title="Contact" description="Get in touch with Sarvagun Gyannodaya Trust">
-  <!-- Hero -->
-  <section class="section bg-mist">
-    <div class="shell max-w-3xl">
-      <p class="kicker mb-5">Contact</p>
-      <h1 class="text-4xl md:text-6xl text-ink mb-6 text-balance">We'd love to hear from you.</h1>
-      <p class="text-lg md:text-xl text-ink-soft">
-        Reach out with questions, feedback, or to get involved.
-      </p>
-    </div>
-  </section>
+<BaseLayout title="Contact" description={`Get in touch with ${SITE_INFO.name}`}>
+  <!-- Page Hero -->
+  <PageHero
+    kicker="Contact"
+    title="We'd love to hear from you."
+    description="Reach out with questions, feedback, or to get involved."
+  />
 
-  <!-- Contact Section -->
+  <!-- Contact Information & Form -->
   <section class="section bg-paper">
     <div class="shell grid lg:grid-cols-5 gap-14">
       <!-- Contact Info -->
@@ -23,7 +22,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
         <div class="space-y-7">
           <div class="flex items-start gap-4">
-            <div class="w-12 h-12 bg-pine/10 rounded-none flex items-center justify-center shrink-0 text-pine">
+            <div class="w-12 h-12 bg-pine/10 flex items-center justify-center shrink-0 text-pine">
               <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
                 <path stroke-linecap="round" d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z" />
                 <circle cx="12" cy="10" r="2.5" />
@@ -32,28 +31,28 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <div>
               <h3 class="font-semibold mb-1">Address</h3>
               <p class="text-ink-soft">
-                [Full Trust Address]<br />
-                [City, State - PIN Code]<br />
-                India
+                {SITE_INFO.contact.address.street}<br />
+                {SITE_INFO.contact.address.cityState}<br />
+                {SITE_INFO.contact.address.country}
               </p>
             </div>
           </div>
 
           <div class="flex items-start gap-4">
-            <div class="w-12 h-12 bg-pine/10 rounded-none flex items-center justify-center shrink-0 text-pine">
+            <div class="w-12 h-12 bg-pine/10 flex items-center justify-center shrink-0 text-pine">
               <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
                 <path stroke-linecap="round" d="M5 4h4l2 5-3 2a12 12 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z" />
               </svg>
             </div>
             <div>
               <h3 class="font-semibold mb-1">Phone</h3>
-              <p class="text-ink-soft">+91 [Phone Number]</p>
-              <p class="text-ink-faint text-sm">Mon-Sat: 9AM - 6PM</p>
+              <p class="text-ink-soft">{SITE_INFO.contact.phone}</p>
+              <p class="text-ink-faint text-sm">{SITE_INFO.contact.phoneHours}</p>
             </div>
           </div>
 
           <div class="flex items-start gap-4">
-            <div class="w-12 h-12 bg-pine/10 rounded-none flex items-center justify-center shrink-0 text-pine">
+            <div class="w-12 h-12 bg-pine/10 flex items-center justify-center shrink-0 text-pine">
               <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
                 <rect x="3" y="5" width="18" height="14" rx="2" />
                 <path stroke-linecap="round" d="M3 7l9 6 9-6" />
@@ -61,56 +60,22 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             </div>
             <div>
               <h3 class="font-semibold mb-1">Email</h3>
-              <p class="text-ink-soft">info@sarvagungyannodayatrust.org</p>
-              <p class="text-ink-faint text-sm">We reply within 24-48 hours</p>
+              <p class="text-ink-soft">{SITE_INFO.contact.email}</p>
+              <p class="text-ink-faint text-sm">{SITE_INFO.contact.emailResponseTime}</p>
             </div>
           </div>
         </div>
 
-        <!-- Social Links -->
+        <!-- Social Links Component -->
         <div class="mt-9">
           <h3 class="font-semibold mb-4">Follow Us</h3>
-          <div class="flex gap-3">
-            {[
-              {
-                name: "Facebook",
-                fill: "#1877F2",
-                path: "M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z",
-              },
-              {
-                name: "Instagram",
-                fill: "#E4405F",
-                path: "M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678a6.162 6.162 0 100 12.324 6.162 6.162 0 100-12.324zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405a1.441 1.441 0 11-2.882 0 1.441 1.441 0 012.882 0z",
-              },
-              {
-                name: "LinkedIn",
-                fill: "#0A66C2",
-                path: "M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.125 2.062 2.062 0 0 1 0 4.125zM7.119 20.452H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z",
-              },
-              {
-                name: "YouTube",
-                fill: "#FF0000",
-                path: "M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z",
-              },
-            ].map((s) => (
-              <a
-                href="#"
-                class="w-11 h-11 flex items-center justify-center border border-pine/20 hover:bg-pine hover:text-paper transition-colors"
-                aria-label={s.name}
-                title={s.name}
-              >
-                <svg class="w-5 h-5" viewBox="0 0 24 24" fill={s.fill} aria-hidden="true">
-                  <path d={s.path} />
-                </svg>
-              </a>
-            ))}
-          </div>
+          <SocialLinks variant="dark" />
         </div>
       </div>
 
       <!-- Contact Form -->
       <div class="lg:col-span-3">
-        <div class="card p-8 md:p-10">
+        <div class="card p-8 md:p-10 border border-line">
           <h2 class="font-display text-3xl text-ink mb-8">Send Us a Message</h2>
           <form id="contact-form" class="space-y-5">
             <div class="grid md:grid-cols-2 gap-4">
@@ -121,7 +86,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                   id="name"
                   name="name"
                   required
-                  class="w-full px-4 py-3 border border-line rounded-none focus:outline-none focus:ring-2 focus:ring-pine/40 focus:border-pine"
+                  class="w-full px-4 py-3 border border-line focus:outline-none focus:ring-2 focus:ring-pine/40 focus:border-pine"
                 />
               </div>
               <div>
@@ -131,7 +96,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                   id="email"
                   name="email"
                   required
-                  class="w-full px-4 py-3 border border-line rounded-none focus:outline-none focus:ring-2 focus:ring-pine/40 focus:border-pine"
+                  class="w-full px-4 py-3 border border-line focus:outline-none focus:ring-2 focus:ring-pine/40 focus:border-pine"
                 />
               </div>
             </div>
@@ -141,7 +106,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                 type="tel"
                 id="phone"
                 name="phone"
-                class="w-full px-4 py-3 border border-line rounded-none focus:outline-none focus:ring-2 focus:ring-pine/40 focus:border-pine"
+                class="w-full px-4 py-3 border border-line focus:outline-none focus:ring-2 focus:ring-pine/40 focus:border-pine"
               />
             </div>
             <div>
@@ -150,7 +115,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                 id="subject"
                 name="subject"
                 required
-                class="w-full px-4 py-3 border border-line rounded-none focus:outline-none focus:ring-2 focus:ring-pine/40 focus:border-pine bg-white"
+                class="w-full px-4 py-3 border border-line focus:outline-none focus:ring-2 focus:ring-pine/40 focus:border-pine bg-white"
               >
                 <option value="">Select a subject</option>
                 <option value="general">General Inquiry</option>
@@ -168,7 +133,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                 name="message"
                 rows="5"
                 required
-                class="w-full px-4 py-3 border border-line rounded-none focus:outline-none focus:ring-2 focus:ring-pine/40 focus:border-pine"
+                class="w-full px-4 py-3 border border-line focus:outline-none focus:ring-2 focus:ring-pine/40 focus:border-pine"
               ></textarea>
             </div>
             <button type="submit" class="btn btn-primary w-full !py-4">Send Message</button>
@@ -178,16 +143,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </div>
   </section>
 
-  <!-- Map Section -->
+  <!-- Map Placeholder -->
   <section class="bg-mist">
     <div class="shell pb-24">
-      <div class="h-72 rounded-none border border-line bg-mist/40 flex items-center justify-center">
+      <div class="h-72 border border-line bg-mist/40 flex items-center justify-center">
         <div class="text-center">
           <svg class="w-10 h-10 mx-auto mb-3 text-ink-faint" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
             <path stroke-linecap="round" d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z" />
             <circle cx="12" cy="10" r="2.5" />
           </svg>
-          <p class="text-ink-soft">Map will be embedded here</p>
+          <p class="text-ink-soft font-semibold">Location Map</p>
           <p class="text-ink-faint text-sm">[Google Maps integration]</p>
         </div>
       </div>
@@ -197,15 +162,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <script>
   const form = document.getElementById('contact-form') as HTMLFormElement;
-
-  form?.addEventListener('submit', async (e) => {
+  form?.addEventListener('submit', (e) => {
     e.preventDefault();
-
-    const formData = new FormData(form);
-    const data = Object.fromEntries(formData.entries());
-
-    console.log('Form submitted:', data);
-
     alert('Thank you for your message! We will get back to you soon.');
     form.reset();
   });

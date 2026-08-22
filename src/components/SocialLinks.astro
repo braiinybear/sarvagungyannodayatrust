@@ -1,0 +1,28 @@
+---
+import { SOCIAL_LINKS } from '../data/siteData';
+
+interface Props {
+  variant?: 'light' | 'dark';
+}
+
+const { variant = 'light' } = Astro.props;
+
+const buttonStyles = variant === 'light'
+  ? 'border-paper/25 hover:bg-paper hover:text-pine-deep'
+  : 'border-pine/20 hover:bg-pine hover:text-paper';
+---
+
+<div class="flex gap-3">
+  {SOCIAL_LINKS.map((s) => (
+    <a
+      href={s.url}
+      class={`w-11 h-11 flex items-center justify-center border transition-colors ${buttonStyles}`}
+      aria-label={s.name}
+      title={s.name}
+    >
+      <svg class="w-5 h-5" viewBox="0 0 24 24" fill={s.fill} aria-hidden="true">
+        <path d={s.path} />
+      </svg>
+    </a>
+  ))}
+</div>

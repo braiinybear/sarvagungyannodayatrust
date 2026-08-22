@@ -1,0 +1,42 @@
+---
+interface Props {
+  quote: string;
+  author: string;
+  role: string;
+  variant?: 'centered' | 'card';
+}
+
+const { quote, author, role, variant = 'centered' } = Astro.props;
+---
+
+{variant === 'centered' ? (
+  <section class="section">
+    <div class="shell max-w-5xl text-center">
+      <figure>
+        <p class="font-display text-[1.9rem] md:text-[2.9rem] lg:text-[3.4rem] italic font-medium leading-[1.2] tracking-tight">
+          "{quote}"
+        </p>
+        <figcaption class="mt-10">
+          <p class="font-bold text-sm tracking-[0.18em] uppercase">{author}</p>
+          <p class="text-ink-faint text-sm mt-1">{role}</p>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+) : (
+  <div class="bg-pine-deep p-10 md:p-12 text-paper relative overflow-hidden">
+    <span class="absolute -top-10 -left-6 font-display text-[16rem] leading-none text-paper/5 select-none" aria-hidden>&ldquo;</span>
+    <blockquote class="font-display text-xl md:text-2xl leading-snug text-paper relative">
+      "{quote}"
+    </blockquote>
+    <div class="mt-8 flex items-center gap-4 relative">
+      <div class="w-12 h-12 bg-saffron flex items-center justify-center text-paper font-display text-lg font-bold">
+        {author.split(' ').map(n => n[0]).join('').slice(0, 2)}
+      </div>
+      <div>
+        <p class="font-semibold text-paper">{author}</p>
+        <p class="text-paper/60 text-sm">{role}</p>
+      </div>
+    </div>
+  </div>
+)}

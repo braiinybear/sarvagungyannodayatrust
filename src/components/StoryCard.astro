@@ -1,0 +1,24 @@
+---
+import type { Story } from '../data/storiesData';
+
+interface Props {
+  story: Story;
+}
+
+const { story } = Astro.props;
+---
+
+<article class="group">
+  <div class="overflow-hidden mb-6">
+    <img
+      src={story.img}
+      alt={story.alt}
+      class="w-full aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+      loading="lazy"
+    />
+  </div>
+  <p class="text-[0.68rem] font-bold tracking-[0.22em] uppercase text-saffron mb-3">{story.cat}</p>
+  <h3 class="font-display text-[1.4rem] md:text-xl mb-3 leading-snug">{story.title}</h3>
+  {story.snippet && <p class="text-ink-soft text-sm mb-4 leading-relaxed">{story.snippet}</p>}
+  <p class="text-ink-faint text-xs">{story.who}</p>
+</article>

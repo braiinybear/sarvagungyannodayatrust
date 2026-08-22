@@ -1,47 +1,46 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import { SITE_INFO } from '../../data/siteData';
+
+const DONATION_TIERS = [
+  { amount: "₹500", text: "School supplies for five children for a month" },
+  { amount: "₹1,000", text: "Health checkups for ten elders" },
+  { amount: "₹5,000", text: "Digital literacy training for 20 students" },
+  { amount: "₹10,000", text: "A village sanitation or livelihood project" },
+];
 ---
 
-<BaseLayout title="Donate" description="Support Sarvagun Gyannodaya Trust - Your donation changes lives">
-  <!-- Hero -->
-  <section class="section bg-pine text-paper">
-    <div class="shell max-w-3xl">
-      <p class="kicker !text-saffron mb-5">Donate</p>
-      <h1 class="text-4xl md:text-6xl mb-6">Your generosity becomes their future.</h1>
-      <p class="text-xl text-paper/80">
-        Every donation helps us empower communities through education, elderly care, and development.
-      </p>
-    </div>
-  </section>
+<BaseLayout title="Donate" description={`Support ${SITE_INFO.name} - Your donation changes lives`}>
+  <!-- Page Hero -->
+  <PageHero
+    kicker="Donate"
+    title="Your generosity becomes their future."
+    description="Every donation helps us empower communities through education, elderly care, and development."
+    breadcrumbs={[
+      { label: "Get Involved", href: "/get-involved" },
+      { label: "Donate" }
+    ]}
+  />
 
-  <!-- Donation Impact -->
+  <!-- Donation Impact Tiers -->
   <section class="section bg-paper">
     <div class="shell">
       <div class="mb-12 text-center">
         <p class="kicker justify-center mb-4">Where Your Money Goes</p>
-        <h2 class="text-3xl md:text-5xl text-ink">Every rupee, accounted for</h2>
+        <h2 class="text-3xl md:text-5xl text-ink font-display">Every rupee, accounted for</h2>
       </div>
 
       <div class="grid md:grid-cols-4 gap-x-8 gap-y-10">
-        <div class="border-t border-line pt-6">
-          <p class="font-display text-3xl text-pine mb-1">₹500</p>
-          <p class="text-sm text-ink-soft">School supplies for five children for a month</p>
-        </div>
-        <div class="border-t border-line pt-6">
-          <p class="font-display text-3xl text-pine mb-1">₹1,000</p>
-          <p class="text-sm text-ink-soft">Health checkups for ten elders</p>
-        </div>
-        <div class="border-t border-line pt-6">
-          <p class="font-display text-3xl text-pine mb-1">₹5,000</p>
-          <p class="text-sm text-ink-soft">Digital literacy training for 20 students</p>
-        </div>
-        <div class="border-t border-line pt-6">
-          <p class="font-display text-3xl text-pine mb-1">₹10,000</p>
-          <p class="text-sm text-ink-soft">A village sanitation or livelihood project</p>
-        </div>
+        {DONATION_TIERS.map((tier) => (
+          <div class="border-t border-line pt-6">
+            <p class="font-display text-3xl text-pine mb-1">{tier.amount}</p>
+            <p class="text-sm text-ink-soft leading-relaxed">{tier.text}</p>
+          </div>
+        ))}
       </div>
 
-      <!-- Fund Allocation -->
+      <!-- Fund Allocation Meters -->
       <div class="max-w-3xl mx-auto mt-16">
         <h3 class="font-display text-xl text-ink mb-6">Fund Allocation</h3>
         <div class="space-y-5">
@@ -50,7 +49,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
               <span>Programs &amp; Beneficiaries</span>
               <span class="text-pine">90%</span>
             </div>
-            <div class="h-1 bg-mist">
+            <div class="h-1 bg-mist rounded-full overflow-hidden">
               <div class="h-full bg-pine" style="width: 90%"></div>
             </div>
           </div>
@@ -59,7 +58,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
               <span>Administration</span>
               <span class="text-saffron">7%</span>
             </div>
-            <div class="h-1 bg-mist">
+            <div class="h-1 bg-mist rounded-full overflow-hidden">
               <div class="h-full bg-saffron" style="width: 7%"></div>
             </div>
           </div>
@@ -68,7 +67,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
               <span>Fundraising</span>
               <span class="text-ember">3%</span>
             </div>
-            <div class="h-1 bg-mist">
+            <div class="h-1 bg-mist rounded-full overflow-hidden">
               <div class="h-full bg-ember" style="width: 3%"></div>
             </div>
           </div>
@@ -77,14 +76,14 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     </div>
   </section>
 
-  <!-- Donation Form -->
+  <!-- Interactive Donation Form -->
   <section class="section bg-mist">
     <div class="shell max-w-2xl">
-      <div class="bg-white p-8 md:p-12">
+      <div class="bg-white p-8 md:p-12 border border-line">
         <h2 class="font-display text-3xl text-ink mb-8 text-center">Make a Donation</h2>
 
         <form id="donation-form" class="space-y-7">
-          <!-- Donation Type toggle -->
+          <!-- Donation Frequency -->
           <div>
             <label class="block text-sm font-semibold mb-3">Donation Type</label>
             <div class="grid grid-cols-2 border border-line">
@@ -104,7 +103,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
               <p class="font-display text-3xl text-pine">₹<span id="amount-display">1,000</span></p>
             </div>
 
-            <!-- Slider -->
             <input
               type="range"
               id="amount-slider"
@@ -123,7 +121,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
             <div class="grid grid-cols-3 gap-2">
               <button type="button" class="donation-amount px-4 py-3 border border-line font-semibold text-sm hover:border-ink transition-colors" data-amount="500">₹500</button>
-              <button type="button" class="donation-amount px-4 py-3 border border-line font-semibold text-sm hover:border-ink transition-colors" data-amount="1000">₹1,000</button>
+              <button type="button" class="donation-amount px-4 py-3 border border-pine bg-mist text-ink font-semibold text-sm hover:border-ink transition-colors" data-amount="1000">₹1,000</button>
               <button type="button" class="donation-amount px-4 py-3 border border-line font-semibold text-sm hover:border-ink transition-colors" data-amount="2500">₹2,500</button>
               <button type="button" class="donation-amount px-4 py-3 border border-line font-semibold text-sm hover:border-ink transition-colors" data-amount="5000">₹5,000</button>
               <button type="button" class="donation-amount px-4 py-3 border border-line font-semibold text-sm hover:border-ink transition-colors" data-amount="10000">₹10,000</button>
@@ -133,14 +131,14 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
               type="number"
               id="custom-amount"
               name="custom_amount"
-              placeholder="Enter a custom amount"
+              placeholder="Enter custom amount (₹)"
               class="w-full px-4 py-3 border border-line focus:outline-none focus:ring-2 focus:ring-pine/40 focus:border-pine hidden mt-3"
             />
             <input type="hidden" id="donation-amount" name="amount" value="1000" />
             <input type="hidden" id="donation-type" name="donation_type" value="monthly" />
           </div>
 
-          <!-- Donor Info -->
+          <!-- Donor Details -->
           <div class="grid md:grid-cols-2 gap-4">
             <div>
               <label for="donor-name" class="block text-sm font-semibold mb-1">Full Name *</label>
@@ -174,7 +172,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
             />
           </div>
 
-          <!-- Tax Receipt -->
+          <!-- 80G Tax Exemption Option -->
           <div class="flex items-start gap-3">
             <input type="checkbox" id="tax-receipt" name="tax_receipt" class="mt-1.5" />
             <label for="tax-receipt" class="text-sm text-ink-soft">
@@ -182,12 +180,12 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
             </label>
           </div>
 
-          <!-- Submit -->
+          <!-- Submit Button -->
           <button type="submit" class="btn btn-primary w-full !py-4 text-[0.8rem]">
-            Donate Now
+            Proceed to Payment
           </button>
 
-          <p class="text-center text-ink-faint text-sm">
+          <p class="text-center text-ink-faint text-xs">
             Your donation is secure and encrypted. All donations are tax-exempt under Section 80G.
           </p>
         </form>
@@ -198,7 +196,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   <!-- Other Ways to Give -->
   <section class="section bg-paper">
     <div class="shell">
-      <h2 class="text-3xl md:text-4xl text-ink mb-12 text-center">Other Ways to Give</h2>
+      <h2 class="text-3xl md:text-4xl text-ink mb-12 text-center font-display">Other Ways to Give</h2>
       <div class="grid md:grid-cols-3 gap-x-12 gap-y-10">
         <div>
           <div class="w-12 h-12 bg-pine flex items-center justify-center mb-5 text-paper">
@@ -208,8 +206,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
             </svg>
           </div>
           <h3 class="font-display text-xl mb-3">Bank Transfer</h3>
-          <p class="text-ink-soft text-sm mb-4">
-            Direct bank transfer to our account. Contact us for details.
+          <p class="text-ink-soft text-sm mb-4 leading-relaxed">
+            Direct bank transfer to our trust account. Contact us for NEFT/IMPS details.
           </p>
           <a href="/contact" class="link-arrow">Get Bank Details</a>
         </div>
@@ -220,9 +218,9 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
               <path stroke-linecap="round" d="M11 18h2" />
             </svg>
           </div>
-          <h3 class="font-display text-xl mb-3">UPI</h3>
-          <p class="text-ink-soft text-sm mb-4">
-            Scan our QR code or use our UPI ID for instant donations.
+          <h3 class="font-display text-xl mb-3">UPI Payment</h3>
+          <p class="text-ink-soft text-sm mb-4 leading-relaxed">
+            Scan our QR code or use our trust UPI handle for instant contribution.
           </p>
           <a href="/contact" class="link-arrow">Get UPI Details</a>
         </div>
@@ -234,8 +232,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
             </svg>
           </div>
           <h3 class="font-display text-xl mb-3">In-Kind Support</h3>
-          <p class="text-ink-soft text-sm mb-4">
-            Donate goods, services, or expertise to our programs.
+          <p class="text-ink-soft text-sm mb-4 leading-relaxed">
+            Donate supplies, books, computers, or professional services to our centers.
           </p>
           <a href="/contact" class="link-arrow">Learn More</a>
         </div>
@@ -255,32 +253,29 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
   const fmt = (n: number) => n.toLocaleString('en-IN');
 
-  const setActiveChip = (value: string) => {
+  const setActiveChip = (valStr: string) => {
     amountButtons.forEach(b => {
-      const active = b.getAttribute('data-amount') === value;
-      b.classList.toggle('border-ink', active);
+      const active = b.getAttribute('data-amount') === valStr;
+      b.classList.toggle('border-pine', active);
       b.classList.toggle('bg-mist', active);
       b.classList.toggle('text-ink', active);
       b.classList.toggle('border-line', !active);
     });
   };
 
-  const setSliderValue = (value: number) => {
-    slider.value = String(Math.min(Math.max(value, Number(slider.min)), Number(slider.max)));
-  };
-
   slider?.addEventListener('input', () => {
-    const value = Number(slider.value);
-    amountDisplay.textContent = fmt(value);
-    amountHidden.value = String(value);
+    const val = Number(slider.value);
+    if (amountDisplay) amountDisplay.textContent = fmt(val);
+    if (amountHidden) amountHidden.value = String(val);
     customAmountInput?.classList.add('hidden');
-    setActive('custom');
+    setActiveChip('custom');
   });
 
   amountButtons.forEach(button => {
     button.addEventListener('click', () => {
       const amount = button.getAttribute('data-amount');
-      setActive(amount);
+      if (!amount) return;
+      setActiveChip(amount);
 
       if (amount === 'custom') {
         customAmountInput?.classList.remove('hidden');
@@ -289,39 +284,37 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       }
 
       customAmountInput?.classList.add('hidden');
-      const value = Number(amount);
-      amountDisplay.textContent = fmt(value);
-      amountHidden.value = String(value);
-      setSliderValue(value);
+      const val = Number(amount);
+      if (amountDisplay) amountDisplay.textContent = fmt(val);
+      if (amountHidden) amountHidden.value = String(val);
+      if (slider) slider.value = String(Math.min(Math.max(val, Number(slider.min)), Number(slider.max)));
     });
   });
 
   customAmountInput?.addEventListener('input', () => {
-    const value = Number(customAmountInput.value);
-    if (value > 0) {
-      amountDisplay.textContent = fmt(value);
-      amountHidden.value = String(value);
+    const val = Number(customAmountInput.value);
+    if (val > 0) {
+      if (amountDisplay) amountDisplay.textContent = fmt(val);
+      if (amountHidden) amountHidden.value = String(val);
     }
   });
 
   toggles.forEach(t => {
     t.addEventListener('click', () => {
       toggles.forEach(o => {
-        o.classList.toggle('bg-pine', o === t);
-        o.classList.toggle('text-paper', o === t);
-        o.classList.toggle('text-ink-soft', o !== t);
-        o.classList.toggle('hover:text-ink', o !== t);
-        o.classList.remove('hover:bg-pine');
+        const isCurrent = o === t;
+        o.classList.toggle('bg-pine', isCurrent);
+        o.classList.toggle('text-paper', isCurrent);
+        o.classList.toggle('text-ink-soft', !isCurrent);
+        o.classList.toggle('bg-transparent', !isCurrent);
       });
-      typeHidden.value = t.getAttribute('data-type') || 'monthly';
+      if (typeHidden) typeHidden.value = t.getAttribute('data-type') || 'monthly';
     });
   });
 
   const form = document.getElementById('donation-form') as HTMLFormElement;
-
-  form?.addEventListener('submit', async (e) => {
+  form?.addEventListener('submit', (e) => {
     e.preventDefault();
-    console.log('Donation form submitted');
     alert('Thank you for your donation! You will be redirected to the payment gateway.');
   });
 </script>
