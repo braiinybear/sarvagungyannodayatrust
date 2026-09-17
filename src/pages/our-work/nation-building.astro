@@ -1,0 +1,185 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import { PROGRAMS } from '../../data/programsData';
+
+const program = PROGRAMS.find(p => p.id === 'nation-building')!;
+
+const nationGallery = [
+  { src: "/images/nation-building/2f5a282e-db2a-485a-b5a0-a61f978d5d9b.jpg", title: "Youth Rallies & Yuva Brigade", desc: "Mobilizing energetic youth for community service, national pride, and character formation." },
+  { src: "/images/nation-building/bf3fa072-02d1-4922-bf52-0261e4a4ca8f.jpg", title: "National Youth Day Conventions", desc: "Annual seminars inspired by Swami Vivekananda's message to youth across India." },
+  { src: "/images/nation-building/cba21d87-8102-4556-9239-f1b6a9f25ef3.jpg", title: "Heritage & Cultural Awareness", desc: "Connecting youth with India's rich spiritual, scientific, and cultural legacy." },
+  { src: "/images/nation-building/71284457-b009-408e-b43b-01b21ad62df2.jpg", title: "Civic Duty & Anti-Addiction Drives", desc: "Awareness campaigns against substance abuse, promoting healthy civic participation." }
+];
+---
+
+<BaseLayout title="Nation Building — SARVAGUN Gyannodaya Trust" description="Channeling youth vigor into nation-building, character education, civic duty, and social leadership.">
+  <PageHero
+    kicker="Focus Area 05"
+    title="Nation Building & Youth Brigade"
+    description="My hope of the future lies in the youth of character, intelligent, renouncing all for the service of others. Building a strong, self-reliant India."
+  />
+
+  <!-- Motto Banner -->
+  <div class="bg-amber-950 text-amber-100 py-4 px-6 border-b border-amber-900/40 text-center">
+    <p class="font-display text-base md:text-lg tracking-wide font-medium">
+      युवा शक्ति ही राष्ट्र शक्ति • चरित्र निर्माण से देश निर्माण • त्याग और सेवा संधान
+    </p>
+  </div>
+
+  <div class="bg-mist py-10 md:py-14">
+    <div class="shell max-w-5xl mx-auto space-y-8 md:space-y-10">
+
+      <!-- Section 1: Our Nation Building Vision -->
+      <section class="grid lg:grid-cols-12 gap-10 items-center bg-white border border-line p-8 md:p-12" data-animate="fade-up">
+        <div class="lg:col-span-7 space-y-5">
+          <span class="text-xs font-bold uppercase tracking-[0.2em] text-saffron-deep">Our Nation Vision</span>
+          <h2 class="text-2xl md:text-3xl font-display font-semibold text-ink leading-tight">
+            Empowering Youth as Pillars of the Nation
+          </h2>
+          <p class="text-ink-soft text-base leading-relaxed">
+            At <strong>SARVAGUN Gyannodaya Trust</strong>, we firmly believe that the true wealth of a nation lies in the character, vigor, and idealism of its youth. Through our <em>Yuva Brigade</em> initiative, we channel the boundless energy of young men and women into constructive nation-building activities.
+          </p>
+          <p class="text-ink-soft text-base leading-relaxed">
+            We organize youth conventions, leadership workshops, blood donation drives, anti-addiction awareness campaigns, and village development programs.
+          </p>
+          <p class="text-ink-soft text-base leading-relaxed">
+            Our goal is to nurture a generation of courageous, compassionate leaders committed to India's progress.
+          </p>
+        </div>
+        <div class="lg:col-span-5 relative group overflow-hidden border border-line bg-mist">
+          <img
+            src={nationGallery[0].src}
+            alt={nationGallery[0].title}
+            class="w-full aspect-4/3 object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+            loading="eager"
+          />
+          <div class="p-3 bg-stone-50 border-t border-line text-xs text-ink-faint font-medium">
+            📸 {nationGallery[0].title}: {nationGallery[0].desc}
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 2: 5-Step Youth Progression -->
+      <section class="bg-white border border-line p-8 md:p-12 text-center" data-animate="fade-up">
+        <span class="text-xs font-bold uppercase tracking-[0.2em] text-saffron-deep block mb-3">Nation Building Pathway</span>
+        <h2 class="text-2xl md:text-3xl font-display font-semibold text-ink mb-4">
+          The Journey of a Youth Leader
+        </h2>
+        <p class="text-ink-soft text-base leading-relaxed max-w-3xl mx-auto mb-8">
+          Nation building begins with self-discipline, character formation, and a profound sense of duty toward fellow citizens.
+        </p>
+
+        <!-- 5-Step Flow Strip -->
+        <div class="bg-amber-950 text-white p-6 border border-amber-900/30 max-w-4xl mx-auto mb-8">
+          <p class="text-xs font-semibold uppercase tracking-widest text-amber-400 mb-3">Youth Leadership Journey</p>
+          <div class="flex flex-wrap items-center justify-center gap-2 md:gap-4 text-sm md:text-base font-display font-semibold">
+            <span class="bg-amber-900/60 px-3 py-1 border border-amber-700/40">Awakening</span>
+            <span class="text-amber-400">→</span>
+            <span class="bg-amber-900/60 px-3 py-1 border border-amber-700/40">Character</span>
+            <span class="text-amber-400">→</span>
+            <span class="bg-amber-900/60 px-3 py-1 border border-amber-700/40">Unity</span>
+            <span class="text-amber-400">→</span>
+            <span class="bg-amber-900/60 px-3 py-1 border border-amber-700/40">Leadership</span>
+            <span class="text-amber-400">→</span>
+            <span class="bg-amber-900/60 px-3 py-1 border border-amber-700/40 text-amber-200">Nation Building</span>
+          </div>
+        </div>
+
+        <p class="text-ink-faint text-sm max-w-2xl mx-auto italic">
+          &ldquo;Arise, awake, and stop not till the goal is reached.&rdquo; — Swami Vivekananda
+        </p>
+      </section>
+
+      <!-- Section 3: Our 4 Youth Pillars -->
+      <section class="bg-white border border-line p-8 md:p-12" data-animate="fade-up">
+        <div class="text-center max-w-2xl mx-auto mb-10">
+          <span class="text-xs font-bold uppercase tracking-[0.2em] text-saffron-deep block mb-2">Youth Pillars</span>
+          <h2 class="text-2xl md:text-3xl font-display font-semibold text-ink mb-3">
+            We Mobilize. We Train. We Unite. We Lead.
+          </h2>
+          <p class="text-ink-faint text-sm leading-relaxed">
+            Guiding young minds away from distractions into purposeful community leadership and patriotic service.
+          </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="border border-line p-6 bg-mist hover:border-amber-700/40 transition-colors">
+            <div class="text-saffron-deep font-bold text-lg mb-2">01. We Mobilize</div>
+            <p class="text-ink-soft text-xs leading-relaxed">
+              Yuva Brigade rallies, National Youth Day celebrations, and volunteer student forums.
+            </p>
+          </div>
+          <div class="border border-line p-6 bg-mist hover:border-amber-700/40 transition-colors">
+            <div class="text-saffron-deep font-bold text-lg mb-2">02. We Train</div>
+            <p class="text-ink-soft text-xs leading-relaxed">
+              Conducting ethical leadership workshops, public speaking, disaster response, and civic responsibility sessions.
+            </p>
+          </div>
+          <div class="border border-line p-6 bg-mist hover:border-amber-700/40 transition-colors">
+            <div class="text-saffron-deep font-bold text-lg mb-2">03. We Unite</div>
+            <p class="text-ink-soft text-xs leading-relaxed">
+              Promoting social harmony, anti-addiction campaigns, and cross-cultural youth solidarity.
+            </p>
+          </div>
+          <div class="border border-line p-6 bg-mist hover:border-amber-700/40 transition-colors">
+            <div class="text-saffron-deep font-bold text-lg mb-2">04. We Lead</div>
+            <p class="text-ink-soft text-xs leading-relaxed">
+              Directing youth energy into village development, cleanliness drives, and blood donation camps.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 4: Photo Gallery Grid -->
+      <section data-animate="fade-up">
+        <div class="flex items-end justify-between mb-8">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-[0.2em] text-saffron-deep block mb-1">Field Documentation</span>
+            <h2 class="text-2xl font-display font-semibold text-ink">Glimpses of Yuva Brigade Action</h2>
+          </div>
+        </div>
+        <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6" data-animate="stagger">
+          {nationGallery.map((img) => (
+            <div class="bg-white border border-line overflow-hidden group hover:border-amber-700/40 transition-colors">
+              <div class="relative overflow-hidden aspect-4/3 bg-mist">
+                <img
+                  src={img.src}
+                  alt={img.title}
+                  class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                  loading="lazy"
+                />
+              </div>
+              <div class="p-4">
+                <h4 class="font-display font-semibold text-sm text-ink mb-1">{img.title}</h4>
+                <p class="text-ink-faint text-xs leading-relaxed">{img.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Section 5: Closing Commitment -->
+      <section class="bg-white border border-line p-8 md:p-12 text-center" data-animate="fade-up">
+        <div class="my-6 p-8 bg-amber-950 text-amber-100 max-w-3xl mx-auto border border-amber-900/60 shadow-xs">
+          <p class="text-xs font-bold uppercase tracking-widest text-amber-400 mb-3">Our Youth Commitment</p>
+          <blockquote class="font-display italic text-lg md:text-xl leading-relaxed text-white mb-4">
+            &ldquo;A hundred energetic young men and women, sincere to the core, can revolutionize the world.&rdquo;
+          </blockquote>
+          <p class="text-sm font-semibold text-amber-300">SARVAGUN Gyannodaya Trust</p>
+          <p class="text-xs text-amber-400/80 mt-1">युवा शक्ति, चरित्र और राष्ट्र सेवा संकल्प</p>
+        </div>
+
+        <div class="pt-4 flex flex-wrap justify-center gap-4">
+          <a href="/get-involved/volunteer" class="btn btn-primary text-sm px-8 py-3.5">
+            Join Yuva Brigade
+          </a>
+          <a href="/contact" class="btn btn-outline-dark text-sm px-8 py-3.5">
+            Organize Youth Seminar
+          </a>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</BaseLayout>

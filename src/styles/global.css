@@ -1,22 +1,33 @@
 @import "tailwindcss";
 
 @theme {
-  --color-ink: #14120F;
-  --color-ink-soft: #4A463E;
-  --color-ink-faint: #8A857A;
-  --color-paper: #FDFCFA;
-  --color-mist: #F3F1EC;
-  --color-line: #E3E0D8;
-  --color-pine: #123A2C;
-  --color-pine-deep: #0B2A1F;
-  --color-saffron: #E08A2E;
-  --color-ember: #C2572E;
+  --color-ink: #161E2E;
+  --color-ink-soft: #374151;
+  --color-ink-faint: #6B7280;
+  --color-paper: #FFFFFF;
+  --color-mist: #FAF8F5;
+  --color-cream: #F4F0E8;
+  --color-line: #E5E0D8;
 
-  --font-display: 'Fraunces', serif;
-  --font-body: 'Plus Jakarta Sans', sans-serif;
+  /* Brand — used sparingly, only CTAs and badges */
+  --color-saffron: #D97706;
+  --color-saffron-deep: #B45309;
+  --color-saffron-light: #FFFBEB;
 
-  --spacing-page: 1160px;
-  --spacing-section: 120px;
+  --color-navy: #1B2A3D;
+  --color-navy-deep: #0F1A28;
+
+  --color-emerald: #047857;
+  --color-azure: #0369A1;
+  --color-crimson: #BE123C;
+  --color-amber: #92400E;
+  --color-violet: #6D28D9;
+
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+
+  --spacing-page: 1240px;
+  --spacing-section: 88px;
 }
 
 @layer base {
@@ -28,31 +39,33 @@
     font-family: var(--font-body);
     color: var(--color-ink);
     background-color: var(--color-paper);
-    line-height: 1.6;
-    font-size: 17px;
+    line-height: 1.7;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
-    font-weight: 500;
-    line-height: 1.08;
-    letter-spacing: -0.02em;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
   }
 
   ::selection {
-    background: var(--color-ink);
-    color: var(--color-paper);
+    background: var(--color-saffron);
+    color: #FFFFFF;
   }
 }
 
 @layer components {
+  /* Container */
   .shell {
     width: 100%;
     max-width: var(--spacing-page);
     margin-left: auto;
     margin-right: auto;
-    padding-left: 1.75rem;
-    padding-right: 1.75rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 
   .section {
@@ -60,131 +73,181 @@
     padding-bottom: var(--spacing-section);
   }
 
+  /* Section label — clean, minimal */
   .kicker {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.9rem;
-    font-size: 0.7rem;
+    display: inline-block;
+    font-size: 0.8rem;
     font-weight: 700;
-    letter-spacing: 0.22em;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--color-saffron);
   }
 
-  .kicker::before {
-    content: "";
-    width: 2.5rem;
-    height: 1px;
-    background: currentColor;
-  }
-
+  /* Buttons — solid, rectangular, institutional */
   .btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    padding: 1rem 1.9rem;
-    font-weight: 700;
-    font-size: 0.78rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    transition: all 0.2s ease;
+    padding: 0.75rem 1.75rem;
+    font-weight: 600;
+    font-size: 0.875rem;
+    letter-spacing: 0.02em;
+    border-radius: 4px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    cursor: pointer;
+    text-decoration: none;
   }
 
   .btn-primary {
-    background: var(--color-pine);
-    color: #fff;
+    background-color: var(--color-saffron);
+    color: #FFFFFF;
   }
-
   .btn-primary:hover {
-    background: var(--color-pine-deep);
+    background-color: var(--color-saffron-deep);
   }
 
   .btn-dark {
-    background: var(--color-ink);
-    color: #fff;
+    background-color: var(--color-navy);
+    color: #FFFFFF;
   }
-
   .btn-dark:hover {
-    background: #000;
+    background-color: var(--color-navy-deep);
   }
 
-  .btn-ghost {
+  .btn-outline {
+    background: transparent;
+    color: #FFFFFF;
+    border: 1.5px solid rgba(255, 255, 255, 0.6);
+  }
+  .btn-outline:hover {
+    background: #FFFFFF;
+    color: var(--color-ink);
+    border-color: #FFFFFF;
+  }
+
+  .btn-outline-dark {
     background: transparent;
     color: var(--color-ink);
-    border: 1px solid var(--color-ink);
+    border: 1.5px solid var(--color-line);
   }
-
-  .btn-ghost:hover {
-    background: var(--color-ink);
-    color: #fff;
-  }
-
-  .btn-light {
-    background: #fff;
-    color: var(--color-ink);
-  }
-
-  .btn-light:hover {
+  .btn-outline-dark:hover {
     background: var(--color-mist);
+    border-color: var(--color-ink-faint);
   }
 
-  .btn-accent {
-    background: var(--color-saffron);
-    color: #fff;
-  }
-
-  .btn-accent:hover {
-    background: #c9741c;
-  }
-
+  /* Cards — clean, structured, editorial */
   .card {
-    background: #fff;
+    background: #FFFFFF;
+    border: 1px solid var(--color-line);
+    overflow: hidden;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  .card:hover {
+    border-color: #B45309;
   }
 
-  .img-frame img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-
-  .stat-number {
-    font-family: var(--font-display);
-    font-weight: 600;
-    letter-spacing: -0.02em;
-    color: var(--color-ink);
-    line-height: 1.05;
-  }
-
-  .stat-label {
-    margin-top: 0.75rem;
-    font-size: 0.8rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--color-ink-faint);
-  }
-
-  .link-arrow {
+  /* Category badge — crisp uppercase tag pill */
+  .badge {
     display: inline-flex;
     align-items: center;
-    gap: 0.6rem;
+    padding: 0.25rem 0.65rem;
+    font-size: 0.65rem;
     font-weight: 700;
-    font-size: 0.8rem;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
+    color: #FFFFFF;
+    border-radius: 2px;
+    background-color: var(--color-saffron);
+  }
+
+  .badge-education { background-color: var(--color-saffron); }
+  .badge-social { background-color: var(--color-azure); }
+  .badge-sports { background-color: var(--color-crimson); }
+  .badge-environment { background-color: var(--color-emerald); }
+  .badge-nation { background-color: var(--color-navy); }
+  .badge-culture { background-color: var(--color-violet); }
+  .badge-spirituality { background-color: var(--color-amber); }
+
+  /* Navigation dropdown — clean, no rounded corners */
+  .nav-dropdown {
+    position: relative;
+  }
+
+  .nav-dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 240px;
+    background: #FFFFFF;
+    padding: 0.5rem 0;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    border: 1px solid var(--color-line);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(4px);
+    transition: all 0.2s ease;
+    z-index: 50;
+  }
+
+  .nav-dropdown:hover .nav-dropdown-menu,
+  .nav-dropdown:focus-within .nav-dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .nav-dropdown-item {
+    display: block;
+    padding: 0.6rem 1.25rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-ink-soft);
+    transition: background-color 0.15s ease, color 0.15s ease;
+  }
+
+  .nav-dropdown-item:hover {
+    background: var(--color-saffron-light);
+    color: var(--color-saffron);
+  }
+
+  /* Simple text link arrow — editorial style */
+  .link-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-weight: 600;
+    font-size: 0.875rem;
     color: var(--color-ink);
-    border-bottom: 1px solid var(--color-ink);
-    padding-bottom: 0.25rem;
-    transition: gap 0.2s ease;
+    border-bottom: 1.5px solid var(--color-ink);
+    padding-bottom: 2px;
+    transition: color 0.2s ease, border-color 0.2s ease;
   }
 
-  .link-arrow:hover {
-    gap: 1rem;
+  .link-more:hover {
+    color: var(--color-saffron);
+    border-color: var(--color-saffron);
   }
+}
 
-  .link-arrow-light {
-    color: #fff;
-    border-color: rgba(255, 255, 255, 0.6);
+/* ── GSAP Animation Base Styles ── */
+[data-animate="fade-up"],
+[data-animate="fade-in"],
+[data-animate="slide-left"],
+[data-animate="slide-right"],
+[data-animate="scale-in"] {
+  opacity: 0;
+}
+
+[data-animate="stagger"] > * {
+  opacity: 0;
+}
+
+/* Respect reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+  [data-animate],
+  [data-animate="stagger"] > * {
+    opacity: 1 !important;
+    transform: none !important;
   }
 }

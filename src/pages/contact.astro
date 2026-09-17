@@ -5,42 +5,32 @@ import SocialLinks from "../components/SocialLinks.astro";
 import { SITE_INFO } from "../data/siteData";
 ---
 
-<BaseLayout title="Contact" description={`Get in touch with ${SITE_INFO.name}`}>
+<BaseLayout title="Contact Us" description={`Get in touch with ${SITE_INFO.name}`}>
   <!-- Page Hero -->
   <PageHero
-    kicker="Contact"
+    kicker="Contact Us"
     title="We'd love to hear from you."
-    description="Reach out with questions, feedback, or to get involved."
+    description="Reach out with questions, feedback, partnership proposals, or volunteering interest."
   />
 
   <!-- Contact Information & Form -->
-  <section class="section bg-paper">
-    <div class="shell grid lg:grid-cols-5 gap-14">
+  <section class="section bg-slate-50">
+    <div class="shell grid lg:grid-cols-5 gap-12">
       <!-- Contact Info -->
       <div class="lg:col-span-2">
-        <h2 class="font-display text-3xl text-ink mb-8">Get In Touch</h2>
+        <h2 class="font-display text-3xl font-bold text-slate-900 mb-6">Get In Touch</h2>
 
-        <div class="space-y-7">
+        <div class="space-y-6">
           <div class="flex items-start gap-4">
-            <div
-              class="w-12 h-12 bg-pine/10 flex items-center justify-center shrink-0 text-pine"
-            >
-              <svg
-                class="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.8"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"></path>
+            <div class="w-12 h-12 rounded-xl bg-orange-100 text-saffron-deep flex items-center justify-center shrink-0">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                <path stroke-linecap="round" d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"></path>
                 <circle cx="12" cy="10" r="2.5"></circle>
               </svg>
             </div>
             <div>
-              <h3 class="font-semibold mb-1">Address</h3>
-              <p class="text-ink-soft">
+              <h3 class="font-semibold text-slate-900 mb-1">Trust Office Address</h3>
+              <p class="text-slate-600 text-sm leading-relaxed">
                 {SITE_INFO.contact.address.street}<br />
                 {SITE_INFO.contact.address.cityState}<br />
                 {SITE_INFO.contact.address.country}
@@ -49,166 +39,117 @@ import { SITE_INFO } from "../data/siteData";
           </div>
 
           <div class="flex items-start gap-4">
-            <div
-              class="w-12 h-12 bg-pine/10 flex items-center justify-center shrink-0 text-pine"
-            >
-              <svg
-                class="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.8"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  d="M5 4h4l2 5-3 2a12 12 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"
-                ></path>
+            <div class="w-12 h-12 rounded-xl bg-indigo-100 text-indigo-900 flex items-center justify-center shrink-0">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                <path stroke-linecap="round" d="M5 4h4l2 5-3 2a12 12 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"></path>
               </svg>
             </div>
             <div>
-              <h3 class="font-semibold mb-1">Phone</h3>
-              <p class="text-ink-soft">{SITE_INFO.contact.phone}</p>
-              <p class="text-ink-faint text-sm">
-                {SITE_INFO.contact.phoneHours}
-              </p>
+              <h3 class="font-semibold text-slate-900 mb-1">Helpline Phone</h3>
+              <p class="text-slate-600 text-sm font-semibold">{SITE_INFO.contact.phone}</p>
+              <p class="text-slate-500 text-xs">{SITE_INFO.contact.phoneHours}</p>
             </div>
           </div>
 
           <div class="flex items-start gap-4">
-            <div
-              class="w-12 h-12 bg-pine/10 flex items-center justify-center shrink-0 text-pine"
-            >
-              <svg
-                class="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.8"
-                viewBox="0 0 24 24"
-              >
+            <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
                 <rect x="3" y="5" width="18" height="14" rx="2"></rect>
                 <path stroke-linecap="round" d="M3 7l9 6 9-6"></path>
               </svg>
             </div>
             <div>
-              <h3 class="font-semibold mb-1">Email</h3>
-              <p class="text-ink-soft">{SITE_INFO.contact.email}</p>
-              <p class="text-ink-faint text-sm">
-                {SITE_INFO.contact.emailResponseTime}
-              </p>
+              <h3 class="font-semibold text-slate-900 mb-1">Email Support</h3>
+              <p class="text-slate-600 text-sm font-semibold">{SITE_INFO.contact.email}</p>
+              <p class="text-slate-500 text-xs">{SITE_INFO.contact.emailResponseTime}</p>
             </div>
           </div>
         </div>
 
         <!-- Social Links Component -->
-        <div class="mt-9">
-          <h3 class="font-semibold mb-4">Follow Us</h3>
+        <div class="mt-8 pt-6 border-t border-slate-200">
+          <h3 class="font-semibold text-slate-900 mb-3 text-sm">Follow Our Official Handles</h3>
           <SocialLinks variant="dark" />
         </div>
       </div>
 
       <!-- Contact Form -->
       <div class="lg:col-span-3">
-        <div class="card p-8 md:p-10 border border-line">
-          <h2 class="font-display text-3xl text-ink mb-8">Send Us a Message</h2>
-          <form id="contact-form" class="space-y-5">
+        <div class="vibrant-card p-8 md:p-10 border-t-4 border-t-saffron">
+          <h2 class="font-display text-2xl font-bold text-slate-900 mb-6">Send Us a Message</h2>
+          <form id="contact-form" class="space-y-4">
             <div class="grid md:grid-cols-2 gap-4">
               <div>
-                <label for="name" class="block text-sm font-semibold mb-1"
-                  >Name *</label
-                >
+                <label for="name" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">Full Name *</label>
                 <input
                   type="text"
                   id="name"
                   name="name"
                   required
-                  class="w-full px-4 py-3 border focus:outline-none focus:ring-2 focus:ring-pine/40 focus:border-pine"
+                  placeholder="Enter your name"
+                  class="w-full px-4 py-3 rounded-lg border border-line focus:outline-none focus:ring-2 focus:ring-saffron/40 text-sm"
                 />
               </div>
               <div>
-                <label for="email" class="block text-sm font-semibold mb-1"
-                  >Email *</label
-                >
+                <label for="email" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">Email Address *</label>
                 <input
                   type="email"
                   id="email"
                   name="email"
                   required
-                  class="w-full px-4 py-3 border focus:outline-none focus:ring-2 focus:ring-pine/40 focus:border-pine"
+                  placeholder="name@example.com"
+                  class="w-full px-4 py-3 rounded-lg border border-line focus:outline-none focus:ring-2 focus:ring-saffron/40 text-sm"
                 />
               </div>
             </div>
-            <div>
-              <label for="phone" class="block text-sm font-semibold mb-1"
-                >Phone</label
-              >
-              <input
-                type="tel"
-                id="phone"
-                name="phone"
-                class="w-full px-4 py-3 border focus:outline-none focus:ring-2 focus:ring-pine/40 focus:border-pine"
-              />
+
+            <div class="grid md:grid-cols-2 gap-4">
+              <div>
+                <label for="phone" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">Phone Number</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  placeholder="+91 98765 43210"
+                  class="w-full px-4 py-3 rounded-lg border border-line focus:outline-none focus:ring-2 focus:ring-saffron/40 text-sm"
+                />
+              </div>
+              <div>
+                <label for="subject" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">Inquiry Subject *</label>
+                <select
+                  id="subject"
+                  name="subject"
+                  required
+                  class="w-full px-4 py-3 rounded-lg border border-line focus:outline-none focus:ring-2 focus:ring-saffron/40 text-sm bg-white"
+                >
+                  <option value="">Select inquiry category</option>
+                  <option value="general">General Inquiry</option>
+                  <option value="education">Education & Gyannodaya</option>
+                  <option value="sports">Sports</option>
+                  <option value="donation">Donation & 80G Tax Exemption</option>
+                  <option value="volunteer">Volunteering & Yuva Brigade</option>
+                  <option value="partnership">Corporate / NGO Partnership</option>
+                  <option value="media">Media & Press</option>
+                </select>
+              </div>
             </div>
+
             <div>
-              <label for="subject" class="block text-sm font-semibold mb-1"
-                >Subject *</label
-              >
-              <select
-                id="subject"
-                name="subject"
-                required
-                class="w-full px-4 py-3 border focus:outline-none focus:ring-2 focus:ring-pine/40 focus:border-pine bg-white"
-              >
-                <option value="">Select a subject</option>
-                <option value="general">General Inquiry</option>
-                <option value="donation">Donation</option>
-                <option value="volunteer">Volunteering</option>
-                <option value="partnership">Partnership</option>
-                <option value="media">Media Inquiry</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
-            <div>
-              <label for="message" class="block text-sm font-semibold mb-1"
-                >Message *</label
-              >
+              <label for="message" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">Your Message *</label>
               <textarea
                 id="message"
                 name="message"
-                rows="5"
+                rows="4"
                 required
-                class="w-full px-4 py-3 border focus:outline-none focus:ring-2 focus:ring-pine/40 focus:border-pine"
+                placeholder="How can we assist you?"
+                class="w-full px-4 py-3 rounded-lg border border-line focus:outline-none focus:ring-2 focus:ring-saffron/40 text-sm"
               ></textarea>
             </div>
-            <button type="submit" class="btn btn-primary w-full py-4"
-              >Send Message</button
-            >
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Map Placeholder -->
-  <section class="bg-mist">
-    <div class="shell pb-24">
-      <div
-        class="h-72 border border-line bg-mist/40 flex items-center justify-center"
-      >
-        <div class="text-center">
-          <svg
-            class="w-10 h-10 mx-auto mb-3 text-ink-faint"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.5"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"></path>
-            <circle cx="12" cy="10" r="2.5"></circle>
-          </svg>
-          <p class="text-ink-soft font-semibold">Location Map</p>
-          <p class="text-ink-faint text-sm">[Google Maps integration]</p>
+            <button type="submit" class="btn btn-primary w-full py-3.5! text-xs font-bold">
+              Send Message
+            </button>
+          </form>
         </div>
       </div>
     </div>
@@ -219,7 +160,7 @@ import { SITE_INFO } from "../data/siteData";
   const form = document.getElementById("contact-form") as HTMLFormElement;
   form?.addEventListener("submit", (e) => {
     e.preventDefault();
-    alert("Thank you for your message! We will get back to you soon.");
+    alert("Thank you for reaching out to Sarvagun Gyannodaya Trust! We will get back to you within 24 hours.");
     form.reset();
   });
 </script>

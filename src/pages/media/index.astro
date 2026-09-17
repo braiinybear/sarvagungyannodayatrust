@@ -1,0 +1,144 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import { MEDIA_REPORTS, PRESS_RELEASES, EVENTS } from '../../data/mediaData';
+
+const ALL_FIELD_PHOTOS = [
+  // Education (6)
+  { src: "/images/education/3d1c3775-4b8c-4c1f-a88e-e5856c6c8f9d.jpg", tag: "Education", title: "Interactive Classroom Session" },
+  { src: "/images/education/5ccd5329-8fd1-4209-9bd4-2d16a9999ab5.jpg", tag: "Education", title: "Digital Literacy & Coding Class" },
+  { src: "/images/education/62d11f3a-0d11-4f51-8e94-093d8ea4fcb3.jpg", tag: "Education", title: "Student Value Mentorship" },
+  { src: "/images/education/8640a895-9dee-44f2-be2a-614351170c6e.jpg", tag: "Education", title: "Gyannodaya Learning Center" },
+  { src: "/images/education/d4498011-1a6c-425d-b04a-33452c784635.jpg", tag: "Education", title: "Youth Skill Workshop" },
+  { src: "/images/education/ea70810c-ddaa-42d8-80d7-ff1129aa1246.jpg", tag: "Education", title: "Rural Student Empowerment" },
+
+  // Sports (6)
+  { src: "/images/sports/275cd986-31c3-46ba-81a1-947f509f28c5.jpg", tag: "Sports", title: "Football Training Academy" },
+  { src: "/images/sports/3268f985-9c9a-4a2f-ab5c-fe034df41098.jpg", tag: "Sports", title: "Track & Field Competition" },
+  { src: "/images/sports/61b6dcec-edfd-4ef7-8ed0-dbef3a3b8b92.jpg", tag: "Sports", title: "Youth Fitness & Discipline" },
+  { src: "/images/sports/c7fc56bb-f819-407a-9352-3c92c5eec0e8.jpg", tag: "Sports", title: "District Athletic Tournament" },
+  { src: "/images/sports/c8a28afc-0dc5-4e79-82f3-0b17613da265.jpg", tag: "Sports", title: "Traditional Sports & Martial Arts" },
+  { src: "/images/sports/cd56c3c0-2dfd-4730-ad5d-b38074bcba9d.jpg", tag: "Sports", title: "Sports Kit Distribution" },
+
+  // Social Work (5)
+  { src: "/images/social-work/241dc954-3df6-4d7e-a65e-20eccbb2d488.jpg", tag: "Social Work", title: "Women's Empowerment Group" },
+  { src: "/images/social-work/31ca7713-addd-4ed3-a864-6bd2ba594034.jpg", tag: "Social Work", title: "Community Sanitation & Hygiene Drive" },
+  { src: "/images/social-work/54e0730e-169c-462b-9dd7-f0f9d84bd28f.jpg", tag: "Social Work", title: "Elderly Care & Support" },
+  { src: "/images/social-work/bea900bc-9728-4e10-b074-cfc009fde77b.jpg", tag: "Social Work", title: "Health & Medical Checkup Camp" },
+  { src: "/images/social-work/dfb2f186-8278-4d63-b63c-b20e47b7e567.jpg", tag: "Social Work", title: "Community Relief Distribution" },
+
+  // Environment (3)
+  { src: "/images/environment/466d579b-dce5-4be6-b718-5bbcb6e4cd64.jpg", tag: "Environment", title: "Tree Plantation Drive" },
+  { src: "/images/environment/4c074d9e-1f52-4df5-98ee-74ed6083020f.jpg", tag: "Environment", title: "Clean Water & Sanitation Drive" },
+  { src: "/images/environment/5f7e0efe-a451-4414-aee6-7bd54a2ec712.jpg", tag: "Environment", title: "Plastic Cleanup Movement" },
+
+  // Nation Building (12)
+  { src: "/images/nation-building/0afb96f5-eeee-4256-96a4-cbfcbab9449e.jpg", tag: "Nation Building", title: "Youth Volunteer Brigade" },
+  { src: "/images/nation-building/2e270fb0-26aa-49fc-815a-f8f88a1fbbc8.jpg", tag: "Nation Building", title: "Community Leadership Seminar" },
+  { src: "/images/nation-building/2f5a282e-db2a-485a-b5a0-a61f978d5d9b.jpg", tag: "Nation Building", title: "Patriotic Youth Rally" },
+  { src: "/images/nation-building/577c40cc-4286-4d30-8b78-e908eab8f27c.jpg", tag: "Nation Building", title: "Heritage & Unity Event" },
+  { src: "/images/nation-building/71284457-b009-408e-b43b-01b21ad62df2.jpg", tag: "Nation Building", title: "Spirituality & Values Convention" },
+  { src: "/images/nation-building/ab95f9e8-c60d-4eaa-9d49-e845e45b04d8.jpg", tag: "Nation Building", title: "Civic Duty & Disaster Relief" },
+  { src: "/images/nation-building/be505e02-0da5-4f9e-b7c4-4765e42ee381.jpg", tag: "Nation Building", title: "Grassroots Community Mobilization" },
+  { src: "/images/nation-building/bf3fa072-02d1-4922-bf52-0261e4a4ca8f.jpg", tag: "Nation Building", title: "Cultural Procession" },
+  { src: "/images/nation-building/cba21d87-8102-4556-9239-f1b6a9f25ef3.jpg", tag: "Nation Building", title: "Community Service Gathering" },
+  { src: "/images/nation-building/cd49fa62-7415-42c6-a5a1-fee5910272c0.jpg", tag: "Nation Building", title: "Field Action Expedition" },
+  { src: "/images/nation-building/e2ea57c1-57e2-4572-b45a-c14bb0d75a06.jpg", tag: "Nation Building", title: "National Integration Camp" },
+  { src: "/images/nation-building/fd3a054b-9a9c-4205-9b0b-986bfa4ac27e.jpg", tag: "Nation Building", title: "Youth Mentorship Forum" }
+];
+---
+
+<BaseLayout title="Media & Photo Gallery — Sarvagun Gyannodaya Trust" description="Explore media reports, press releases, events, and complete field photo gallery.">
+  <PageHero
+    kicker="Media Center"
+    title="Media, Publications & Field Gallery"
+    description="Explore our complete photo archive from field operations across India."
+  />
+
+  <section class="section bg-slate-50">
+    <div class="shell max-w-6xl mx-auto space-y-16">
+      
+      <!-- Complete Field Photo Gallery -->
+      <div>
+        <div class="flex items-center justify-between mb-8">
+          <div>
+            <span class="kicker block mb-1">Authentic Action</span>
+            <h2 class="text-2xl font-display font-bold text-slate-900">Ground Field Photo Gallery ({ALL_FIELD_PHOTOS.length} Photos)</h2>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
+          {ALL_FIELD_PHOTOS.map((photo) => (
+            <div class="group relative overflow-hidden border border-slate-200 bg-white aspect-square shadow-xs">
+              <img
+                src={photo.src}
+                alt={photo.title}
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-linear-to-t from-black/85 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-2.5 flex flex-col justify-end">
+                <span class="text-[10px] font-bold tracking-wider text-saffron uppercase mb-0.5">{photo.tag}</span>
+                <span class="text-xs font-semibold text-white leading-tight">{photo.title}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Media Reports Block -->
+      <div>
+        <div class="flex items-center justify-between mb-8">
+          <h2 class="text-2xl font-display font-bold text-slate-900">Media & Field Reports</h2>
+          <a href="/media/reports" class="link-arrow">View All Reports</a>
+        </div>
+        <div class="grid md:grid-cols-2 gap-8">
+          {MEDIA_REPORTS.map((item) => (
+            <div class="vibrant-card p-6">
+              <span class="text-xs font-bold text-saffron uppercase tracking-wider mb-2 block">{item.date}</span>
+              <h3 class="font-display text-lg font-bold text-slate-900 mb-2">{item.title}</h3>
+              <p class="text-slate-600 text-sm mb-4">{item.summary}</p>
+              <a href="/media/reports" class="text-xs font-bold text-slate-800 uppercase tracking-wider hover:text-saffron-deep">Read Report &rarr;</a>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Press Releases Block -->
+      <div>
+        <div class="flex items-center justify-between mb-8">
+          <h2 class="text-2xl font-display font-bold text-slate-900">Press Releases</h2>
+          <a href="/media/press-releases" class="link-arrow">View All Press Releases</a>
+        </div>
+        <div class="grid md:grid-cols-2 gap-8">
+          {PRESS_RELEASES.map((item) => (
+            <div class="vibrant-card p-6 border-l-4 border-l-rose-500">
+              <span class="text-xs font-bold text-rose-600 uppercase tracking-wider mb-2 block">{item.date}</span>
+              <h3 class="font-display text-lg font-bold text-slate-900 mb-2">{item.title}</h3>
+              <p class="text-slate-600 text-sm mb-4">{item.summary}</p>
+              <a href="/media/press-releases" class="text-xs font-bold text-slate-800 uppercase tracking-wider hover:text-saffron-deep">Read Press Release &rarr;</a>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Events Block -->
+      <div>
+        <div class="flex items-center justify-between mb-8">
+          <h2 class="text-2xl font-display font-bold text-slate-900">Upcoming Events & Campaigns</h2>
+          <a href="/media/events" class="link-arrow">View All Events</a>
+        </div>
+        <div class="grid md:grid-cols-2 gap-8">
+          {EVENTS.map((item) => (
+            <div class="vibrant-card p-6 border-l-4 border-l-emerald-600">
+              <span class="text-xs font-bold text-emerald-600 uppercase tracking-wider mb-2 block">{item.date}</span>
+              <h3 class="font-display text-lg font-bold text-slate-900 mb-2">{item.title}</h3>
+              <p class="text-slate-600 text-sm mb-4">{item.summary}</p>
+              <a href="/media/events" class="text-xs font-bold text-slate-800 uppercase tracking-wider hover:text-saffron-deep">Event Details &rarr;</a>
+            </div>
+          ))}
+        </div>
+      </div>
+
+    </div>
+  </section>
+</BaseLayout>

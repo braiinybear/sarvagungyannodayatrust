@@ -3,35 +3,60 @@ interface Props {
   kicker: string;
   title: string;
   description?: string;
+  image?: string;
   breadcrumbs?: { label: string; href?: string }[];
 }
 
-const { kicker, title, description, breadcrumbs } = Astro.props;
+const { kicker, title, description, image, breadcrumbs } = Astro.props;
+
+const bgImage = image || 'https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=1600';
 ---
 
-<section class="section bg-mist">
-  <div class="shell max-w-3xl">
+<section class="relative bg-navy-deep text-white overflow-hidden border-b border-stone-800">
+  <!-- Background image -->
+  <img
+    src={bgImage}
+    alt=""
+    class="absolute inset-0 w-full h-full object-cover opacity-20"
+    loading="eager"
+    data-animate="parallax"
+  />
+  <div class="absolute inset-0 bg-linear-to-r from-navy-deep via-navy-deep/95 to-navy-deep/75"></div>
+
+  <div class="relative shell py-16 md:py-24 z-10">
+    <!-- Breadcrumbs -->
     {breadcrumbs && breadcrumbs.length > 0 && (
-      <nav class="text-sm text-ink-faint mb-8 flex items-center gap-2">
+      <nav class="text-xs uppercase font-semibold tracking-wider text-white/50 mb-6 flex items-center gap-2" data-animate="fade-in">
         {breadcrumbs.map((crumb, idx) => (
           <>
-            {idx > 0 && <span>/</span>}
+            {idx > 0 && <span class="text-amber-500/40">•</span>}
             {crumb.href ? (
-              <a href={crumb.href} class="hover:text-pine transition-colors">
+              <a href={crumb.href} class="hover:text-amber-400 transition-colors">
                 {crumb.label}
               </a>
             ) : (
-              <span class="text-ink-soft">{crumb.label}</span>
+              <span class="text-white/80">{crumb.label}</span>
             )}
           </>
         ))}
       </nav>
     )}
-    <p class="kicker mb-5">{kicker}</p>
-    <h1 class="text-4xl md:text-6xl text-ink mb-6 text-balance font-display">{title}</h1>
-    {description && (
-      <p class="text-lg md:text-xl text-ink-soft leading-relaxed">{description}</p>
-    )}
-    <slot />
+
+    <div class="max-w-3xl">
+      <div class="inline-flex items-center gap-2 mb-3" data-animate="fade-up">
+        <span class="text-[0.7rem] font-bold uppercase tracking-[0.2em] text-amber-400 bg-amber-950/60 px-2.5 py-1 border border-amber-500/30">
+          {kicker}
+        </span>
+      </div>
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-display font-semibold text-white leading-tight mb-5" data-animate="hero-text">
+        {title}
+      </h1>
+      {description && (
+        <p class="text-base sm:text-lg text-white/75 leading-relaxed max-w-2xl font-normal" data-animate="fade-up" data-delay="0.4">
+          {description}
+        </p>
+      )}
+      <slot />
+    </div>
   </div>
 </section>

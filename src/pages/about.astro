@@ -36,8 +36,8 @@ import { VALUES, LEADERSHIP, FOUNDER_ACHIEVEMENTS } from '../data/teamData';
       </div>
       <div class="img-frame aspect-4/3 overflow-hidden">
         <img
-          src="https://images.pexels.com/photos/4848235/pexels-photo-4848235.jpeg?auto=compress&cs=tinysrgb&w=1200"
-          alt="Community coming together"
+          src="/images/nation-building/2e270fb0-26aa-49fc-815a-f8f88a1fbbc8.jpg"
+          alt="Sarvagun Gyannodaya Trust community coming together"
           loading="lazy"
           class="w-full h-full object-cover"
         />
@@ -51,7 +51,7 @@ import { VALUES, LEADERSHIP, FOUNDER_ACHIEVEMENTS } from '../data/teamData';
       <video
         class="w-full aspect-video object-cover order-2 lg:order-1"
         src="https://videos.pexels.com/video-files/6646649/6646649-hd_1920_1080_30fps.mp4"
-        poster="https://images.pexels.com/videos/6646649/africa-causes-change-charity-6646649.jpeg?auto=compress&cs=tinysrgb&w=1200"
+        poster="/images/social-work/54e0730e-169c-462b-9dd7-f0f9d84bd28f.jpg"
         autoplay
         muted
         loop
@@ -73,7 +73,17 @@ import { VALUES, LEADERSHIP, FOUNDER_ACHIEVEMENTS } from '../data/teamData';
   <!-- Founder Section -->
   <section class="section bg-mist border-t border-line/60">
     <div class="shell grid lg:grid-cols-2 gap-14 items-center">
-      <div class="order-2 lg:order-1">
+      <div class="order-2 lg:order-1 space-y-6">
+        <div class="card overflow-hidden">
+          <div class="aspect-4/3 overflow-hidden bg-white">
+            <img
+              src={SITE_INFO.founder.image}
+              alt={SITE_INFO.founder.name}
+              class="w-full h-full object-cover object-top"
+              loading="lazy"
+            />
+          </div>
+        </div>
         <QuoteBlock
           quote={SITE_INFO.founder.quoteExtended}
           author={SITE_INFO.founder.name}
@@ -82,7 +92,7 @@ import { VALUES, LEADERSHIP, FOUNDER_ACHIEVEMENTS } from '../data/teamData';
         />
       </div>
       <div class="order-1 lg:order-2">
-        <p class="kicker mb-4">Our Founder</p>
+        <p class="kicker mb-4">Our Founder &amp; Settlor</p>
         <h2 class="text-3xl md:text-5xl text-ink mb-6 font-display">{SITE_INFO.founder.name}</h2>
         <p class="text-ink-soft mb-6 leading-relaxed">
           {SITE_INFO.founder.name} established {SITE_INFO.name} with a vision to bridge
@@ -112,7 +122,7 @@ import { VALUES, LEADERSHIP, FOUNDER_ACHIEVEMENTS } from '../data/teamData';
   <section class="section bg-paper">
     <div class="shell grid md:grid-cols-2 gap-7">
       <div class="card p-9">
-        <div class="w-14 h-14 bg-pine/10 flex items-center justify-center mb-6 text-pine">
+        <div class="w-14 h-14 bg-saffron/10 flex items-center justify-center mb-6 text-saffron">
           <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
             <circle cx="12" cy="12" r="9" />
             <circle cx="12" cy="12" r="5" />
@@ -150,7 +160,7 @@ import { VALUES, LEADERSHIP, FOUNDER_ACHIEVEMENTS } from '../data/teamData';
       <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
         {VALUES.map((v) => (
           <div class="text-center">
-            <div class="w-20 h-20 bg-pine/10 flex items-center justify-center mx-auto mb-5 text-pine">
+            <div class="w-20 h-20 bg-saffron/10 flex items-center justify-center mx-auto mb-5 text-saffron">
               <svg class="w-9 h-9" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d={v.icon} />
               </svg>
@@ -169,13 +179,25 @@ import { VALUES, LEADERSHIP, FOUNDER_ACHIEVEMENTS } from '../data/teamData';
       <h2 class="text-3xl md:text-4xl text-ink mb-12 text-center font-display">Our Leadership</h2>
       <div class="grid md:grid-cols-3 gap-7">
         {LEADERSHIP.map((member) => (
-          <div class="card p-8 text-center">
-            <div class={`w-20 h-20 ${member.isFounder ? 'bg-pine text-paper' : 'bg-mist text-ink-faint'} mx-auto mb-5 flex items-center justify-center font-display text-2xl`}>
-              {member.initials}
+          <div class="card p-8 text-center flex flex-col justify-between">
+            <div>
+              <div class="w-24 h-24 rounded-2xl overflow-hidden bg-mist mx-auto mb-5 border border-line flex items-center justify-center">
+                {member.image ? (
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    class="w-full h-full object-cover object-top"
+                  />
+                ) : (
+                  <div class={`w-full h-full ${member.isFounder ? 'bg-navy-deep text-white' : 'bg-mist text-ink-faint'} flex items-center justify-center font-display text-2xl`}>
+                    {member.initials}
+                  </div>
+                )}
+              </div>
+              <h3 class="font-display text-xl mb-1">{member.name}</h3>
+              <p class="text-saffron text-sm font-semibold mb-3">{member.role}</p>
+              <p class="text-ink-soft text-sm leading-relaxed">{member.bio}</p>
             </div>
-            <h3 class="font-display text-xl mb-1">{member.name}</h3>
-            <p class="text-saffron text-sm font-semibold mb-3">{member.role}</p>
-            <p class="text-ink-soft text-sm leading-relaxed">{member.bio}</p>
           </div>
         ))}
       </div>
@@ -202,7 +224,7 @@ import { VALUES, LEADERSHIP, FOUNDER_ACHIEVEMENTS } from '../data/teamData';
             <ul class="space-y-2.5">
               {["Annual Report 2024-25", "Annual Report 2023-24", "Audited Accounts 2024-25"].map((r) => (
                 <li>
-                  <a href="#" class="text-pine hover:underline flex items-center gap-2 text-sm">
+                  <a href="#" class="text-saffron hover:underline flex items-center gap-2 text-sm">
                     <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
                       <path stroke-linecap="round" d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM14 2v6h6" />
                     </svg>

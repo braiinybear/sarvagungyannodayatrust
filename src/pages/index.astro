@@ -1,34 +1,16 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ProgramCard from '../components/ProgramCard.astro';
-import StoryCard from '../components/StoryCard.astro';
-import QuoteBlock from '../components/QuoteBlock.astro';
+import PhilosophyBlock from '../components/PhilosophyBlock.astro';
 import { SITE_INFO } from '../data/siteData';
 import { PROGRAMS } from '../data/programsData';
-import { STORIES } from '../data/storiesData';
-
-const SUPPORTERS = [
-  { initials: "AK", name: "Amit & Kavita K.", place: "Delhi", amount: "10,000" },
-  { initials: "SP", name: "S. Pandey", place: "Lucknow", amount: "5,000" },
-  { initials: "RM", name: "Rajesh M.", place: "Indore", amount: "2,500" },
-  { initials: "Anon", name: "An anonymous donor", place: "Uttarakhand", amount: "1,000" },
-  { initials: "DV", name: "Deepti V.", place: "Pune", amount: "850" },
-  { initials: "GS", name: "Gaurav S.", place: "Bhopal", amount: "500" },
-];
-
-const DONATION_IMPACT = [
-  { amount: "₹500", text: "School supplies for five children for a month" },
-  { amount: "₹1,000", text: "Health checkups for ten elders" },
-  { amount: "₹5,000", text: "Digital literacy training for 20 students" },
-  { amount: "₹10,000", text: "A village sanitation or livelihood project" },
-];
 ---
 
-<BaseLayout title="Home">
-  <!-- Hero Section -->
-  <section class="relative min-h-[92vh] flex items-center overflow-hidden bg-pine-deep">
+<BaseLayout title="Sarvagun Gyannodaya Trust — Education, Sports, Culture & Social Service">
+  <!-- Hero — Full-bleed image/video with clean text overlay -->
+  <section class="relative min-h-[85vh] flex items-end overflow-hidden bg-navy-deep">
     <video
-      class="absolute inset-0 w-full h-full object-cover"
+      class="absolute inset-0 w-full h-full object-cover opacity-40"
       src="https://videos.pexels.com/video-files/16868495/16868495-hd_1920_1080_25fps.mp4"
       poster="https://images.pexels.com/videos/16868495/books-celebrations-childhood-in-india-children-of-india-16868495.jpeg?auto=compress&cs=tinysrgb&w=1600"
       autoplay
@@ -37,38 +19,253 @@ const DONATION_IMPACT = [
       playsinline
       preload="metadata"
     ></video>
-    <div class="absolute inset-0 bg-pine-deep/65"></div>
-    <div class="relative shell py-36 md:py-44">
-      <p class="kicker mb-8">A Trust for Education · for the Elderly · for Communities</p>
-      <h1 class="text-paper text-[2.75rem] md:text-[4.5rem] lg:text-[5.5rem] max-w-4xl font-display leading-[1.08]">
-        {SITE_INFO.tagline}
-      </h1>
-      <div class="mt-10 flex flex-wrap items-center gap-8">
-        <a href="/get-involved/donate" class="btn btn-accent">Donate Today</a>
-        <a href="/our-work" class="btn btn-light">Explore Our Work</a>
+    <div class="absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-transparent"></div>
+
+    <div class="relative shell pb-20 pt-40 z-10">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2 mb-4" data-animate="fade-in">
+          <span class="text-[0.7rem] font-bold uppercase tracking-[0.2em] text-amber-400 bg-amber-950/70 px-3 py-1 border border-amber-500/30">
+            Registered Public Charitable Trust • 80G Tax Exempt
+          </span>
+        </div>
+        <h1 class="text-white text-4xl sm:text-5xl md:text-6xl font-display font-semibold leading-[1.15] mb-6" data-animate="hero-text">
+          Education, Dignity &amp; Service — For Every Life.
+        </h1>
+        <p class="text-white/80 text-lg md:text-xl leading-relaxed mb-8 max-w-2xl font-normal" data-animate="fade-up" data-delay="0.5">
+          Rooted in Swami Vivekananda's philosophy: <em class="text-amber-200">"Service to man is service to God."</em> Empowering youth, elderly, sports talent, and rural communities across India.
+        </p>
+        <div class="flex flex-wrap items-center gap-4" data-animate="fade-up" data-delay="0.7">
+          <a href="/our-work" class="btn btn-primary text-sm font-semibold tracking-wide py-3.5 px-7">
+            Explore Our Work
+          </a>
+          <a href="/about" class="btn btn-outline text-sm font-semibold tracking-wide py-3.5 px-7">
+            About the Trust
+          </a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- High-Level Impact Headline -->
-  <section class="shell section">
-    <p class="kicker mb-6">Impact</p>
-    <p class="text-[2.4rem] md:text-[3.4rem] lg:text-[4rem] font-display font-medium tracking-tight leading-[1.1] max-w-5xl">
-      More than <span class="text-saffron">50,000 lives</span> touched across
-      education, elderly care, and community development.
-    </p>
-    <a href="/impact" class="link-arrow mt-10">See the full impact</a>
-  </section>
-
-  <!-- Programs Overview Grid -->
-  <section class="section bg-mist">
+  <!-- Latest Section — Tata Trusts "Latest" horizontal cards with category badges -->
+  <section class="section bg-white">
     <div class="shell">
-      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
-        <p class="kicker mb-4 md:mb-0">What We Do</p>
-        <p class="text-ink-soft max-w-sm text-lg">Three programs, one purpose — to make dignity everyone's birthright.</p>
+      <div class="flex items-end justify-between mb-10" data-animate="fade-up">
+        <div>
+          <span class="kicker block mb-2">Latest</span>
+          <h2 class="text-2xl md:text-3xl font-display font-semibold text-ink">
+            News & Updates
+          </h2>
+        </div>
+        <a href="/media/reports" class="link-more text-sm hidden md:inline-flex">View all</a>
       </div>
 
-      <div class="grid md:grid-cols-3 gap-10">
+      <!-- 3-column editorial cards (Tata Trusts "Latest" section pattern) -->
+      <div class="grid md:grid-cols-3 gap-6" data-animate="stagger">
+        <article class="card group">
+          <div class="relative overflow-hidden">
+            <img
+              src="/images/education/62d11f3a-0d11-4f51-8e94-093d8ea4fcb3.jpg"
+              alt="Education initiative"
+              class="w-full aspect-4/3 object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+              loading="lazy"
+            />
+            <span class="badge badge-education absolute top-3 right-3">Education</span>
+          </div>
+          <div class="p-5">
+            <h3 class="font-display text-lg font-semibold text-ink mb-2 leading-snug">
+              <a href="/our-work/education" class="hover:text-saffron transition-colors">
+                Opening New Learning Centers in Rural Uttarakhand
+              </a>
+            </h3>
+            <p class="text-ink-faint text-sm leading-relaxed mb-4 line-clamp-3">
+              Our latest Gyannodaya centers are bringing quality education to children in remote hill villages, combining modern pedagogy with Swami Vivekananda's vision of character-building.
+            </p>
+            <a href="/our-work/education" class="link-more text-sm">Read more</a>
+          </div>
+        </article>
+
+        <article class="card group">
+          <div class="relative overflow-hidden">
+            <img
+              src="/images/sports/275cd986-31c3-46ba-81a1-947f509f28c5.jpg"
+              alt="Sports initiative"
+              class="w-full aspect-4/3 object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+              loading="lazy"
+            />
+            <span class="badge badge-sports absolute top-3 right-3">Sports</span>
+          </div>
+          <div class="p-5">
+            <h3 class="font-display text-lg font-semibold text-ink mb-2 leading-snug">
+              <a href="/our-work/sports" class="hover:text-saffron transition-colors">
+                Young Athletes Shine at State-Level Championships
+              </a>
+            </h3>
+            <p class="text-ink-faint text-sm leading-relaxed mb-4 line-clamp-3">
+              Twelve athletes from our training camps represented their districts in athletics, kabaddi, and wrestling, continuing the tradition of physical excellence and discipline.
+            </p>
+            <a href="/our-work/sports" class="link-more text-sm">Read more</a>
+          </div>
+        </article>
+
+        <article class="card group">
+          <div class="relative overflow-hidden">
+            <img
+              src="/images/nation-building/cba21d87-8102-4556-9239-f1b6a9f25ef3.jpg"
+              alt="Cultural event"
+              class="w-full aspect-4/3 object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+              loading="lazy"
+            />
+            <span class="badge badge-culture absolute top-3 right-3">Culture &amp; Art</span>
+          </div>
+          <div class="p-5">
+            <h3 class="font-display text-lg font-semibold text-ink mb-2 leading-snug">
+              <a href="/our-work/culture-art" class="hover:text-saffron transition-colors">
+                Preserving Folk Arts Through Community Workshops
+              </a>
+            </h3>
+            <p class="text-ink-faint text-sm leading-relaxed mb-4 line-clamp-3">
+              Our cultural preservation program is documenting and reviving traditional art forms, connecting younger generations with their heritage through hands-on workshops.
+            </p>
+            <a href="/our-work/culture-art" class="link-more text-sm">Read more</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Impact Stories — Asymmetric grid (Tata Trusts "Impact Stories" section) -->
+  <section class="section bg-navy-deep text-white">
+    <div class="shell">
+      <div class="flex items-end justify-between mb-10" data-animate="fade-up">
+        <div>
+          <span class="kicker block mb-2">Impact Stories</span>
+          <h2 class="text-2xl md:text-3xl font-display font-semibold text-white">
+            Stories of Change
+          </h2>
+        </div>
+        <a href="/impact" class="text-sm font-semibold text-white/60 hover:text-white border-b border-white/40 pb-0.5 transition-colors hidden md:inline">
+          View all stories
+        </a>
+      </div>
+
+      <!-- Asymmetric layout like Tata Trusts Impact Stories -->
+      <div class="grid md:grid-cols-3 gap-5" data-animate="stagger">
+        <!-- Large featured story -->
+        <div class="md:col-span-2 relative group overflow-hidden">
+          <img
+            src="/images/education/8640a895-9dee-44f2-be2a-614351170c6e.jpg"
+            alt="Rural education impact"
+            class="w-full h-full min-h-[380px] object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+            loading="lazy"
+          />
+          <div class="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent"></div>
+          <span class="badge badge-education absolute top-4 right-4">Education</span>
+          <div class="absolute bottom-0 left-0 right-0 p-6">
+            <h3 class="font-display text-xl md:text-2xl font-semibold text-white mb-2 leading-snug">
+              Seeds of Knowledge: How One Village Transformed Its Future
+            </h3>
+            <p class="text-white/70 text-sm leading-relaxed mb-3 max-w-lg">
+              In a small village in Madhya Pradesh, a single learning center sparked a movement. Today, 300 children attend school daily.
+            </p>
+            <a href="/impact" class="text-sm font-semibold text-white border-b border-white/50 pb-0.5 hover:border-white transition-colors">
+              Read more
+            </a>
+          </div>
+        </div>
+
+        <!-- Side story -->
+        <div class="relative group overflow-hidden">
+          <img
+            src="/images/sports/c7fc56bb-f819-407a-9352-3c92c5eec0e8.jpg"
+            alt="Sports impact"
+            class="w-full h-full min-h-[380px] object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+            loading="lazy"
+          />
+          <div class="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent"></div>
+          <span class="badge badge-sports absolute top-4 right-4">Sports</span>
+          <div class="absolute bottom-0 left-0 right-0 p-5">
+            <h3 class="font-display text-lg font-semibold text-white mb-2 leading-snug">
+              From Village Ground to National Stage
+            </h3>
+            <p class="text-white/70 text-sm leading-relaxed mb-3">
+              Young athletes from our rural sports program are now competing at the national level.
+            </p>
+            <a href="/impact" class="text-sm font-semibold text-white border-b border-white/50 pb-0.5 hover:border-white transition-colors">
+              Read more
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom row — 3 smaller stories -->
+      <div class="grid md:grid-cols-3 gap-5 mt-5" data-animate="stagger">
+        <div class="relative group overflow-hidden">
+          <img
+            src="/images/nation-building/cba21d87-8102-4556-9239-f1b6a9f25ef3.jpg"
+            alt="Cultural heritage"
+            class="w-full aspect-4/3 object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+            loading="lazy"
+          />
+          <div class="absolute inset-0 bg-linear-to-t from-black/70 to-transparent"></div>
+          <span class="badge badge-culture absolute top-3 right-3">Culture</span>
+          <div class="absolute bottom-0 left-0 right-0 p-4">
+            <h3 class="font-display text-base font-semibold text-white leading-snug">
+              Reviving Traditional Arts in Rural Communities
+            </h3>
+          </div>
+        </div>
+
+        <div class="relative group overflow-hidden">
+          <img
+            src="/images/environment/4c074d9e-1f52-4df5-98ee-74ed6083020f.jpg"
+            alt="Environment initiative"
+            class="w-full aspect-4/3 object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+            loading="lazy"
+          />
+          <div class="absolute inset-0 bg-linear-to-t from-black/70 to-transparent"></div>
+          <span class="badge badge-environment absolute top-3 right-3">Environment</span>
+          <div class="absolute bottom-0 left-0 right-0 p-4">
+            <h3 class="font-display text-base font-semibold text-white leading-snug">
+              Clean Water, Clean Future: Village Sanitation Drive
+            </h3>
+          </div>
+        </div>
+
+        <div class="relative group overflow-hidden">
+          <img
+            src="/images/social-work/241dc954-3df6-4d7e-a65e-20eccbb2d488.jpg"
+            alt="Social initiative"
+            class="w-full aspect-4/3 object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+            loading="lazy"
+          />
+          <div class="absolute inset-0 bg-linear-to-t from-black/70 to-transparent"></div>
+          <span class="badge badge-social absolute top-3 right-3">Social</span>
+          <div class="absolute bottom-0 left-0 right-0 p-4">
+            <h3 class="font-display text-base font-semibold text-white leading-snug">
+              Empowering Women Through Self-Help Groups
+            </h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Areas of Work — Seven Pillars Grid -->
+  <section class="section bg-white">
+    <div class="shell">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10" data-animate="fade-up">
+        <div>
+          <span class="kicker block mb-2">Our Work</span>
+          <h2 class="text-2xl md:text-3xl font-display font-semibold text-ink">
+            Seven Pillars of Impact
+          </h2>
+        </div>
+        <p class="text-ink-faint text-sm max-w-md">
+          Structured programs across Education, Social Care, Sports, Environment, Nation Building, Culture, and Spirituality.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" data-animate="stagger" data-stagger-delay="0.1">
         {PROGRAMS.map((program) => (
           <ProgramCard program={program} />
         ))}
@@ -76,148 +273,145 @@ const DONATION_IMPACT = [
     </div>
   </section>
 
-  <!-- Founder Quote -->
-  <QuoteBlock
-    quote={SITE_INFO.founder.quote}
-    author={SITE_INFO.founder.name}
-    role={`${SITE_INFO.founder.role}, ${SITE_INFO.name}`}
-    variant="centered"
-  />
+  <!-- Swami Vivekananda Philosophy -->
+  <PhilosophyBlock />
 
-  <!-- Field Video Section -->
-  <section class="section bg-paper">
-    <div class="shell grid lg:grid-cols-2 gap-14 items-center">
-      <div>
-        <p class="kicker mb-5">In the Field</p>
-        <h2 class="text-[2.2rem] md:text-[3rem] mb-6 font-display">See the change unfold</h2>
-        <p class="text-ink-soft text-lg mb-8 leading-relaxed">
-          A moment from our community outreach — food and care reaching families
-          during our festivals of giving.
+  <!-- Field Video & Impact Section -->
+  <section class="section bg-white border-t border-line">
+    <div class="shell grid lg:grid-cols-2 gap-12 items-center">
+      <div data-animate="slide-right">
+        <span class="kicker block mb-3">In the Field</span>
+        <h2 class="text-2xl md:text-3xl font-display font-semibold text-ink mb-5">
+          See the Change Unfold
+        </h2>
+        <p class="text-ink-faint text-base leading-relaxed mb-6">
+          Moments from our rural learning centers, athletic training camps, and community healthcare drives. Every act of giving turns into lasting transformation.
         </p>
-        <a href="/our-work" class="link-arrow">Explore Our Work</a>
+        <a href="/impact" class="btn btn-primary">
+          Read Impact Stories
+        </a>
       </div>
-      <video
-        class="w-full aspect-video object-cover"
-        src="https://videos.pexels.com/video-files/12483187/12483187-hd_1920_1080_25fps.mp4"
-        poster="https://images.pexels.com/videos/12483187/pexels-photo-12483187.jpeg?auto=compress&cs=tinysrgb&w=1200"
-        autoplay
-        muted
-        loop
-        playsinline
-        preload="metadata"
-      ></video>
+      <div class="overflow-hidden border border-line aspect-video" data-animate="slide-left">
+        <video
+          class="w-full h-full object-cover"
+          src="https://videos.pexels.com/video-files/12483187/12483187-hd_1920_1080_25fps.mp4"
+          poster="https://images.pexels.com/videos/12483187/pexels-photo-12483187.jpeg?auto=compress&cs=tinysrgb&w=1200"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="metadata"
+        ></video>
+      </div>
     </div>
   </section>
 
-  <!-- Stories of Change Grid -->
-  <section class="section bg-mist">
+  <!-- Ground Action Gallery — High visual impact using real field photos -->
+  <section class="section bg-mist border-t border-b border-line">
     <div class="shell">
-      <div class="flex items-end justify-between gap-6 mb-16">
-        <p class="kicker mb-4 md:mb-0">Stories of Change</p>
-        <a href="/blog" class="link-arrow hidden md:inline-flex">All stories</a>
-      </div>
-
-      <div class="grid md:grid-cols-3 gap-10">
-        {STORIES.map((story) => (
-          <StoryCard story={story} />
-        ))}
-      </div>
-
-      <a href="/blog" class="link-arrow mt-12 md:hidden">All stories</a>
-    </div>
-  </section>
-
-  <!-- Latest Supporters -->
-  <section class="section bg-mist border-t border-line/60">
-    <div class="shell">
-      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
-        <p class="kicker mb-4 md:mb-0">Latest Supporters</p>
-        <a href="/get-involved/donate" class="link-arrow">Join them</a>
-      </div>
-
-      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-x-8 gap-y-10 items-start">
-        {SUPPORTERS.map((s) => (
-          <figure class="text-center">
-            <div class="w-14 h-14 bg-pine text-paper flex items-center justify-center font-display text-sm tracking-widest mx-auto mb-4">
-              {s.initials}
-            </div>
-            <figcaption>
-              <p class="font-semibold text-sm leading-tight">{s.name}</p>
-              <p class="text-ink-faint text-xs mt-1">{s.place}</p>
-              <p class="text-saffron font-display text-sm mt-2">₹{s.amount}</p>
-            </figcaption>
-          </figure>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- Financial Transparency & Impact Breakdown -->
-  <section class="section">
-    <div class="shell grid lg:grid-cols-2 gap-16">
-      <div>
-        <p class="kicker mb-6">Transparency</p>
-        <h2 class="text-[2.2rem] md:text-[3rem] mb-6 font-display">Where your donation goes</h2>
-        <p class="text-ink-soft text-lg mb-10 leading-relaxed">
-          We publish annual accounts and every rupee is tracked to a program. No exceptions.
-        </p>
-        <a href="/impact" class="link-arrow">View annual reports</a>
-      </div>
-
-      <div class="flex flex-col justify-center">
-        <div class="mb-7">
-          <div class="flex justify-between items-baseline mb-2">
-            <span class="font-semibold text-sm">Programs &amp; Beneficiaries</span>
-            <span class="font-display text-2xl text-pine">90%</span>
-          </div>
-          <div class="h-1 bg-mist rounded-full overflow-hidden">
-            <div class="h-full bg-pine" style="width: 90%"></div>
-          </div>
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4" data-animate="fade-up">
+        <div>
+          <span class="kicker block mb-2">Ground Action</span>
+          <h2 class="text-2xl md:text-3xl font-display font-semibold text-ink">
+            Glimpses of Our Field Operations
+          </h2>
         </div>
-        <div class="mb-7">
-          <div class="flex justify-between items-baseline mb-2">
-            <span class="font-semibold text-sm">Administration</span>
-            <span class="font-display text-2xl text-saffron">7%</span>
-          </div>
-          <div class="h-1 bg-mist rounded-full overflow-hidden">
-            <div class="h-full bg-saffron" style="width: 7%"></div>
-          </div>
-        </div>
-        <div class="mb-7">
-          <div class="flex justify-between items-baseline mb-2">
-            <span class="font-semibold text-sm">Fundraising</span>
-            <span class="font-display text-2xl text-ember">3%</span>
-          </div>
-          <div class="h-1 bg-mist rounded-full overflow-hidden">
-            <div class="h-full bg-ember" style="width: 3%"></div>
+        <a href="/media" class="link-more text-sm hidden md:inline-flex">Explore Full Photo Gallery</a>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4" data-animate="stagger" data-stagger-delay="0.08">
+        <div class="group relative overflow-hidden aspect-square border border-line bg-white">
+          <img
+            src="/images/nation-building/2f5a282e-db2a-485a-b5a0-a61f978d5d9b.jpg"
+            alt="Youth Movement"
+            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            loading="lazy"
+          />
+          <div class="absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-3 flex items-end">
+            <span class="text-xs font-semibold text-white">Youth Rally &amp; Unity</span>
           </div>
         </div>
 
-        <div class="grid grid-cols-2 gap-8 mt-4">
-          {DONATION_IMPACT.map((item) => (
-            <div class="border-t border-line pt-5">
-              <p class="font-display text-2xl mb-1">{item.amount}</p>
-              <p class="text-sm text-ink-soft">{item.text}</p>
-            </div>
-          ))}
+        <div class="group relative overflow-hidden aspect-square border border-line bg-white">
+          <img
+            src="/images/sports/61b6dcec-edfd-4ef7-8ed0-dbef3a3b8b92.jpg"
+            alt="Athletic Training"
+            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            loading="lazy"
+          />
+          <div class="absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-3 flex items-end">
+            <span class="text-xs font-semibold text-white">Sports Excellence</span>
+          </div>
+        </div>
+
+        <div class="group relative overflow-hidden aspect-square border border-line bg-white">
+          <img
+            src="/images/education/5ccd5329-8fd1-4209-9bd4-2d16a9999ab5.jpg"
+            alt="Classroom Session"
+            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            loading="lazy"
+          />
+          <div class="absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-3 flex items-end">
+            <span class="text-xs font-semibold text-white">Digital Classroom</span>
+          </div>
+        </div>
+
+        <div class="group relative overflow-hidden aspect-square border border-line bg-white">
+          <img
+            src="/images/social-work/dfb2f186-8278-4d63-b63c-b20e47b7e567.jpg"
+            alt="Community Relief"
+            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            loading="lazy"
+          />
+          <div class="absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-3 flex items-end">
+            <span class="text-xs font-semibold text-white">Community Care</span>
+          </div>
+        </div>
+
+        <div class="group relative overflow-hidden aspect-square border border-line bg-white">
+          <img
+            src="/images/nation-building/bf3fa072-02d1-4922-bf52-0261e4a4ca8f.jpg"
+            alt="Cultural Heritage"
+            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            loading="lazy"
+          />
+          <div class="absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-3 flex items-end">
+            <span class="text-xs font-semibold text-white">Heritage &amp; Culture</span>
+          </div>
+        </div>
+
+        <div class="group relative overflow-hidden aspect-square border border-line bg-white">
+          <img
+            src="/images/environment/5f7e0efe-a451-4414-aee6-7bd54a2ec712.jpg"
+            alt="Cleanliness Drive"
+            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            loading="lazy"
+          />
+          <div class="absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-3 flex items-end">
+            <span class="text-xs font-semibold text-white">Eco Drive</span>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Final Call to Action -->
-  <section class="bg-pine-deep text-paper">
-    <div class="shell section text-center">
-      <p class="font-display text-[2.2rem] md:text-[3.4rem] tracking-tight leading-[1.15] max-w-4xl mx-auto">
-        A small act, a lifetime of change.
+
+  <!-- Final CTA — Clean, simple -->
+  <section class="bg-navy-deep text-white py-20 text-center">
+    <div class="shell max-w-2xl mx-auto">
+      <h2 class="text-2xl md:text-4xl font-display font-semibold mb-5" data-animate="fade-up">
+        A Small Act, A Lifetime of Change.
+      </h2>
+      <p class="text-white/60 text-base leading-relaxed mb-8" data-animate="fade-up" data-delay="0.15">
+        Donate, volunteer, or partner with us. Every contribution directly funds our 7 pillars of work.
       </p>
-      <p class="text-paper/65 max-w-xl mx-auto mt-6 mb-12 text-lg leading-relaxed">
-        Donate, volunteer, or simply share our work. However you choose to help, you make the difference real.
-      </p>
-      <div class="flex flex-wrap justify-center gap-6">
-        <a href="/get-involved/donate" class="btn btn-accent">Donate Now</a>
-        <a href="/get-involved/volunteer" class="btn btn-light">Become a Volunteer</a>
-        <a href="/get-involved/partner" class="link-arrow link-arrow-light mt-4">Partner With Us</a>
+      <div class="flex flex-wrap justify-center gap-3" data-animate="fade-up" data-delay="0.3">
+        <a href="/get-involved/donate" class="btn btn-primary">
+          Donate Now
+        </a>
+        <a href="/contact" class="btn btn-outline">
+          Contact Us
+        </a>
       </div>
     </div>
   </section>

@@ -1,131 +1,272 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
-import { SITE_INFO } from '../../data/siteData';
 import { PROGRAMS } from '../../data/programsData';
 
-const program = PROGRAMS.find(p => p.id === 'education') || PROGRAMS[0];
+const program = PROGRAMS.find(p => p.id === 'education')!;
 
-const OFFERS = [
-  {
-    title: "Digital Literacy Centers",
-    desc: "Community computer hubs providing free digital skills training — from basic computer use to internet safety and online services.",
-    icon: "M2 4h20v13H2z M8 21h8 M12 17v4"
-  },
-  {
-    title: "Scholarship Programs",
-    desc: "Financial support covering school fees, books, and supplies for talented students from underprivileged backgrounds.",
-    icon: "M12 3l2.7 5.5 6.1.9-4.4 4.3 1 6.1-5.4-2.9-5.4 2.9 1-6.1L3.2 9.4l6.1-.9L12 3z"
-  },
-  {
-    title: "After-School Tutoring",
-    desc: "Extra academic support and homework help to keep children in school and performing at their best.",
-    icon: "M12 7v10M7 12h10 M12 3a9 9 0 100 18 9 9 0 000-18z"
-  },
-  {
-    title: "Computer Training for Youth",
-    desc: "Job-ready digital skills for young people: office software, online communication, and e-commerce basics.",
-    icon: "M6 2h12v20H6z M11 18h2"
-  }
+const educationGallery = [
+  { src: "/images/education/62d11f3a-0d11-4f51-8e94-093d8ea4fcb3.jpg", title: "Interactive Gyannodaya Classroom", desc: "A teacher and students sharing knowledge in an atmosphere of mutual participation." },
+  { src: "/images/education/8640a895-9dee-44f2-be2a-614351170c6e.jpg", title: "Community Learning Center", desc: "Providing a supportive environment for children in underserved hill and rural villages." },
+  { src: "/images/education/3d1c3775-4b8c-4c1f-a88e-e5856c6c8f9d.jpg", title: "Learning With Joy", desc: "Combining academics with storytelling, creative expression, and practical experiences." },
+  { src: "/images/education/5ccd5329-8fd1-4209-9bd4-2d16a9999ab5.jpg", title: "Books & Digital Support", desc: "Distributing educational resources and fostering a habit of regular self-improvement." },
+  { src: "/images/education/d4498011-1a6c-425d-b04a-33452c784635.jpg", title: "Mentorship & Guidance", desc: "Helping students build confidence to express ideas and overcome academic hurdles." },
+  { src: "/images/education/ea70810c-ddaa-42d8-80d7-ff1129aa1246.jpg", title: "Youth Empowerment", desc: "Preparing young minds for higher education, ethical leadership, and community service." }
 ];
 ---
 
-<BaseLayout title={program.title} description={`${program.title} by ${SITE_INFO.name}`}>
-  <!-- Page Hero -->
+<BaseLayout title="Education — SARVAGUN Gyannodaya Trust" description="Empowering children through character-building education, digital literacy, and holistic mentorship.">
   <PageHero
-    kicker={`Program ${program.number}`}
-    title={program.title}
-    description={program.tagline}
-    breadcrumbs={[
-      { label: "Our Work", href: "/our-work" },
-      { label: program.title }
-    ]}
-  >
-    <div class="mt-8 flex flex-wrap gap-4">
-      <a href="/get-involved/donate" class="btn btn-primary">Support This Program</a>
-      <a href="/get-involved/volunteer" class="btn btn-ghost">Volunteer</a>
-    </div>
-  </PageHero>
+    kicker="Focus Area 01"
+    title="Education & Human Awakening"
+    description="Education is not merely filling the mind with information; it is the manifestation of the perfection and potential already within every child."
+  />
 
-  <!-- Overview Section -->
-  <section class="section bg-paper">
-    <div class="shell grid lg:grid-cols-2 gap-14 items-center">
-      <div>
-        <p class="kicker mb-4">Inside the Program</p>
-        <h2 class="text-3xl md:text-5xl text-ink mb-6 font-display">What we offer</h2>
-        <p class="text-ink-soft leading-relaxed mb-6">{program.fullDescription}</p>
-        <ul class="space-y-3 mb-8">
-          {program.highlights?.map((highlight) => (
-            <li class="flex items-start gap-3">
-              <svg class="w-5 h-5 text-saffron mt-0.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-              </svg>
-              <span class="text-ink-soft">{highlight}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
-      <div class="overflow-hidden aspect-[4/3] border border-line">
-        <img
-          src="https://images.pexels.com/photos/6217466/pexels-photo-6217466.jpeg?auto=compress&cs=tinysrgb&w=1200"
-          alt="Children using a computer together"
-          loading="lazy"
-          class="w-full h-full object-cover"
-        />
-      </div>
-    </div>
-  </section>
+  <!-- Motto Banner -->
+  <div class="bg-amber-950 text-amber-100 py-4 px-6 border-b border-amber-900/40 text-center">
+    <p class="font-display text-base md:text-lg tracking-wide font-medium">
+      ज्ञान से जागृति • जागृति से चरित्र • चरित्र से समाज निर्माण
+    </p>
+  </div>
 
-  <!-- Offerings Grid -->
-  <section class="section bg-mist">
-    <div class="shell">
-      <div class="grid md:grid-cols-2 gap-7">
-        {OFFERS.map((item) => (
-          <div class="card p-8 border border-line">
-            <div class="w-12 h-12 bg-pine/10 flex items-center justify-center mb-5 text-pine">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d={item.icon} />
-              </svg>
-            </div>
-            <h3 class="font-display text-xl mb-3">{item.title}</h3>
-            <p class="text-ink-soft text-sm leading-relaxed">{item.desc}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
+  <div class="bg-mist py-10 md:py-14">
+    <div class="shell max-w-5xl mx-auto space-y-8 md:space-y-10">
 
-  <!-- Video Demonstration -->
-  <section class="section bg-paper">
-    <div class="shell">
-      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
-        <div>
-          <p class="kicker mb-4">In the Classroom</p>
-          <h2 class="text-3xl md:text-5xl text-ink font-display">Watch it happen</h2>
+      <!-- Section 1: Our Educational Journey -->
+      <section class="grid lg:grid-cols-12 gap-10 items-center bg-white border border-line p-8 md:p-12" data-animate="fade-up">
+        <div class="lg:col-span-7 space-y-5">
+          <span class="text-xs font-bold uppercase tracking-[0.2em] text-saffron-deep">Our Educational Journey</span>
+          <h2 class="text-2xl md:text-3xl font-display font-semibold text-ink leading-tight">
+            Awakening Potential, Building Character
+          </h2>
+          <p class="text-ink-soft text-base leading-relaxed">
+            Education has always been one of the core pillars of our work at <strong>SARVAGUN Gyannodaya Trust</strong>. We believe that every child deserves an opportunity to learn, grow, and discover their own potential, regardless of their social or economic background.
+          </p>
+          <p class="text-ink-soft text-base leading-relaxed">
+            Our educational initiatives are inspired by the life and teachings of Swami Vivekananda, who considered education a powerful means of developing strength, character, confidence, and self-reliance. For us, education is not limited to books and examinations—it is a continuous process of developing the mind, character, and sense of social responsibility.
+          </p>
+          <p class="text-ink-soft text-base leading-relaxed">
+            We strive to create a learning environment where children can learn with curiosity, ask questions without hesitation, participate freely, and develop confidence in themselves.
+          </p>
         </div>
-        <p class="text-ink-soft text-lg max-w-md">Students doing their schoolwork at one of our learning centers.</p>
-      </div>
-      <video
-        class="w-full aspect-video object-cover"
-        src="https://videos.pexels.com/video-files/5200020/5200020-hd_1920_1080_25fps.mp4"
-        poster="https://images.pexels.com/videos/5200020/pexels-photo-5200020.jpeg?auto=compress&cs=tinysrgb&w=1600"
-        autoplay
-        muted
-        loop
-        playsinline
-        preload="metadata"
-      ></video>
-    </div>
-  </section>
+        <div class="lg:col-span-5 relative group overflow-hidden border border-line bg-mist">
+          <img
+            src={educationGallery[0].src}
+            alt={educationGallery[0].title}
+            class="w-full aspect-4/3 object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+            loading="eager"
+          />
+          <div class="p-3 bg-stone-50 border-t border-line text-xs text-ink-faint font-medium">
+            📸 {educationGallery[0].title}: {educationGallery[0].desc}
+          </div>
+        </div>
+      </section>
 
-  <!-- CTA Section -->
-  <section class="section bg-pine-deep text-center text-paper">
-    <div class="shell max-w-2xl">
-      <h2 class="text-3xl md:text-4xl mb-4 font-display">Help a Child Learn Today</h2>
-      <p class="text-paper/75 mb-8 leading-relaxed">
-        Just ₹500 supports a child's school supplies for a month. Together, we can open doors to a brighter future.
-      </p>
-      <a href="/get-involved/donate" class="btn btn-accent">Donate Now</a>
+      <!-- Section 2: Inspired by Swami Vivekananda & The 5-Step Progression -->
+      <section class="bg-white border border-line p-8 md:p-12 text-center" data-animate="fade-up">
+        <span class="text-xs font-bold uppercase tracking-[0.2em] text-saffron-deep block mb-3">Guiding Philosophy</span>
+        <h2 class="text-2xl md:text-3xl font-display font-semibold text-ink mb-4">
+          Inspired by Swami Vivekananda
+        </h2>
+        <p class="text-ink-soft text-base leading-relaxed max-w-3xl mx-auto mb-8">
+          Swami Vivekananda's vision of education continues to inspire our work. He emphasized that education should not merely fill the mind with information; it should help bring out the inherent abilities that already exist within a person.
+        </p>
+
+        <!-- 5-Step Flow Strip -->
+        <div class="bg-amber-950 text-white p-6 border border-amber-900/30 max-w-4xl mx-auto mb-8">
+          <p class="text-xs font-semibold uppercase tracking-widest text-amber-400 mb-3">The Path of Educational Transformation</p>
+          <div class="flex flex-wrap items-center justify-center gap-2 md:gap-4 text-sm md:text-base font-display font-semibold">
+            <span class="bg-amber-900/60 px-3 py-1 border border-amber-700/40">Knowledge</span>
+            <span class="text-amber-400">→</span>
+            <span class="bg-amber-900/60 px-3 py-1 border border-amber-700/40">Character</span>
+            <span class="text-amber-400">→</span>
+            <span class="bg-amber-900/60 px-3 py-1 border border-amber-700/40">Confidence</span>
+            <span class="text-amber-400">→</span>
+            <span class="bg-amber-900/60 px-3 py-1 border border-amber-700/40">Responsibility</span>
+            <span class="text-amber-400">→</span>
+            <span class="bg-amber-900/60 px-3 py-1 border border-amber-700/40 text-amber-200">Service</span>
+          </div>
+        </div>
+
+        <p class="text-ink-faint text-sm max-w-2xl mx-auto italic">
+          &ldquo;We want that education by which character is formed, strength of mind is increased, the intellect is expanded, and by which one can stand on one's own feet.&rdquo; — Swami Vivekananda
+        </p>
+      </section>
+
+      <!-- Section 3: Education Beyond the Classroom & Learning With Joy -->
+      <section class="grid lg:grid-cols-2 gap-10" data-animate="stagger">
+        <!-- Left: Education Beyond Classroom -->
+        <div class="bg-white border border-line p-8 space-y-4">
+          <span class="text-xs font-bold uppercase tracking-[0.2em] text-saffron-deep block">Holistic Growth</span>
+          <h3 class="text-xl md:text-2xl font-display font-semibold text-ink">Education Beyond the Classroom</h3>
+          <p class="text-ink-soft text-sm leading-relaxed">
+            We believe meaningful education goes beyond academic achievement. A child needs knowledge, but also values, discipline, communication skills, physical development, and the confidence to face life.
+          </p>
+          <p class="text-ink-soft text-sm leading-relaxed">
+            Academic support is complemented by sports, creative expression, discussions, value-based learning, and social awareness. Our objective is simple: to help children become better learners, stronger individuals, and responsible members of society.
+          </p>
+          <div class="relative overflow-hidden border border-line mt-4">
+            <img src={educationGallery[2].src} alt={educationGallery[2].title} class="w-full aspect-16/9 object-cover" />
+            <div class="p-2.5 bg-stone-50 text-xs text-ink-faint">📸 {educationGallery[2].title}</div>
+          </div>
+        </div>
+
+        <!-- Right: Creating Opportunities to Learn -->
+        <div class="bg-white border border-line p-8 space-y-4">
+          <span class="text-xs font-bold uppercase tracking-[0.2em] text-saffron-deep block">Inclusive Reach</span>
+          <h3 class="text-xl md:text-2xl font-display font-semibold text-ink">Creating Opportunities to Learn</h3>
+          <p class="text-ink-soft text-sm leading-relaxed">
+            Our educational work focuses particularly on children who may have limited access to additional educational resources. We provide a supportive environment where students receive guidance, improve basic concepts, and build positive study habits.
+          </p>
+          <p class="text-ink-soft text-sm leading-relaxed">
+            We create a space where every child feels heard, respected, and encouraged. The photographs from our educational activities reflect this spirit—teachers and students learning together in an atmosphere of joy.
+          </p>
+          <div class="relative overflow-hidden border border-line mt-4">
+            <img src={educationGallery[1].src} alt={educationGallery[1].title} class="w-full aspect-16/9 object-cover" />
+            <div class="p-2.5 bg-stone-50 text-xs text-ink-faint">📸 {educationGallery[1].title}</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 4: Our Approach — 4 Pillars Grid -->
+      <section class="bg-white border border-line p-8 md:p-12" data-animate="fade-up">
+        <div class="text-center max-w-2xl mx-auto mb-10">
+          <span class="text-xs font-bold uppercase tracking-[0.2em] text-saffron-deep block mb-2">Our Approach</span>
+          <h2 class="text-2xl md:text-3xl font-display font-semibold text-ink mb-3">
+            We Teach. We Encourage. We Guide. We Inspire.
+          </h2>
+          <p class="text-ink-faint text-sm leading-relaxed">
+            Our role is not only to complete a syllabus. We try to understand each learner and encourage them to progress step by step, valuing effort, consistency, and character over mere marks.
+          </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="border border-line p-6 bg-mist hover:border-amber-700/40 transition-colors">
+            <div class="text-saffron-deep font-bold text-lg mb-2">01. We Teach</div>
+            <p class="text-ink-soft text-xs leading-relaxed">
+              Strengthening core academic concepts, foundational literacy, and digital skills through clear, patient explanation.
+            </p>
+          </div>
+          <div class="border border-line p-6 bg-mist hover:border-amber-700/40 transition-colors">
+            <div class="text-saffron-deep font-bold text-lg mb-2">02. We Encourage</div>
+            <p class="text-ink-soft text-xs leading-relaxed">
+              Transforming hesitant, shy children into confident speakers who express ideas without fear of judgment.
+            </p>
+          </div>
+          <div class="border border-line p-6 bg-mist hover:border-amber-700/40 transition-colors">
+            <div class="text-saffron-deep font-bold text-lg mb-2">03. We Guide</div>
+            <p class="text-ink-soft text-xs leading-relaxed">
+              Providing personalized mentorship for students who struggle with specific subjects or life decisions.
+            </p>
+          </div>
+          <div class="border border-line p-6 bg-mist hover:border-amber-700/40 transition-colors">
+            <div class="text-saffron-deep font-bold text-lg mb-2">04. We Inspire</div>
+            <p class="text-ink-soft text-xs leading-relaxed">
+              Instilling ethical values, civic responsibility, and the spirit of selfless service to family and society.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 5: Books, Materials & From Education to Empowerment -->
+      <section class="grid lg:grid-cols-12 gap-10 items-center bg-white border border-line p-8 md:p-12" data-animate="fade-up">
+        <div class="lg:col-span-5 relative group overflow-hidden border border-line bg-mist">
+          <img
+            src={educationGallery[3].src}
+            alt={educationGallery[3].title}
+            class="w-full aspect-4/3 object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+          />
+          <div class="p-3 bg-stone-50 border-t border-line text-xs text-ink-faint font-medium">
+            📸 {educationGallery[3].title}: {educationGallery[3].desc}
+          </div>
+        </div>
+        <div class="lg:col-span-7 space-y-5">
+          <span class="text-xs font-bold uppercase tracking-[0.2em] text-saffron-deep">Empowerment Journey</span>
+          <h2 class="text-2xl md:text-3xl font-display font-semibold text-ink leading-tight">
+            From Education to Empowerment
+          </h2>
+          <p class="text-ink-soft text-sm leading-relaxed">
+            Educational resources make a significant difference. Wherever possible, we support children by providing learning materials and encouraging the regular habit of reading and continuous self-improvement.
+          </p>
+
+          <div class="grid sm:grid-cols-2 gap-4 pt-2">
+            <div class="p-4 border-l-2 border-amber-800 bg-amber-50/50">
+              <span class="font-bold text-ink text-sm block">1. Access Knowledge</span>
+              <p class="text-xs text-ink-faint mt-1">A child who learns to read can unlock vast worlds of wisdom.</p>
+            </div>
+            <div class="p-4 border-l-2 border-amber-800 bg-amber-50/50">
+              <span class="font-bold text-ink text-sm block">2. Express Ideas</span>
+              <p class="text-xs text-ink-faint mt-1">A child who learns to communicate expresses thoughts with confidence.</p>
+            </div>
+            <div class="p-4 border-l-2 border-amber-800 bg-amber-50/50">
+              <span class="font-bold text-ink text-sm block">3. Face Challenges</span>
+              <p class="text-xs text-ink-faint mt-1">A child with self-confidence navigates life hurdles resiliently.</p>
+            </div>
+            <div class="p-4 border-l-2 border-amber-800 bg-amber-50/50">
+              <span class="font-bold text-ink text-sm block">4. Contribute to Society</span>
+              <p class="text-xs text-ink-faint mt-1">A child with strong values becomes a pillar for community welfare.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 6: Photo Gallery Grid -->
+      <section data-animate="fade-up">
+        <div class="flex items-end justify-between mb-8">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-[0.2em] text-saffron-deep block mb-1">Field Documentation</span>
+            <h2 class="text-2xl font-display font-semibold text-ink">Glimpses of Gyannodaya Centers</h2>
+          </div>
+        </div>
+        <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6" data-animate="stagger">
+          {educationGallery.map((img) => (
+            <div class="bg-white border border-line overflow-hidden group hover:border-amber-700/40 transition-colors">
+              <div class="relative overflow-hidden aspect-4/3 bg-mist">
+                <img
+                  src={img.src}
+                  alt={img.title}
+                  class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                  loading="lazy"
+                />
+              </div>
+              <div class="p-4">
+                <h4 class="font-display font-semibold text-sm text-ink mb-1">{img.title}</h4>
+                <p class="text-ink-faint text-xs leading-relaxed">{img.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Section 7: Vision for Future & Final Closing Quote -->
+      <section class="bg-white border border-line p-8 md:p-12 text-center" data-animate="fade-up">
+        <span class="text-xs font-bold uppercase tracking-[0.2em] text-saffron-deep block mb-3">Our Future Horizon</span>
+        <h2 class="text-2xl md:text-3xl font-display font-semibold text-ink mb-4">
+          A Small Beginning, A Larger Purpose
+        </h2>
+        <p class="text-ink-soft text-base leading-relaxed max-w-3xl mx-auto mb-6">
+          Every educational session may appear small—a few children, a teacher, some books, and a few hours of learning. But meaningful change begins with such sincere efforts. When we help one child learn, we are contributing to a more aware, capable, and responsible society.
+        </p>
+
+        <div class="my-10 p-8 bg-amber-950 text-amber-100 max-w-3xl mx-auto border border-amber-900/60 shadow-xs">
+          <p class="text-xs font-bold uppercase tracking-widest text-amber-400 mb-3">Our Educational Commitment</p>
+          <blockquote class="font-display italic text-lg md:text-xl leading-relaxed text-white mb-4">
+            &ldquo;Let education awaken the potential within every child, build character, develop confidence and inspire a life of service.&rdquo;
+          </blockquote>
+          <p class="text-sm font-semibold text-amber-300">SARVAGUN Gyannodaya Trust</p>
+          <p class="text-xs text-amber-400/80 mt-1">गुण, ज्ञान और जागृति से समाज निर्माण</p>
+        </div>
+
+        <div class="pt-4 flex flex-wrap justify-center gap-4">
+          <a href="/get-involved/donate" class="btn btn-primary text-sm px-8 py-3.5">
+            Support Education Fund
+          </a>
+          <a href="/get-involved/volunteer" class="btn btn-outline-dark text-sm px-8 py-3.5">
+            Volunteer as a Teacher
+          </a>
+        </div>
+      </section>
+
     </div>
-  </section>
+  </div>
 </BaseLayout>

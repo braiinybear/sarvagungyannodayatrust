@@ -1,0 +1,185 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import { PROGRAMS } from '../../data/programsData';
+
+const program = PROGRAMS.find(p => p.id === 'environment')!;
+
+const envGallery = [
+  { src: "/images/environment/4c074d9e-1f52-4df5-98ee-74ed6083020f.jpg", title: "Tree Plantation Drives", desc: "Planting native trees in rural school campuses, village commons, and eroded hill slopes." },
+  { src: "/images/environment/5f7e0efe-a451-4414-aee6-7bd54a2ec712.jpg", title: "Community Cleanliness & Hygiene", desc: "Organizing plastic cleanup drives and promoting village waste management awareness." },
+  { src: "/images/environment/466d579b-dce5-4be6-b718-5bbcb6e4cd64.jpg", title: "Eco-Education Workshops", desc: "Teaching young students about biodiversity, soil health, and environmental stewardship." },
+  { src: "/images/social-work/31ca7713-addd-4ed3-a864-6bd2ba594034.jpg", title: "Village Sanitation & Water Protection", desc: "Promoting clean water access, pond rejuvenation, and village health sanitation." }
+];
+---
+
+<BaseLayout title="Environment & Sanitation — SARVAGUN Gyannodaya Trust" description="Tree plantation, plastic-free drives, environmental education, and water conservation.">
+  <PageHero
+    kicker="Focus Area 04"
+    title="Environment & Ecological Care"
+    description="Nature is our Mother. Protecting forests, clean water sources, and fostering ecological responsibility for future generations."
+  />
+
+  <!-- Motto Banner -->
+  <div class="bg-amber-950 text-amber-100 py-4 px-6 border-b border-amber-900/40 text-center">
+    <p class="font-display text-base md:text-lg tracking-wide font-medium">
+      प्रकृति ही जीवन • स्वच्छता ही सेवा • वृक्षारोपण से भावी संरक्षण
+    </p>
+  </div>
+
+  <div class="bg-mist py-10 md:py-14">
+    <div class="shell max-w-5xl mx-auto space-y-8 md:space-y-10">
+
+      <!-- Section 1: Our Environmental Mission -->
+      <section class="grid lg:grid-cols-12 gap-10 items-center bg-white border border-line p-8 md:p-12" data-animate="fade-up">
+        <div class="lg:col-span-7 space-y-5">
+          <span class="text-xs font-bold uppercase tracking-[0.2em] text-saffron-deep">Our Eco Vision</span>
+          <h2 class="text-2xl md:text-3xl font-display font-semibold text-ink leading-tight">
+            Harmonizing Human Progress with Nature
+          </h2>
+          <p class="text-ink-soft text-base leading-relaxed">
+            At <strong>SARVAGUN Gyannodaya Trust</strong>, we recognize that true human development is impossible without ecological harmony. Our environmental wing leads grassroots tree plantation drives, plastic cleanup initiatives, and water conservation awareness.
+          </p>
+          <p class="text-ink-soft text-base leading-relaxed">
+            By involving school children, youth clubs, and village elders in planting native fruit and shade trees, we ensure long-term sapling survival and community ownership.
+          </p>
+          <p class="text-ink-soft text-base leading-relaxed">
+            We aim to make every village and school campus greener, cleaner, and ecologically resilient.
+          </p>
+        </div>
+        <div class="lg:col-span-5 relative group overflow-hidden border border-line bg-mist">
+          <img
+            src={envGallery[0].src}
+            alt={envGallery[0].title}
+            class="w-full aspect-4/3 object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+            loading="eager"
+          />
+          <div class="p-3 bg-stone-50 border-t border-line text-xs text-ink-faint font-medium">
+            📸 {envGallery[0].title}: {envGallery[0].desc}
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 2: 5-Step Eco Progression -->
+      <section class="bg-white border border-line p-8 md:p-12 text-center" data-animate="fade-up">
+        <span class="text-xs font-bold uppercase tracking-[0.2em] text-saffron-deep block mb-3">Eco Pathway</span>
+        <h2 class="text-2xl md:text-3xl font-display font-semibold text-ink mb-4">
+          From Awareness to Ecological Balance
+        </h2>
+        <p class="text-ink-soft text-base leading-relaxed max-w-3xl mx-auto mb-8">
+          Protecting our environment requires daily conscious effort, community hygiene, and continuous tree stewardship.
+        </p>
+
+        <!-- 5-Step Flow Strip -->
+        <div class="bg-amber-950 text-white p-6 border border-amber-900/30 max-w-4xl mx-auto mb-8">
+          <p class="text-xs font-semibold uppercase tracking-widest text-amber-400 mb-3">Environmental Stewardship Journey</p>
+          <div class="flex flex-wrap items-center justify-center gap-2 md:gap-4 text-sm md:text-base font-display font-semibold">
+            <span class="bg-amber-900/60 px-3 py-1 border border-amber-700/40">Awareness</span>
+            <span class="text-amber-400">→</span>
+            <span class="bg-amber-900/60 px-3 py-1 border border-amber-700/40">Plantation</span>
+            <span class="text-amber-400">→</span>
+            <span class="bg-amber-900/60 px-3 py-1 border border-amber-700/40">Water Care</span>
+            <span class="text-amber-400">→</span>
+            <span class="bg-amber-900/60 px-3 py-1 border border-amber-700/40">Cleanliness</span>
+            <span class="text-amber-400">→</span>
+            <span class="bg-amber-900/60 px-3 py-1 border border-amber-700/40 text-amber-200">Sustainability</span>
+          </div>
+        </div>
+
+        <p class="text-ink-faint text-sm max-w-2xl mx-auto italic">
+          &ldquo;Nature provides enough to satisfy every man's needs, but not every man's greed.&rdquo;
+        </p>
+      </section>
+
+      <!-- Section 3: Our 4 Eco Pillars -->
+      <section class="bg-white border border-line p-8 md:p-12" data-animate="fade-up">
+        <div class="text-center max-w-2xl mx-auto mb-10">
+          <span class="text-xs font-bold uppercase tracking-[0.2em] text-saffron-deep block mb-2">Eco Pillars</span>
+          <h2 class="text-2xl md:text-3xl font-display font-semibold text-ink mb-3">
+            We Plant. We Clean. We Protect. We Educate.
+          </h2>
+          <p class="text-ink-faint text-sm leading-relaxed">
+            Our volunteers lead hands-on plantation, sanitation drives, and water conservation projects across rural districts.
+          </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="border border-line p-6 bg-mist hover:border-amber-700/40 transition-colors">
+            <div class="text-saffron-deep font-bold text-lg mb-2">01. We Plant</div>
+            <p class="text-ink-soft text-xs leading-relaxed">
+              Sapling distribution and afforestation drives in schools, public commons, and hill regions.
+            </p>
+          </div>
+          <div class="border border-line p-6 bg-mist hover:border-amber-700/40 transition-colors">
+            <div class="text-saffron-deep font-bold text-lg mb-2">02. We Clean</div>
+            <p class="text-ink-soft text-xs leading-relaxed">
+              Community sanitation drives, plastic cleanup campaigns, and village waste segregation guidance.
+            </p>
+          </div>
+          <div class="border border-line p-6 bg-mist hover:border-amber-700/40 transition-colors">
+            <div class="text-saffron-deep font-bold text-lg mb-2">03. We Protect</div>
+            <p class="text-ink-soft text-xs leading-relaxed">
+              Protecting rural water sources, pond rejuvenation efforts, and rainwater harvesting awareness.
+            </p>
+          </div>
+          <div class="border border-line p-6 bg-mist hover:border-amber-700/40 transition-colors">
+            <div class="text-saffron-deep font-bold text-lg mb-2">04. We Educate</div>
+            <p class="text-ink-soft text-xs leading-relaxed">
+              Conducting Eco-Clubs in Gyannodaya centers to train young students as environmental guardians.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 4: Photo Gallery Grid -->
+      <section data-animate="fade-up">
+        <div class="flex items-end justify-between mb-8">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-[0.2em] text-saffron-deep block mb-1">Field Documentation</span>
+            <h2 class="text-2xl font-display font-semibold text-ink">Glimpses of Environmental Work</h2>
+          </div>
+        </div>
+        <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6" data-animate="stagger">
+          {envGallery.map((img) => (
+            <div class="bg-white border border-line overflow-hidden group hover:border-amber-700/40 transition-colors">
+              <div class="relative overflow-hidden aspect-4/3 bg-mist">
+                <img
+                  src={img.src}
+                  alt={img.title}
+                  class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                  loading="lazy"
+                />
+              </div>
+              <div class="p-4">
+                <h4 class="font-display font-semibold text-sm text-ink mb-1">{img.title}</h4>
+                <p class="text-ink-faint text-xs leading-relaxed">{img.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Section 5: Closing Commitment -->
+      <section class="bg-white border border-line p-8 md:p-12 text-center" data-animate="fade-up">
+        <div class="my-6 p-8 bg-amber-950 text-amber-100 max-w-3xl mx-auto border border-amber-900/60 shadow-xs">
+          <p class="text-xs font-bold uppercase tracking-widest text-amber-400 mb-3">Our Ecological Commitment</p>
+          <blockquote class="font-display italic text-lg md:text-xl leading-relaxed text-white mb-4">
+            &ldquo;Planting a tree today is an act of faith and love for the generations that follow.&rdquo;
+          </blockquote>
+          <p class="text-sm font-semibold text-amber-300">SARVAGUN Gyannodaya Trust</p>
+          <p class="text-xs text-amber-400/80 mt-1">पर्यावरण संरक्षण और हरित भारत संकल्प</p>
+        </div>
+
+        <div class="pt-4 flex flex-wrap justify-center gap-4">
+          <a href="/get-involved/donate" class="btn btn-primary text-sm px-8 py-3.5">
+            Sponsor Tree Plantation
+          </a>
+          <a href="/get-involved/volunteer" class="btn btn-outline-dark text-sm px-8 py-3.5">
+            Join Eco Volunteers
+          </a>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</BaseLayout>

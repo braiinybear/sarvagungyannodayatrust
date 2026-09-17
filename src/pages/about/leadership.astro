@@ -1,0 +1,85 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import QuoteBlock from '../../components/QuoteBlock.astro';
+import { SITE_INFO } from '../../data/siteData';
+import { LEADERSHIP, FOUNDER_ACHIEVEMENTS } from '../../data/teamData';
+---
+
+<BaseLayout title="Leadership" description={`Leadership team of ${SITE_INFO.name}`}>
+  <PageHero
+    kicker="About Us · Leadership"
+    title="Guided by vision, integrity, and purpose"
+    description={`Meet the leadership driving the mission of ${SITE_INFO.name}.`}
+  />
+
+  <section class="section bg-white">
+    <div class="shell max-w-5xl mx-auto">
+      <!-- Founder Spotlight Card -->
+      <div class="card p-8 md:p-12 mb-16 border-t-4 border-t-saffron">
+        <div class="grid lg:grid-cols-3 gap-8 items-center">
+          <div class="text-center lg:text-left">
+            <div class="w-36 h-36 rounded-2xl overflow-hidden bg-slate-100 mx-auto lg:mx-0 shadow-md border border-line mb-4">
+              {SITE_INFO.founder.image ? (
+                <img
+                  src={SITE_INFO.founder.image}
+                  alt={SITE_INFO.founder.name}
+                  class="w-full h-full object-cover object-top"
+                />
+              ) : (
+                <div class="w-full h-full bg-linear-to-br from-saffron to-saffron-deep text-white font-display text-4xl font-bold flex items-center justify-center">
+                  {SITE_INFO.founder.initials}
+                </div>
+              )}
+            </div>
+            <h2 class="text-2xl font-display font-bold text-ink">{SITE_INFO.founder.name}</h2>
+            <p class="text-saffron-deep font-semibold text-sm">{SITE_INFO.founder.role}</p>
+          </div>
+          <div class="lg:col-span-2">
+            <p class="text-ink-soft text-lg leading-relaxed mb-6">
+              {SITE_INFO.founder.quoteExtended}
+            </p>
+            <div class="p-4 rounded-xl bg-orange-50/70 border border-orange-200/80">
+              <p class="text-xs font-bold uppercase tracking-wider text-saffron-deep mb-2">Founder's Key Milestones</p>
+              <ul class="grid sm:grid-cols-2 gap-2 text-xs text-ink-soft font-medium">
+                {FOUNDER_ACHIEVEMENTS.map((item) => (
+                  <li class="flex items-center gap-2">
+                    <span class="w-1.5 h-1.5 rounded-full bg-saffron shrink-0"></span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Leadership Profiles Grid -->
+      <h3 class="text-2xl font-display font-bold text-ink mb-8 text-center">Executive Leadership & Management</h3>
+      <div class="grid md:grid-cols-3 gap-8">
+        {LEADERSHIP.map((member) => (
+          <div class="card p-8 text-center flex flex-col justify-between">
+            <div>
+              <div class="w-24 h-24 rounded-2xl overflow-hidden bg-mist mx-auto mb-5 border border-line flex items-center justify-center">
+                {member.image ? (
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    class="w-full h-full object-cover object-top"
+                  />
+                ) : (
+                  <div class="w-full h-full bg-slate-100 text-slate-700 flex items-center justify-center font-display text-2xl font-bold">
+                    {member.initials}
+                  </div>
+                )}
+              </div>
+              <h4 class="font-display text-xl font-bold text-ink mb-1">{member.name}</h4>
+              <p class="text-saffron-deep text-sm font-semibold mb-3">{member.role}</p>
+              <p class="text-ink-soft text-sm leading-relaxed">{member.bio}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,84 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import { SITE_INFO } from '../../data/siteData';
+
+const TRUSTEES = [
+  {
+    name: "Mr. Rahul Rawat",
+    role: "Managing Trustee & Founder",
+    qualification: "Social Entrepreneur & Philanthropist",
+    bio: "Over 15 years of grassroots experience in educational reform and community welfare across India.",
+    initials: "RR",
+    image: "/images/rahul-rawat.png"
+  },
+  {
+    name: "Dr. Ananya Sharma",
+    role: "Trustee — Education & Research",
+    qualification: "Ph.D. in Education",
+    bio: "Leading academician dedicated to curriculum design, digital skilling, and rural literacy initiatives.",
+    initials: "AS"
+  },
+  {
+    name: "Shri Vikram Singh",
+    role: "Trustee — Governance & Legal",
+    qualification: "Advocate & Legal Scholar",
+    bio: "Ensures compliance, transparency, legal integrity, and statutory alignment with Indian Trust laws.",
+    initials: "VS"
+  },
+  {
+    name: "Smt. Sunita Verma",
+    role: "Trustee — Social Welfare",
+    qualification: "Social Worker & Community Leader",
+    bio: "Pioneer in elderly healthcare, self-help groups, and women empowerment programs.",
+    initials: "SV"
+  }
+];
+---
+
+<BaseLayout title="Board of Trustees" description={`Board of Trustees of ${SITE_INFO.name}`}>
+  <PageHero
+    kicker="About Us · Governance"
+    title="Board of Trustees"
+    description="Dedicated stewards guiding statutory compliance, ethics, and strategic social vision."
+  />
+
+  <section class="section bg-mist">
+    <div class="shell max-w-5xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-8">
+        {TRUSTEES.map((t) => (
+          <div class="card p-8 flex flex-col justify-between border-l-4 border-l-saffron">
+            <div>
+              <div class="flex items-center gap-4 mb-4">
+                <div class="w-16 h-16 rounded-xl overflow-hidden bg-navy-deep text-white font-display text-xl font-bold flex items-center justify-center shrink-0 border border-line">
+                  {t.image ? (
+                    <img src={t.image} alt={t.name} class="w-full h-full object-cover object-top" />
+                  ) : (
+                    t.initials
+                  )}
+                </div>
+                <div>
+                  <h3 class="font-display text-xl font-bold text-ink">{t.name}</h3>
+                  <p class="text-saffron font-semibold text-xs uppercase tracking-wider">{t.role}</p>
+                </div>
+              </div>
+              <p class="text-ink-faint text-xs font-bold uppercase tracking-wider mb-2">Qualifications: {t.qualification}</p>
+              <p class="text-ink-soft text-sm leading-relaxed">{t.bio}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Statutory Governance Box -->
+      <div class="mt-16 p-8 bg-white border border-line text-center">
+        <h3 class="font-display text-xl font-bold text-ink mb-2">Statutory Trust Governance</h3>
+        <p class="text-ink-soft text-sm max-w-2xl mx-auto leading-relaxed mb-6">
+          Registered under the Indian Trust Act, 1882. The Board of Trustees meets quarterly to review audits, program performance, 80G compliance, and donor accountability.
+        </p>
+        <a href="/impact" class="btn btn-dark text-xs">
+          View Audited Financial Reports
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

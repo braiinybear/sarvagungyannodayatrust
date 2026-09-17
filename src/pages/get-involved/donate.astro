@@ -34,7 +34,7 @@ const DONATION_TIERS = [
       <div class="grid md:grid-cols-4 gap-x-8 gap-y-10">
         {DONATION_TIERS.map((tier) => (
           <div class="border-t border-line pt-6">
-            <p class="font-display text-3xl text-pine mb-1">{tier.amount}</p>
+            <p class="font-display text-3xl text-saffron mb-1">{tier.amount}</p>
             <p class="text-sm text-ink-soft leading-relaxed">{tier.text}</p>
           </div>
         ))}
@@ -47,10 +47,10 @@ const DONATION_TIERS = [
           <div>
             <div class="flex justify-between text-sm font-semibold mb-1.5">
               <span>Programs &amp; Beneficiaries</span>
-              <span class="text-pine">90%</span>
+              <span class="text-saffron">90%</span>
             </div>
             <div class="h-1 bg-mist rounded-full overflow-hidden">
-              <div class="h-full bg-pine" style="width: 90%"></div>
+              <div class="h-full bg-saffron" style="width: 90%"></div>
             </div>
           </div>
           <div>
@@ -65,10 +65,10 @@ const DONATION_TIERS = [
           <div>
             <div class="flex justify-between text-sm font-semibold mb-1.5">
               <span>Fundraising</span>
-              <span class="text-ember">3%</span>
+              <span class="text-saffron-deep">3%</span>
             </div>
             <div class="h-1 bg-mist rounded-full overflow-hidden">
-              <div class="h-full bg-ember" style="width: 3%"></div>
+              <div class="h-full bg-saffron-deep" style="width: 3%"></div>
             </div>
           </div>
         </div>
@@ -87,7 +87,7 @@ const DONATION_TIERS = [
           <div>
             <label class="block text-sm font-semibold mb-3">Donation Type</label>
             <div class="grid grid-cols-2 border border-line">
-              <button type="button" id="toggle-monthly" class="donation-type px-4 py-3.5 font-bold text-[0.76rem] tracking-[0.14em] uppercase bg-pine text-paper transition-colors" data-type="monthly">
+              <button type="button" id="toggle-monthly" class="donation-type px-4 py-3.5 font-bold text-[0.76rem] tracking-[0.14em] uppercase bg-saffron text-white transition-colors" data-type="monthly">
                 Monthly
               </button>
               <button type="button" id="toggle-onetime" class="donation-type px-4 py-3.5 font-bold text-[0.76rem] tracking-[0.14em] uppercase bg-transparent text-ink-soft hover:text-ink transition-colors" data-type="one-time">
@@ -100,7 +100,7 @@ const DONATION_TIERS = [
           <div>
             <div class="flex items-baseline justify-between mb-5">
               <label class="text-sm font-semibold">Select Amount</label>
-              <p class="font-display text-3xl text-pine">₹<span id="amount-display">1,000</span></p>
+              <p class="font-display text-3xl text-saffron">₹<span id="amount-display">1,000</span></p>
             </div>
 
             <input
@@ -110,7 +110,7 @@ const DONATION_TIERS = [
               max="10000"
               step="100"
               value="1000"
-              class="w-full h-1 appearance-none bg-line cursor-pointer mb-3 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-4 [&::-webkit-slider-thumb]:h-4 [&::-webkit-slider-thumb]:bg-pine [&::-webkit-slider-thumb]:border-none [&::-moz-range-thumb]:w-4 [&::-moz-range-thumb]:h-4 [&::-moz-range-thumb]:border-none [&::-moz-range-thumb]:bg-pine"
+              class="w-full range-slider mb-3"
             />
             <div class="flex justify-between text-[0.62rem] font-semibold tracking-[0.12em] uppercase text-ink-faint mb-6">
               <span>₹100</span>
@@ -121,7 +121,7 @@ const DONATION_TIERS = [
 
             <div class="grid grid-cols-3 gap-2">
               <button type="button" class="donation-amount px-4 py-3 border border-line font-semibold text-sm hover:border-ink transition-colors" data-amount="500">₹500</button>
-              <button type="button" class="donation-amount px-4 py-3 border border-pine bg-mist text-ink font-semibold text-sm hover:border-ink transition-colors" data-amount="1000">₹1,000</button>
+              <button type="button" class="donation-amount px-4 py-3 border border-saffron bg-mist text-ink font-semibold text-sm hover:border-ink transition-colors" data-amount="1000">₹1,000</button>
               <button type="button" class="donation-amount px-4 py-3 border border-line font-semibold text-sm hover:border-ink transition-colors" data-amount="2500">₹2,500</button>
               <button type="button" class="donation-amount px-4 py-3 border border-line font-semibold text-sm hover:border-ink transition-colors" data-amount="5000">₹5,000</button>
               <button type="button" class="donation-amount px-4 py-3 border border-line font-semibold text-sm hover:border-ink transition-colors" data-amount="10000">₹10,000</button>
@@ -132,7 +132,7 @@ const DONATION_TIERS = [
               id="custom-amount"
               name="custom_amount"
               placeholder="Enter custom amount (₹)"
-              class="w-full px-4 py-3 border border-line focus:outline-none focus:ring-2 focus:ring-pine/40 focus:border-pine hidden mt-3"
+              class="w-full px-4 py-3 border border-line focus:outline-none focus:ring-2 focus:ring-saffron/40 hidden mt-3"
             />
             <input type="hidden" id="donation-amount" name="amount" value="1000" />
             <input type="hidden" id="donation-type" name="donation_type" value="monthly" />
@@ -147,7 +147,7 @@ const DONATION_TIERS = [
                 id="donor-name"
                 name="name"
                 required
-                class="w-full px-4 py-3 border border-line focus:outline-none focus:ring-2 focus:ring-pine/40 focus:border-pine"
+                class="w-full px-4 py-3 border border-line focus:outline-none focus:ring-2 focus:ring-saffron/40"
               />
             </div>
             <div>
@@ -157,7 +157,7 @@ const DONATION_TIERS = [
                 id="donor-email"
                 name="email"
                 required
-                class="w-full px-4 py-3 border border-line focus:outline-none focus:ring-2 focus:ring-pine/40 focus:border-pine"
+                class="w-full px-4 py-3 border border-line focus:outline-none focus:ring-2 focus:ring-saffron/40"
               />
             </div>
           </div>
@@ -168,7 +168,7 @@ const DONATION_TIERS = [
               type="tel"
               id="donor-phone"
               name="phone"
-              class="w-full px-4 py-3 border border-line focus:outline-none focus:ring-2 focus:ring-pine/40 focus:border-pine"
+              class="w-full px-4 py-3 border border-line focus:outline-none focus:ring-2 focus:ring-saffron/40"
             />
           </div>
 
@@ -181,7 +181,7 @@ const DONATION_TIERS = [
           </div>
 
           <!-- Submit Button -->
-          <button type="submit" class="btn btn-primary w-full !py-4 text-[0.8rem]">
+          <button type="submit" class="btn btn-primary w-full py-4! text-[0.8rem]">
             Proceed to Payment
           </button>
 
@@ -199,7 +199,7 @@ const DONATION_TIERS = [
       <h2 class="text-3xl md:text-4xl text-ink mb-12 text-center font-display">Other Ways to Give</h2>
       <div class="grid md:grid-cols-3 gap-x-12 gap-y-10">
         <div>
-          <div class="w-12 h-12 bg-pine flex items-center justify-center mb-5 text-paper">
+          <div class="w-12 h-12 bg-saffron flex items-center justify-center mb-5 text-white">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
               <rect x="3" y="6" width="18" height="13" rx="2" />
               <path stroke-linecap="round" d="M3 10h18M8 15h4" />
@@ -209,10 +209,10 @@ const DONATION_TIERS = [
           <p class="text-ink-soft text-sm mb-4 leading-relaxed">
             Direct bank transfer to our trust account. Contact us for NEFT/IMPS details.
           </p>
-          <a href="/contact" class="link-arrow">Get Bank Details</a>
+          <a href="/contact" class="link-more text-sm">Get Bank Details</a>
         </div>
         <div>
-          <div class="w-12 h-12 bg-saffron flex items-center justify-center mb-5 text-paper">
+          <div class="w-12 h-12 bg-navy flex items-center justify-center mb-5 text-white">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
               <rect x="6" y="2" width="12" height="20" rx="3" />
               <path stroke-linecap="round" d="M11 18h2" />
@@ -222,10 +222,10 @@ const DONATION_TIERS = [
           <p class="text-ink-soft text-sm mb-4 leading-relaxed">
             Scan our QR code or use our trust UPI handle for instant contribution.
           </p>
-          <a href="/contact" class="link-arrow">Get UPI Details</a>
+          <a href="/contact" class="link-more text-sm">Get UPI Details</a>
         </div>
         <div>
-          <div class="w-12 h-12 bg-ember flex items-center justify-center mb-5 text-paper">
+          <div class="w-12 h-12 bg-azure flex items-center justify-center mb-5 text-white">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
               <path d="M3 12l3-6h12l3 6-4 5H7l-4-5z" />
               <path stroke-linecap="round" d="M3 12h18" />
@@ -235,7 +235,7 @@ const DONATION_TIERS = [
           <p class="text-ink-soft text-sm mb-4 leading-relaxed">
             Donate supplies, books, computers, or professional services to our centers.
           </p>
-          <a href="/contact" class="link-arrow">Learn More</a>
+          <a href="/contact" class="link-more text-sm">Learn More</a>
         </div>
       </div>
     </div>
@@ -256,7 +256,7 @@ const DONATION_TIERS = [
   const setActiveChip = (valStr: string) => {
     amountButtons.forEach(b => {
       const active = b.getAttribute('data-amount') === valStr;
-      b.classList.toggle('border-pine', active);
+      b.classList.toggle('border-saffron', active);
       b.classList.toggle('bg-mist', active);
       b.classList.toggle('text-ink', active);
       b.classList.toggle('border-line', !active);
@@ -303,8 +303,8 @@ const DONATION_TIERS = [
     t.addEventListener('click', () => {
       toggles.forEach(o => {
         const isCurrent = o === t;
-        o.classList.toggle('bg-pine', isCurrent);
-        o.classList.toggle('text-paper', isCurrent);
+        o.classList.toggle('bg-saffron', isCurrent);
+        o.classList.toggle('text-white', isCurrent);
         o.classList.toggle('text-ink-soft', !isCurrent);
         o.classList.toggle('bg-transparent', !isCurrent);
       });
@@ -318,3 +318,33 @@ const DONATION_TIERS = [
     alert('Thank you for your donation! You will be redirected to the payment gateway.');
   });
 </script>
+
+<style>
+  .range-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 4px;
+    background: var(--color-line);
+    outline: none;
+    cursor: pointer;
+  }
+
+  .range-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 9999px;
+    background: var(--color-saffron);
+    cursor: pointer;
+  }
+
+  .range-slider::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border: none;
+    border-radius: 9999px;
+    background: var(--color-saffron);
+    cursor: pointer;
+  }
+</style>

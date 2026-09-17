@@ -1,0 +1,187 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import { PROGRAMS } from '../../data/programsData';
+
+const program = PROGRAMS.find(p => p.id === 'sports')!;
+
+const sportsGallery = [
+  { src: "/images/sports/275cd986-31c3-46ba-81a1-947f509f28c5.jpg", title: "Grassroots Football Coaching", desc: "Training rural youth in teamwork, stamina, and competitive sportsmanship." },
+  { src: "/images/sports/3268f985-9c9a-4a2f-ab5c-fe034df41098.jpg", title: "Track & Field Championships", desc: "Providing athletic pathways for talented young runners and jumpers." },
+  { src: "/images/sports/61b6dcec-edfd-4ef7-8ed0-dbef3a3b8b92.jpg", title: "Youth Physical Training Camps", desc: "Morning fitness drives building vigor, discipline, and endurance." },
+  { src: "/images/sports/c7fc56bb-f819-407a-9352-3c92c5eec0e8.jpg", title: "District Football Tournaments", desc: "Sponsoring local tournaments where village teams compete at higher levels." },
+  { src: "/images/sports/c8a28afc-0dc5-4e79-82f3-0b17613da265.jpg", title: "Kabaddi & Traditional Games", desc: "Preserving indigenous sports that foster raw agility, courage, and grit." },
+  { src: "/images/sports/cd56c3c0-2dfd-4730-ad5d-b38074bcba9d.jpg", title: "Sports Gear Distribution", desc: "Providing footballs, shoes, uniforms, and equipment to underprivileged players." }
+];
+---
+
+<BaseLayout title="Sports — SARVAGUN Gyannodaya Trust" description="Building physical strength, youth discipline, sportsmanship, and athletic leadership.">
+  <PageHero
+    kicker="Focus Area 03"
+    title="Sports & Youth Physical Vigor"
+    description="You will be nearer to Heaven through football than through the study of the Gita. Building strong muscles and iron nerves for nation-building."
+  />
+
+  <!-- Motto Banner -->
+  <div class="bg-amber-950 text-amber-100 py-4 px-6 border-b border-amber-900/40 text-center">
+    <p class="font-display text-base md:text-lg tracking-wide font-medium">
+      बल से आत्मविश्वास • अनुशासन से चरित्र • क्रीड़ा से राष्ट्र निर्माण
+    </p>
+  </div>
+
+  <div class="bg-mist py-10 md:py-14">
+    <div class="shell max-w-5xl mx-auto space-y-8 md:space-y-10">
+
+      <!-- Section 1: Our Sports Journey -->
+      <section class="grid lg:grid-cols-12 gap-10 items-center bg-white border border-line p-8 md:p-12" data-animate="fade-up">
+        <div class="lg:col-span-7 space-y-5">
+          <span class="text-xs font-bold uppercase tracking-[0.2em] text-saffron-deep">Our Sports Vision</span>
+          <h2 class="text-2xl md:text-3xl font-display font-semibold text-ink leading-tight">
+            Nurturing Vigor, Grit &amp; Athletic Excellence
+          </h2>
+          <p class="text-ink-soft text-base leading-relaxed">
+            At <strong>SARVAGUN Gyannodaya Trust</strong>, we view sports not merely as a pastime, but as a vital instrument for character building, physical health, and youth empowerment. Swami Vivekananda repeatedly emphasized that young people need "muscles of iron and nerves of steel" to serve the nation effectively.
+          </p>
+          <p class="text-ink-soft text-base leading-relaxed">
+            Our sports initiatives provide grassroots coaching, athletic gear, and tournament opportunities for talented youth in rural and semi-urban areas who lack professional sports infrastructure.
+          </p>
+          <p class="text-ink-soft text-base leading-relaxed">
+            From football and track athletics to kabaddi and traditional martial arts, we foster discipline, healthy competition, and resilience.
+          </p>
+        </div>
+        <div class="lg:col-span-5 relative group overflow-hidden border border-line bg-mist">
+          <img
+            src={sportsGallery[0].src}
+            alt={sportsGallery[0].title}
+            class="w-full aspect-4/3 object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+            loading="eager"
+          />
+          <div class="p-3 bg-stone-50 border-t border-line text-xs text-ink-faint font-medium">
+            📸 {sportsGallery[0].title}: {sportsGallery[0].desc}
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 2: 5-Step Athletic Progression -->
+      <section class="bg-white border border-line p-8 md:p-12 text-center" data-animate="fade-up">
+        <span class="text-xs font-bold uppercase tracking-[0.2em] text-saffron-deep block mb-3">Athletic Pathway</span>
+        <h2 class="text-2xl md:text-3xl font-display font-semibold text-ink mb-4">
+          The Journey of an Athlete
+        </h2>
+        <p class="text-ink-soft text-base leading-relaxed max-w-3xl mx-auto mb-8">
+          Sports instills values that classroom books alone cannot teach—how to win with humility, how to rise after defeat, and how to work as a unified team.
+        </p>
+
+        <!-- 5-Step Flow Strip -->
+        <div class="bg-amber-950 text-white p-6 border border-amber-900/30 max-w-4xl mx-auto mb-8">
+          <p class="text-xs font-semibold uppercase tracking-widest text-amber-400 mb-3">Youth Athletic Transformation</p>
+          <div class="flex flex-wrap items-center justify-center gap-2 md:gap-4 text-sm md:text-base font-display font-semibold">
+            <span class="bg-amber-900/60 px-3 py-1 border border-amber-700/40">Strength</span>
+            <span class="text-amber-400">→</span>
+            <span class="bg-amber-900/60 px-3 py-1 border border-amber-700/40">Discipline</span>
+            <span class="text-amber-400">→</span>
+            <span class="bg-amber-900/60 px-3 py-1 border border-amber-700/40">Teamwork</span>
+            <span class="text-amber-400">→</span>
+            <span class="bg-amber-900/60 px-3 py-1 border border-amber-700/40">Leadership</span>
+            <span class="text-amber-400">→</span>
+            <span class="bg-amber-900/60 px-3 py-1 border border-amber-700/40 text-amber-200">Excellence</span>
+          </div>
+        </div>
+
+        <p class="text-ink-faint text-sm max-w-2xl mx-auto italic">
+          &ldquo;What India wants is a new vigor in the blood, strong muscles, and a brave heart.&rdquo; — Swami Vivekananda
+        </p>
+      </section>
+
+      <!-- Section 3: Our 4 Sports Pillars -->
+      <section class="bg-white border border-line p-8 md:p-12" data-animate="fade-up">
+        <div class="text-center max-w-2xl mx-auto mb-10">
+          <span class="text-xs font-bold uppercase tracking-[0.2em] text-saffron-deep block mb-2">Sports Methodology</span>
+          <h2 class="text-2xl md:text-3xl font-display font-semibold text-ink mb-3">
+            We Train. We Equip. We Support. We Empower.
+          </h2>
+          <p class="text-ink-faint text-sm leading-relaxed">
+            Our multi-tier approach ensures talented young boys and girls receive systemic support from rural ground training to state championship stages.
+          </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="border border-line p-6 bg-mist hover:border-amber-700/40 transition-colors">
+            <div class="text-saffron-deep font-bold text-lg mb-2">01. We Train</div>
+            <p class="text-ink-soft text-xs leading-relaxed">
+              Conducting regular coaching camps in football, athletics, and traditional games with qualified trainers.
+            </p>
+          </div>
+          <div class="border border-line p-6 bg-mist hover:border-amber-700/40 transition-colors">
+            <div class="text-saffron-deep font-bold text-lg mb-2">02. We Equip</div>
+            <p class="text-ink-soft text-xs leading-relaxed">
+              Distributing quality sports kits, shoes, footballs, and training equipment to underprivileged players.
+            </p>
+          </div>
+          <div class="border border-line p-6 bg-mist hover:border-amber-700/40 transition-colors">
+            <div class="text-saffron-deep font-bold text-lg mb-2">03. We Support</div>
+            <p class="text-ink-soft text-xs leading-relaxed">
+              Sponsoring tournament entry fees, travel, and nutritional support for athletes competing in state trials.
+            </p>
+          </div>
+          <div class="border border-line p-6 bg-mist hover:border-amber-700/40 transition-colors">
+            <div class="text-saffron-deep font-bold text-lg mb-2">04. We Empower</div>
+            <p class="text-ink-soft text-xs leading-relaxed">
+              Fostering sportsmanship, mental toughness, and drug-free healthy youth lifestyles across communities.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 4: Photo Gallery Grid -->
+      <section data-animate="fade-up">
+        <div class="flex items-end justify-between mb-8">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-[0.2em] text-saffron-deep block mb-1">Field Documentation</span>
+            <h2 class="text-2xl font-display font-semibold text-ink">Action Glimpses from Sports Camps</h2>
+          </div>
+        </div>
+        <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6" data-animate="stagger">
+          {sportsGallery.map((img) => (
+            <div class="bg-white border border-line overflow-hidden group hover:border-amber-700/40 transition-colors">
+              <div class="relative overflow-hidden aspect-4/3 bg-mist">
+                <img
+                  src={img.src}
+                  alt={img.title}
+                  class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                  loading="lazy"
+                />
+              </div>
+              <div class="p-4">
+                <h4 class="font-display font-semibold text-sm text-ink mb-1">{img.title}</h4>
+                <p class="text-ink-faint text-xs leading-relaxed">{img.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Section 5: Closing Commitment -->
+      <section class="bg-white border border-line p-8 md:p-12 text-center" data-animate="fade-up">
+        <div class="my-6 p-8 bg-amber-950 text-amber-100 max-w-3xl mx-auto border border-amber-900/60 shadow-xs">
+          <p class="text-xs font-bold uppercase tracking-widest text-amber-400 mb-3">Our Sports Commitment</p>
+          <blockquote class="font-display italic text-lg md:text-xl leading-relaxed text-white mb-4">
+            &ldquo;Through sports, we build strong bodies, disciplined minds, and brave hearts ready to serve the nation.&rdquo;
+          </blockquote>
+          <p class="text-sm font-semibold text-amber-300">SARVAGUN Gyannodaya Trust</p>
+          <p class="text-xs text-amber-400/80 mt-1">बल, अनुशासन और खेल से चरित्र निर्माण</p>
+        </div>
+
+        <div class="pt-4 flex flex-wrap justify-center gap-4">
+          <a href="/get-involved/donate" class="btn btn-primary text-sm px-8 py-3.5">
+            Sponsor Sports Kits
+          </a>
+          <a href="/contact" class="btn btn-outline-dark text-sm px-8 py-3.5">
+            Partner as a Coach
+          </a>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</BaseLayout>

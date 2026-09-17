@@ -4,6 +4,7 @@ export interface Leader {
   bio: string;
   initials: string;
   isFounder?: boolean;
+  image?: string;
 }
 
 export interface ValueItem {
@@ -25,7 +26,8 @@ export const LEADERSHIP: Leader[] = [
     role: "Founder & Settlor",
     bio: "Visionary leader dedicated to empowering underserved communities.",
     initials: "RR",
-    isFounder: true
+    isFounder: true,
+    image: "/images/rahul-rawat.png"
   },
   {
     name: "[Trustee Name]",

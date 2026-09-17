@@ -43,7 +43,7 @@ const posts = [
         {posts.map((post) => (
           <article class="group card border border-line flex flex-col justify-between overflow-hidden">
             <div>
-              <div class="overflow-hidden aspect-[16/10]">
+              <div class="overflow-hidden aspect-16/10">
                 <img
                   src={post.photo}
                   alt={post.title}
@@ -59,7 +59,7 @@ const posts = [
             </div>
             <div class="px-7 py-4 border-t border-line flex items-center justify-between">
               <span class="text-ink-faint text-xs">{post.date}</span>
-              <a href="#" class="inline-flex items-center gap-2 text-pine font-semibold text-sm hover:gap-3 transition-all">
+              <a href="#" class="inline-flex items-center gap-2 text-saffron font-semibold text-sm hover:gap-3 transition-all">
                 Read <span aria-hidden>→</span>
               </a>
             </div>
@@ -70,7 +70,7 @@ const posts = [
   </section>
 
   <!-- Newsletter Signup -->
-  <section class="section bg-pine-deep text-center text-paper">
+  <section class="section bg-navy-deep text-center text-white">
     <div class="shell max-w-xl">
       <h2 class="text-3xl md:text-4xl mb-4 font-display">Stay Updated</h2>
       <p class="text-paper/75 mb-8">
@@ -80,10 +80,10 @@ const posts = [
         <input
           type="email"
           placeholder="Your email address"
-          class="flex-1 px-5 py-3.5 bg-white/10 border border-paper/20 text-paper placeholder:text-paper/50 focus:outline-none focus:border-saffron"
+          class="flex-1 px-5 py-3.5 bg-white/10 border border-white/20 text-white placeholder:opacity-50 focus:outline-none focus:ring-2 focus:ring-saffron/40"
           required
         />
-        <button type="submit" class="btn btn-primary !py-3.5">Subscribe</button>
+        <button type="submit" class="btn btn-primary py-3.5!">Subscribe</button>
       </form>
     </div>
   </section>

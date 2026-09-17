@@ -6,40 +6,48 @@ interface Props {
 }
 
 const { program } = Astro.props;
+
+const BADGE_CLASSES: Record<string, string> = {
+  saffron: "badge-education",
+  azure: "badge-social",
+  crimson: "badge-sports",
+  emerald: "badge-environment",
+  indigo: "badge-nation",
+  violet: "badge-culture",
+  amber: "badge-spirituality",
+};
 ---
 
-<article class="group flex flex-col justify-between">
-  <div>
-    <a href={program.href} class="block overflow-hidden mb-6">
-      <img
-        src={program.image}
-        alt={program.imageAlt}
-        class="w-full aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-[1.04]"
-        loading="lazy"
-      />
-    </a>
-    <p class="text-[0.68rem] font-bold tracking-[0.22em] uppercase text-saffron mb-3">
-      Program {program.number}
-    </p>
-    <h2 class="font-display text-[1.7rem] md:text-2xl mb-3">
-      <a href={program.href} class="hover:text-pine transition-colors">
-        {program.title}
-      </a>
-    </h2>
-    <p class="text-ink-soft text-[0.95rem] mb-6 max-w-sm">
-      {program.description}
-    </p>
+<article class="card group relative bg-white border border-line hover:border-amber-700/40 transition-all duration-300" data-animate="fade-up">
+  <!-- Image with category badge -->
+  <div class="relative overflow-hidden">
+    <img
+      src={program.image}
+      alt={program.imageAlt}
+      class="w-full aspect-4/3 object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+      loading="lazy"
+    />
+    <div class="absolute inset-0 bg-linear-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+    <span class={`badge absolute top-3 right-3 shadow-xs ${BADGE_CLASSES[program.colorTheme] || ''}`}>
+      {program.title}
+    </span>
   </div>
 
-  <div>
-    <div class="h-1 bg-line mb-4 rounded-full overflow-hidden">
-      <div class="h-full bg-saffron transition-all duration-500" style={`width: ${program.progressPercent}%`}></div>
-    </div>
-    <div class="flex items-end justify-between gap-4">
-      <p class="text-xs text-ink-faint">
-        <span class="font-bold text-ink">₹{program.raised.toLocaleString('en-IN')}</span> raised<br />of ₹{program.goal.toLocaleString('en-IN')}
-      </p>
-      <a href="/get-involved/donate" class="link-arrow">Donate</a>
-    </div>
+  <!-- Content — clean editorial text -->
+  <div class="p-6">
+    <h3 class="font-display text-xl font-semibold text-ink mb-2 leading-snug">
+      <a href={program.href} class="hover:text-saffron-deep transition-colors">
+        {program.title}
+      </a>
+    </h3>
+    <p class="text-ink-faint text-sm leading-relaxed mb-5 line-clamp-3">
+      {program.description}
+    </p>
+    <a href={program.href} class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-ink group-hover:text-saffron-deep transition-colors">
+      <span>Explore Program</span>
+      <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+      </svg>
+    </a>
   </div>
 </article>

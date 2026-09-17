@@ -1,0 +1,42 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import { EVENTS } from '../../data/mediaData';
+---
+
+<BaseLayout title="Events & Campaigns — Media" description="Upcoming and past events, youth summits, and sports tournaments.">
+  <PageHero
+    kicker="Media · Events"
+    title="Events & Field Campaigns"
+    description="Upcoming youth conclaves, sports tournaments, medical drives, and cultural festivals."
+  />
+
+  <section class="section bg-slate-50">
+    <div class="shell max-w-5xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-8">
+        {EVENTS.map((item) => (
+          <div class="vibrant-card overflow-hidden flex flex-col justify-between border-t-4 border-t-emerald-600">
+            <div>
+              <div class="aspect-video overflow-hidden">
+                <img src={item.image} alt={item.title} class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+              </div>
+              <div class="p-6">
+                <div class="flex items-center justify-between text-xs text-slate-500 mb-2">
+                  <span class="px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-800 font-bold uppercase tracking-wider">{item.categoryLabel}</span>
+                  <span class="font-bold text-saffron-deep">{item.date}</span>
+                </div>
+                <h3 class="font-display text-xl font-bold text-slate-900 mb-3">{item.title}</h3>
+                <p class="text-slate-600 text-sm leading-relaxed mb-4">{item.summary}</p>
+              </div>
+            </div>
+            <div class="p-6 pt-0">
+              <a href="/get-involved/volunteer" class="btn btn-indigo text-xs w-full">
+                Register as Volunteer
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

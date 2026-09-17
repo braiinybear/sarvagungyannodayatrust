@@ -1,58 +1,35 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
-import { SITE_INFO } from '../../data/siteData';
+import ProgramCard from '../../components/ProgramCard.astro';
 import { PROGRAMS } from '../../data/programsData';
+import { SITE_INFO } from '../../data/siteData';
 ---
 
-<BaseLayout title="Our Work" description={`Discover ${SITE_INFO.name}'s programs in education, elderly care, and community development`}>
-  <!-- Page Hero -->
+<BaseLayout title="Our Work — 7 Pillars of Impact" description={`Discover the 7 core pillars of work by ${SITE_INFO.name}.`}>
   <PageHero
-    kicker="What We Do"
-    title="Three programs. One purpose."
-    description="We don't just run programs — we transform lives. Explore how we're making a difference across three core areas."
+    kicker="Our Work"
+    title="Seven Pillars, One Mission of Transformation"
+    description="Working across Education, Social Care, Sports, Environment, Nation Building, Culture, and Spirituality to empower every human life."
+    image="https://images.pexels.com/photos/8613089/pexels-photo-8613089.jpeg?auto=compress&cs=tinysrgb&w=1600"
   />
 
-  <!-- Programs Grid -->
-  <section class="section bg-paper">
-    <div class="shell grid md:grid-cols-3 gap-7">
-      {PROGRAMS.map((program) => (
-        <article class="group card border border-line flex flex-col justify-between overflow-hidden">
-          <div>
-            <div class="overflow-hidden aspect-[4/3]">
-              <img
-                src={program.image}
-                alt={program.imageAlt}
-                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                loading="lazy"
-              />
-            </div>
-            <div class="p-7">
-              <span class="text-[0.68rem] font-bold tracking-[0.22em] uppercase text-saffron mb-2 block">Program {program.number}</span>
-              <h2 class="font-display text-2xl mb-3">{program.title}</h2>
-              <p class="text-ink-soft text-sm leading-relaxed">{program.description}</p>
-            </div>
-          </div>
-          <div class="p-7 pt-0">
-            <a href={program.href} class="inline-flex items-center gap-2 text-pine font-semibold text-sm hover:gap-3 transition-all">
-              Explore Program <span aria-hidden>→</span>
-            </a>
-          </div>
-        </article>
-      ))}
-    </div>
-  </section>
+  <section class="section bg-white">
+    <div class="shell">
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <h2 class="text-2xl md:text-3xl font-display font-semibold text-ink mb-4">
+          Our Key Areas of Impact
+        </h2>
+        <p class="text-ink-faint text-base">
+          Click on any pillar to explore our on-ground initiatives, field reports, and beneficiary transformation stories.
+        </p>
+      </div>
 
-  <!-- CTA -->
-  <section class="section bg-pine-deep text-center text-paper">
-    <div class="shell max-w-2xl">
-      <h2 class="text-3xl md:text-4xl mb-4 font-display">Want to Support Our Work?</h2>
-      <p class="text-paper/75 mb-8 leading-relaxed">
-        Every program is powered by people like you. Join us in creating lasting change.
-      </p>
-      <div class="flex flex-wrap justify-center gap-4">
-        <a href="/get-involved/donate" class="btn btn-accent">Donate Now</a>
-        <a href="/get-involved/volunteer" class="btn btn-light">Become a Volunteer</a>
+      <!-- 7 Pillars Grid -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {PROGRAMS.map((program) => (
+          <ProgramCard program={program} />
+        ))}
       </div>
     </div>
   </section>

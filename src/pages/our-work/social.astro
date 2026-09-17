@@ -1,0 +1,186 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import { PROGRAMS } from '../../data/programsData';
+
+const program = PROGRAMS.find(p => p.id === 'social')!;
+
+const socialGallery = [
+  { src: "/images/social-work/54e0730e-169c-462b-9dd7-f0f9d84bd28f.jpg", title: "Elderly Healthcare & Aid Checkups", desc: "Providing medical support, free medicines, and health consultations for seniors." },
+  { src: "/images/social-work/241dc954-3df6-4d7e-a65e-20eccbb2d488.jpg", title: "Ration & Emergency Relief Drives", desc: "Distributing essential grocery kits, food aid, and rations to vulnerable rural families." },
+  { src: "/images/social-work/31ca7713-addd-4ed3-a864-6bd2ba594034.jpg", title: "Community Health & Sanitation", desc: "Promoting village health awareness, clean drinking water access, and sanitation." },
+  { src: "/images/social-work/bea900bc-9728-4e10-b074-cfc009fde77b.jpg", title: "Social Welfare & Care", desc: "Directing relief support and compassionate assistance to underprivileged households." },
+  { src: "/images/social-work/dfb2f186-8278-4d63-b63c-b20e47b7e567.jpg", title: "Disaster & Winter Relief", desc: "Providing warm clothing, blankets, and temporary shelter support during harsh weather." }
+];
+---
+
+<BaseLayout title="Social Services & Healthcare — SARVAGUN Gyannodaya Trust" description="Serving humanity through healthcare drives, elderly care, emergency relief, and community welfare.">
+  <PageHero
+    kicker="Focus Area 02"
+    title="Social Services & Elderly Care"
+    description="Service to man is service to God. Restoring dignity, healthcare access, and compassionate support for elderly citizens and vulnerable families."
+  />
+
+  <!-- Motto Banner -->
+  <div class="bg-amber-950 text-amber-100 py-4 px-6 border-b border-amber-900/40 text-center">
+    <p class="font-display text-base md:text-lg tracking-wide font-medium">
+      सेवा ही साधना • करुणा ही धर्म • नर सेवा ही नारायण सेवा
+    </p>
+  </div>
+
+  <div class="bg-mist py-10 md:py-14">
+    <div class="shell max-w-5xl mx-auto space-y-8 md:space-y-10">
+
+      <!-- Section 1: Our Social Mission -->
+      <section class="grid lg:grid-cols-12 gap-10 items-center bg-white border border-line p-8 md:p-12" data-animate="fade-up">
+        <div class="lg:col-span-7 space-y-5">
+          <span class="text-xs font-bold uppercase tracking-[0.2em] text-saffron-deep">Our Social Mission</span>
+          <h2 class="text-2xl md:text-3xl font-display font-semibold text-ink leading-tight">
+            Compassionate Action for Every Life
+          </h2>
+          <p class="text-ink-soft text-base leading-relaxed">
+            Rooted in the eternal truth that <em>"Service to humanity is worship of the Divine,"</em> <strong>SARVAGUN Gyannodaya Trust</strong> works directly with marginalized communities, destitute elderly citizens, and rural families facing extreme hardship.
+          </p>
+          <p class="text-ink-soft text-base leading-relaxed">
+            Our social initiatives span free medical camps, health checkups, food and blanket distribution during winter, and guidance for elderly citizens seeking government pension support.
+          </p>
+          <p class="text-ink-soft text-base leading-relaxed">
+            We aim to create an empathetic society where no senior citizen feels abandoned and no family goes hungry in times of distress.
+          </p>
+        </div>
+        <div class="lg:col-span-5 relative group overflow-hidden border border-line bg-mist">
+          <img
+            src={socialGallery[0].src}
+            alt={socialGallery[0].title}
+            class="w-full aspect-4/3 object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+            loading="eager"
+          />
+          <div class="p-3 bg-stone-50 border-t border-line text-xs text-ink-faint font-medium">
+            📸 {socialGallery[0].title}: {socialGallery[0].desc}
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 2: 5-Step Social Impact Progression -->
+      <section class="bg-white border border-line p-8 md:p-12 text-center" data-animate="fade-up">
+        <span class="text-xs font-bold uppercase tracking-[0.2em] text-saffron-deep block mb-3">Service Pathway</span>
+        <h2 class="text-2xl md:text-3xl font-display font-semibold text-ink mb-4">
+          From Relief to Restored Dignity
+        </h2>
+        <p class="text-ink-soft text-base leading-relaxed max-w-3xl mx-auto mb-8">
+          True social service goes beyond temporary aid—it restores hope, self-respect, and long-term self-reliance.
+        </p>
+
+        <!-- 5-Step Flow Strip -->
+        <div class="bg-amber-950 text-white p-6 border border-amber-900/30 max-w-4xl mx-auto mb-8">
+          <p class="text-xs font-semibold uppercase tracking-widest text-amber-400 mb-3">Community Empowerment Journey</p>
+          <div class="flex flex-wrap items-center justify-center gap-2 md:gap-4 text-sm md:text-base font-display font-semibold">
+            <span class="bg-amber-900/60 px-3 py-1 border border-amber-700/40">Compassion</span>
+            <span class="text-amber-400">→</span>
+            <span class="bg-amber-900/60 px-3 py-1 border border-amber-700/40">Relief</span>
+            <span class="text-amber-400">→</span>
+            <span class="bg-amber-900/60 px-3 py-1 border border-amber-700/40">Health</span>
+            <span class="text-amber-400">→</span>
+            <span class="bg-amber-900/60 px-3 py-1 border border-amber-700/40">Self-Reliance</span>
+            <span class="text-amber-400">→</span>
+            <span class="bg-amber-900/60 px-3 py-1 border border-amber-700/40 text-amber-200">Dignity</span>
+          </div>
+        </div>
+
+        <p class="text-ink-faint text-sm max-w-2xl mx-auto italic">
+          &ldquo;Look upon every person as God. You cannot help anyone; you can only serve. Serve the children of God, if you have the privilege.&rdquo; — Swami Vivekananda
+        </p>
+      </section>
+
+      <!-- Section 3: Our 4 Social Pillars -->
+      <section class="bg-white border border-line p-8 md:p-12" data-animate="fade-up">
+        <div class="text-center max-w-2xl mx-auto mb-10">
+          <span class="text-xs font-bold uppercase tracking-[0.2em] text-saffron-deep block mb-2">Service Pillars</span>
+          <h2 class="text-2xl md:text-3xl font-display font-semibold text-ink mb-3">
+            We Care. We Feed. We Support. We Uplift.
+          </h2>
+          <p class="text-ink-faint text-sm leading-relaxed">
+            Our field team and volunteers deliver targeted care, healthcare access, and economic self-reliance for vulnerable populations.
+          </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="border border-line p-6 bg-mist hover:border-amber-700/40 transition-colors">
+            <div class="text-saffron-deep font-bold text-lg mb-2">01. We Care</div>
+            <p class="text-ink-soft text-xs leading-relaxed">
+              Elderly healthcare, free health checkup camps, vision care, and distribution of medicines for seniors.
+            </p>
+          </div>
+          <div class="border border-line p-6 bg-mist hover:border-amber-700/40 transition-colors">
+            <div class="text-saffron-deep font-bold text-lg mb-2">02. We Feed</div>
+            <p class="text-ink-soft text-xs leading-relaxed">
+              Ration distribution kits and meal drives for impoverished families during winter and emergencies.
+            </p>
+          </div>
+          <div class="border border-line p-6 bg-mist hover:border-amber-700/40 transition-colors">
+            <div class="text-saffron-deep font-bold text-lg mb-2">03. We Support</div>
+            <p class="text-ink-soft text-xs leading-relaxed">
+              Guiding elderly citizens to access government pension schemes, healthcare cards, and legal rights.
+            </p>
+          </div>
+          <div class="border border-line p-6 bg-mist hover:border-amber-700/40 transition-colors">
+            <div class="text-saffron-deep font-bold text-lg mb-2">04. We Uplift</div>
+            <p class="text-ink-soft text-xs leading-relaxed">
+              Empowering women through self-help groups, tailoring workshops, and micro-handicraft self-employment.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 4: Photo Gallery Grid -->
+      <section data-animate="fade-up">
+        <div class="flex items-end justify-between mb-8">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-[0.2em] text-saffron-deep block mb-1">Field Documentation</span>
+            <h2 class="text-2xl font-display font-semibold text-ink">Glimpses of Social Relief Operations</h2>
+          </div>
+        </div>
+        <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6" data-animate="stagger">
+          {socialGallery.map((img) => (
+            <div class="bg-white border border-line overflow-hidden group hover:border-amber-700/40 transition-colors">
+              <div class="relative overflow-hidden aspect-4/3 bg-mist">
+                <img
+                  src={img.src}
+                  alt={img.title}
+                  class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                  loading="lazy"
+                />
+              </div>
+              <div class="p-4">
+                <h4 class="font-display font-semibold text-sm text-ink mb-1">{img.title}</h4>
+                <p class="text-ink-faint text-xs leading-relaxed">{img.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Section 5: Closing Commitment -->
+      <section class="bg-white border border-line p-8 md:p-12 text-center" data-animate="fade-up">
+        <div class="my-6 p-8 bg-amber-950 text-amber-100 max-w-3xl mx-auto border border-amber-900/60 shadow-xs">
+          <p class="text-xs font-bold uppercase tracking-widest text-amber-400 mb-3">Our Social Commitment</p>
+          <blockquote class="font-display italic text-lg md:text-xl leading-relaxed text-white mb-4">
+            &ldquo;May no elderly citizen feel alone, and may every act of service bring dignity and warmth to human lives.&rdquo;
+          </blockquote>
+          <p class="text-sm font-semibold text-amber-300">SARVAGUN Gyannodaya Trust</p>
+          <p class="text-xs text-amber-400/80 mt-1">सेवा, करुणा और स्वावलंबन से समाज उत्थान</p>
+        </div>
+
+        <div class="pt-4 flex flex-wrap justify-center gap-4">
+          <a href="/get-involved/donate" class="btn btn-primary text-sm px-8 py-3.5">
+            Sponsor Elderly Healthcare
+          </a>
+          <a href="/get-involved/volunteer" class="btn btn-outline-dark text-sm px-8 py-3.5">
+            Join Relief Volunteers
+          </a>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</BaseLayout>

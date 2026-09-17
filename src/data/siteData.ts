@@ -19,6 +19,7 @@ export const SITE_INFO = {
     name: "Mr. Rahul Rawat",
     role: "Founder & Settlor",
     initials: "RR",
+    image: "/images/rahul-rawat.png",
     quote: "True service is not about charity — it is about creating lasting change that empowers people to build better lives.",
     quoteExtended: "Education is the most powerful tool to transform lives. When we empower a community with knowledge and care, we don't just change today — we shape generations."
   },

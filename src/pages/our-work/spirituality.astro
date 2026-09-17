@@ -1,0 +1,184 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import { PROGRAMS } from '../../data/programsData';
+
+const program = PROGRAMS.find(p => p.id === 'spirituality')!;
+
+const spiritualGallery = [
+  { src: "/images/nation-building/bf3fa072-02d1-4922-bf52-0261e4a4ca8f.jpg", title: "Swami Vivekananda Study Circles", desc: "Interactive youth discussions on Practical Vedanta, self-mastery, and selfless service." },
+  { src: "/images/nation-building/0afb96f5-eeee-4256-96a4-cbfcbab9449e.jpg", title: "Youth Mind Management & Value Seminars", desc: "Guiding young students and seniors in quiet reflection, concentration, and emotional resilience." },
+  { src: "/images/nation-building/cba21d87-8102-4556-9239-f1b6a9f25ef3.jpg", title: "Spiritual Heritage & Moral Mentorship", desc: "Teaching universal human ethics, truthfulness, and compassion to school children." }
+];
+---
+
+<BaseLayout title="Spirituality & Values — SARVAGUN Gyannodaya Trust" description="Fostering Practical Vedanta, universal human values, moral ethics, and inner awakening.">
+  <PageHero
+    kicker="Focus Area 07"
+    title="Spirituality & Universal Values"
+    description="Religion is the manifestation of the Divinity already in man. Fostering ethical character, inner peace, and selfless love for humanity."
+  />
+
+  <!-- Motto Banner -->
+  <div class="bg-amber-950 text-amber-100 py-4 px-6 border-b border-amber-900/40 text-center">
+    <p class="font-display text-base md:text-lg tracking-wide font-medium">
+      सत्य ही आधार • विवेक ही दीप • मानव मूल्य ही जीवन धर्म
+    </p>
+  </div>
+
+  <div class="bg-mist py-10 md:py-14">
+    <div class="shell max-w-5xl mx-auto space-y-8 md:space-y-10">
+
+      <!-- Section 1: Our Spiritual Vision -->
+      <section class="grid lg:grid-cols-12 gap-10 items-center bg-white border border-line p-8 md:p-12" data-animate="fade-up">
+        <div class="lg:col-span-7 space-y-5">
+          <span class="text-xs font-bold uppercase tracking-[0.2em] text-saffron-deep">Our Value Vision</span>
+          <h2 class="text-2xl md:text-3xl font-display font-semibold text-ink leading-tight">
+            Practical Vedanta &amp; Universal Harmony
+          </h2>
+          <p class="text-ink-soft text-base leading-relaxed">
+            At <strong>SARVAGUN Gyannodaya Trust</strong>, we define spirituality not as ritual dogma, but as <em>Practical Vedanta</em>—the living realization of divine unity, moral truthfulness, and selfless love for all creation.
+          </p>
+          <p class="text-ink-soft text-base leading-relaxed">
+            Our spiritual initiatives foster character building among children, mind management for youth, and universal respect for all spiritual traditions.
+          </p>
+          <p class="text-ink-soft text-base leading-relaxed">
+            We teach that the highest worship of God is serving suffering humanity with pure love and unselfishness.
+          </p>
+        </div>
+        <div class="lg:col-span-5 relative group overflow-hidden border border-line bg-mist">
+          <img
+            src={spiritualGallery[0].src}
+            alt={spiritualGallery[0].title}
+            class="w-full aspect-4/3 object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+            loading="eager"
+          />
+          <div class="p-3 bg-stone-50 border-t border-line text-xs text-ink-faint font-medium">
+            📸 {spiritualGallery[0].title}: {spiritualGallery[0].desc}
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 2: 5-Step Value Progression -->
+      <section class="bg-white border border-line p-8 md:p-12 text-center" data-animate="fade-up">
+        <span class="text-xs font-bold uppercase tracking-[0.2em] text-saffron-deep block mb-3">Spiritual Pathway</span>
+        <h2 class="text-2xl md:text-3xl font-display font-semibold text-ink mb-4">
+          The Path of Inner Awakening
+        </h2>
+        <p class="text-ink-soft text-base leading-relaxed max-w-3xl mx-auto mb-8">
+          True spirituality transforms human character, awakening selflessness, purity of intent, and universal empathy.
+        </p>
+
+        <!-- 5-Step Flow Strip -->
+        <div class="bg-amber-950 text-white p-6 border border-amber-900/30 max-w-4xl mx-auto mb-8">
+          <p class="text-xs font-semibold uppercase tracking-widest text-amber-400 mb-3">Spiritual Awakening Journey</p>
+          <div class="flex flex-wrap items-center justify-center gap-2 md:gap-4 text-sm md:text-base font-display font-semibold">
+            <span class="bg-amber-900/60 px-3 py-1 border border-amber-700/40">Ethics</span>
+            <span class="text-amber-400">→</span>
+            <span class="bg-amber-900/60 px-3 py-1 border border-amber-700/40">Truth</span>
+            <span class="text-amber-400">→</span>
+            <span class="bg-amber-900/60 px-3 py-1 border border-amber-700/40">Compassion</span>
+            <span class="text-amber-400">→</span>
+            <span class="bg-amber-900/60 px-3 py-1 border border-amber-700/40">Harmony</span>
+            <span class="text-amber-400">→</span>
+            <span class="bg-amber-900/60 px-3 py-1 border border-amber-700/40 text-amber-200">Awakening</span>
+          </div>
+        </div>
+
+        <p class="text-ink-faint text-sm max-w-2xl mx-auto italic">
+          &ldquo;Be pure, be strong, be ethical to the core. All power is within you; you can do anything and everything.&rdquo; — Swami Vivekananda
+        </p>
+      </section>
+
+      <!-- Section 3: Our 4 Value Pillars -->
+      <section class="bg-white border border-line p-8 md:p-12" data-animate="fade-up">
+        <div class="text-center max-w-2xl mx-auto mb-10">
+          <span class="text-xs font-bold uppercase tracking-[0.2em] text-saffron-deep block mb-2">Value Pillars</span>
+          <h2 class="text-2xl md:text-3xl font-display font-semibold text-ink mb-3">
+            We Teach. We Guide. We Foster. We Live.
+          </h2>
+          <p class="text-ink-faint text-sm leading-relaxed">
+            Translating timeless spiritual values into daily unselfish service and personal character.
+          </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="border border-line p-6 bg-mist hover:border-amber-700/40 transition-colors">
+            <div class="text-saffron-deep font-bold text-lg mb-2">01. We Teach</div>
+            <p class="text-ink-soft text-xs leading-relaxed">
+              Moral stories, universal ethics, and character formation sessions for young children in Gyannodaya centers.
+            </p>
+          </div>
+          <div class="border border-line p-6 bg-mist hover:border-amber-700/40 transition-colors">
+            <div class="text-saffron-deep font-bold text-lg mb-2">02. We Guide</div>
+            <p class="text-ink-soft text-xs leading-relaxed">
+              Youth mindfulness, concentration techniques, and emotional balance workshops.
+            </p>
+          </div>
+          <div class="border border-line p-6 bg-mist hover:border-amber-700/40 transition-colors">
+            <div class="text-saffron-deep font-bold text-lg mb-2">03. We Foster</div>
+            <p class="text-ink-soft text-xs leading-relaxed">
+              Inter-faith respect, universal brotherhood, and harmony across all sections of society.
+            </p>
+          </div>
+          <div class="border border-line p-6 bg-mist hover:border-amber-700/40 transition-colors">
+            <div class="text-saffron-deep font-bold text-lg mb-2">04. We Live</div>
+            <p class="text-ink-soft text-xs leading-relaxed">
+              Directing spiritual conviction into practical, selfless service to the poor, sick, and destitute.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 4: Photo Gallery Grid -->
+      <section data-animate="fade-up">
+        <div class="flex items-end justify-between mb-8">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-[0.2em] text-saffron-deep block mb-1">Field Documentation</span>
+            <h2 class="text-2xl font-display font-semibold text-ink">Glimpses of Value Education</h2>
+          </div>
+        </div>
+        <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6" data-animate="stagger">
+          {spiritualGallery.map((img) => (
+            <div class="bg-white border border-line overflow-hidden group hover:border-amber-700/40 transition-colors">
+              <div class="relative overflow-hidden aspect-4/3 bg-mist">
+                <img
+                  src={img.src}
+                  alt={img.title}
+                  class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                  loading="lazy"
+                />
+              </div>
+              <div class="p-4">
+                <h4 class="font-display font-semibold text-sm text-ink mb-1">{img.title}</h4>
+                <p class="text-ink-faint text-xs leading-relaxed">{img.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Section 5: Closing Commitment -->
+      <section class="bg-white border border-line p-8 md:p-12 text-center" data-animate="fade-up">
+        <div class="my-6 p-8 bg-amber-950 text-amber-100 max-w-3xl mx-auto border border-amber-900/60 shadow-xs">
+          <p class="text-xs font-bold uppercase tracking-widest text-amber-400 mb-3">Our Spiritual Commitment</p>
+          <blockquote class="font-display italic text-lg md:text-xl leading-relaxed text-white mb-4">
+            &ldquo;They alone live, who live for others; the rest are more dead than alive.&rdquo;
+          </blockquote>
+          <p class="text-sm font-semibold text-amber-300">SARVAGUN Gyannodaya Trust</p>
+          <p class="text-xs text-amber-400/80 mt-1">नैतिकता, सत्य और नर-नारायण सेवा</p>
+        </div>
+
+        <div class="pt-4 flex flex-wrap justify-center gap-4">
+          <a href="/about" class="btn btn-primary text-sm px-8 py-3.5">
+            Read Trust Philosophy
+          </a>
+          <a href="/contact" class="btn btn-outline-dark text-sm px-8 py-3.5">
+            Contact Trust
+          </a>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</BaseLayout>
